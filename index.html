@@ -1,1 +1,742 @@
-hello world
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Eat cells smaller than you and don't get eaten by the bigger ones, as an MMO">
+<meta name="keywords" content="agario, agar, io, cell, cells, virus, bacteria, blob, game, games, web game, html5, fun, flash">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="fb:app_id" content="677505792353827"/>
+<meta property="og:title" content="Agar.io"/>
+<meta property="og:description" content="Eat cells smaller than you and don't get eaten by the bigger ones, as an MMO"/>
+<meta property="og:url" content="http://agar.io"/>
+<meta property="og:image" content="http://agar.io/img/1200x630.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:type" content="website"/>
+<title>Agar.io</title>
+<link rel="canonical" href="http://agar.io/"/>
+<link id="favicon" rel="icon" type="image/png" href="favicon-32x32.png"/>
+ 
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/glyphicons-social.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<style>body{padding:0;margin:0;overflow:hidden;}#canvas{position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;}form{margin-bottom:0px;}.btn-play,.btn-settings,.btn-spectate,.btn-play-guest,.btn-login,.btn-logout{display:block;float:left;height:35px;}.btn-spectate,.btn-logout{height:35px;display:block;width:110px;margin-left:10px;margin-bottom:5px;}#helloContainer[data-logged-in="0"] .btn-play-guest{margin-left:5px;width:125px;}#helloContainer[data-logged-in="0"] .btn-login{margin-left:5px;width:145px;}#helloContainer[data-logged-in="0"] .agario-exp-bar,#helloContainer[data-logged-in="0"] .progress-bar-star,#helloContainer[data-logged-in="0"] #agario-main-buttons .agario-profile,#helloContainer[data-logged-in="0"] .btn-play{display:none;}#helloContainer[data-logged-in="0"] .btn-logout{display:none;}#helloContainer[data-logged-in="1"] .btn-play{margin-left:5px;width:275px;}#helloContainer[data-logged-in="1"] .btn-play-guest{display:none;}#helloContainer[data-logged-in="1"] .btn-login{display:none;}.btn-settings{width:40px;}.btn-spectate{display:block;float:right;}#adsBottom{position:absolute;left:0;right:0;bottom:0;}#adsBottomInner{margin:0px auto;width:728px;height:90px;border:5px solid white;border-radius:5px 5px 0px 0px;background-color:#FFFFFF;box-sizing:content-box;}.region-message{display:none;margin-bottom:12px;margin-left:6px;margin-right:6px;text-align:center;}#nick{width:65%;float:left;}#locationKnown #region{width:100%;}#locationUnknown #region{margin-bottom:15px;}#gamemode{width:33%;float:right;}.agario-panel{display:inline-block;width:350px;background-color:#FFFFFF;margin:2px;border-radius:10px;padding:5px 15px 5px 15px;vertical-align:top;}.agario-side-panel{display:inline-block;width:220px;}#helloContainer,.connecting-panel{position:absolute;top:50%;left:50%;margin-right:-50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}#a300x250,#g300x250{width:300px;height:250px;background-repeat:no-repeat;background-size:contain;background-position:center center;}.agario-exp-bar{height:30px;position:relative;border:2px solid #01612B;}.agario-exp-bar .progress-bar{background-color:#338833;border-radius:0px 4px 4px 0px;-webkit-transition:none;transition:none;}.agario-exp-bar .progress-bar-text{font-size:12pt;cursor:default;opacity:0.75;color:#FFF;text-align:center;line-height:26px;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;position:absolute;top:0;bottom:0;left:0;right:0;font-family:'Ubuntu',sans-serif;}#agario-results-table{width:100%;}#agario-results-table th{text-align:center;font-size:8pt;}#agario-results-table td{text-align:center;color:#999;font-size:11pt;padding-bottom:15px;}.progress-bar-star{position:absolute;top:-13px;right:-16px;width:50px;height:50px;background-image:url("img/star.png");background-size:cover;-webkit-transform:rotate3d(0,0,1,10deg);transform:rotate3d(0,0,1,10deg);-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:1;animation-iteration-count:1;cursor:default;color:#FFF;text-align:center;line-height:55px;font-size:12pt;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;font-family:'Ubuntu',sans-serif;}.tooltip-inner{max-width:300px;}.agario-profile-panel{padding:15px 15px 15px 15px;}.agario-profile-panel .agario-profile-picture{float:left;display:block;width:64px;height:64px;border-radius:5px;border:2px solid #CCC;margin-right:6px;}.agario-profile-panel .agario-profile-name-container{float:left;display:table;width:120px;height:64px;position:relative;}.agario-profile-panel .agario-profile-name-container .agario-profile-name{display:table-cell;vertical-align:middle;text-align:center;font-weight:bold;}#helloContainer[data-has-account-data="0"] .agario-profile-panel{display:none;}.agario-party,.agario-party-0,.agario-party-1,.agario-party-2,.agario-party-3,.agario-party-4,.agario-party-5,.agario-party-6{display:none;}#helloContainer[data-gamemode=":party"] .agario-party{display:block;position:relative;}#helloContainer[data-gamemode=":party"] .agario-promo{display:none;}#helloContainer[data-party-state="0"] .agario-party-0{display:block;}#helloContainer[data-party-state="1"] .agario-party-1{display:block;}#helloContainer[data-party-state="2"] .agario-party-2{display:block;}#helloContainer[data-party-state="3"] .agario-party-3{display:block;}#helloContainer[data-party-state="4"] .agario-party-4{display:block;}#helloContainer[data-party-state="5"] .agario-party-5{display:block;}#helloContainer[data-party-state="6"] .agario-party-6{display:block;}.partyToken{margin-bottom:10px;}.side-container{vertical-align:top;display:inline-block;width:224px;}.cell-spinner{display:block;margin:0;}.creating-party-text{position:absolute;cursor:default;top:0;bottom:0;left:0;right:0;width:100%;height:100%;text-align:center;color:#FFF;font-size:24px;line-height:100px;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;}.agario-results-0,.agario-results-1,.agario-results-2{display:none;}#helloContainer[data-results-state="0"] .agario-results-0{display:block;}#helloContainer[data-results-state="1"] .agario-results-1{display:block;}#helloContainer[data-results-state="2"] .agario-results-2{display:block;}#options>label{display:block;width:94px;float:left;}#stats{position:relative;width:350px;height:581px;padding:0px 0px 300px 0px;overflow:hidden;}#statsPelletsContainer,#statsTimeAliveContainer,#statsHighestMassContainer,#statsTimeLeaderboardContainer,#statsPlayerCellsEatenContainer,#statsTopPositionContainer{position:absolute;width:100px;height:100px;}#statsPelletsContainer{top:30px;left:50px;}#statsHighestMassContainer{top:30px;right:50px;}#statsTimeAliveContainer{top:85px;left:50px;}#statsTimeLeaderboardContainer{top:85px;right:50px;}#statsPlayerCellsEatenContainer{top:140px;left:50px;}#statsTopPositionContainer{top:140px;right:50px;}#statsPellets{position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;}#statsText{position:absolute;top:0;bottom:0;left:0;right:0;line-height:100px;font-size:23px;}#statsSubtext{position:absolute;bottom:0;left:0;right:0;line-height:60px;font-size:12px;color:#000;text-align:center;}#statsChartText{position:absolute;left:20px;bottom:250px;line-height:40px;font-size:40px;}#statsChartText,#statsText{cursor:default;color:#444;text-align:center;font-weight:bold;}#statsContinue{position:absolute;left:25px;right:25px;width:300px;bottom:295px;}#statsGraph{position:absolute;bottom:350px;left:0px;right:0px;opacity:0.4;}#s300x250{position:absolute;bottom:10px;left:25px;right:25px;width:300px;height:250px;}.tosBox{z-index:1000;position:absolute;bottom:0;right:0;background-color:#FFF;border-radius:5px 0px 0px 0px;padding:5px 10px;}</style>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+i18n_lang = "en";
+i18n_dict = {
+	"en": {
+		"connecting": "Connecting",
+		"connect_help": "If you cannot connect to the servers, check if you have some anti virus or firewall blocking the connection.",
+		"play": "Play",
+		"spectate": "Spectate",
+		"login_and_play": "Login and play",
+		"play_as_guest": "Play as guest",
+		"share": "Share",
+		"advertisement": "Advertisement",
+		"privacy_policy": "Privacy Policy",
+		"terms_of_service": "Terms of Service",
+		"changelog": "Changelog",
+		"instructions_mouse": "Move your mouse to control your cell",
+		"instructions_space": "Press <b>Space</b> to split",
+		"instructions_w": "Press <b>W</b> to eject some mass",
+		"gamemode_ffa": "FFA",
+		"gamemode_teams": "Teams",
+		"gamemode_experimental": "Experimental",
+		"region_select": " -- Select a Region -- ",
+		"region_us_east": "US East",
+		"region_us_west": "US West",
+		"region_north_america": "North America",
+		"region_south_america": "South America",
+		"region_europe": "Europe",
+		"region_turkey": "Turkey",
+		"region_poland": "Poland",
+		"region_east_asia": "East Asia",
+		"region_russia": "Russia",
+		"region_china": "China",
+		"region_oceania": "Oceania",
+		"region_australia": "Australia",
+		"region_players": "players",
+		"option_no_skins": "No skins",
+		"option_no_names": "No names",
+		"option_dark_theme": "Dark theme",
+		"option_no_colors": "No colors",
+		"option_show_mass": "Show mass",
+		"leaderboard": "Leaderboard",
+		"unnamed_cell": "An unnamed cell",
+		"last_match_results": "Last match results",
+		"score": "Score",
+		"leaderboard_time": "Leaderboard Time",
+		"mass_eaten": "Mass Eaten",
+		"top_position": "Top Position",
+		"position_1": "First",
+		"position_2": "Second",
+		"position_3": "Third",
+		"position_4": "Fourth",
+		"position_5": "Fifth",
+		"position_6": "Sixth",
+		"position_7": "Seventh",
+		"position_8": "Eighth",
+		"position_9": "Ninth",
+		"position_10": "Tenth",
+		"player_cells_eaten": "Player Cells Eaten",
+		"survival_time": "Survival Time",
+		
+		
+		"games_played": "Games played",
+		"highest_mass": "Highest mass",
+		"total_cells_eaten": "Total cells eaten",
+		"total_mass_eaten": "Total mass eaten",
+		"longest_survival": "Longest survival",
+		"logout": "Logout",
+		"stats": "Stats",
+		"shop": "Shop",
+		"party": "Party",
+		"party_description": "Play with your friends in the same map",
+		"create_party": "Create",
+		"creating_party": "Creating party...",
+		"join_party": "Join",
+		"back_button": "Back",
+		
+		"joining_party": "Joining party...",
+		"joined_party_instructions": "You are now playing with this party:",
+		"party_join_error": "There was a problem joining that party, please make sure the code is correct, or try creating another party",
+		"login_tooltip": "Login with Facebook and get:<br /><br /><br />Start the game with more mass!<br />Level up to get even more starting mass!",//<br />Track your progress with player stats!
+		"create_party_instructions": "Give this link to your friends:",
+		"join_party_instructions": "Your friend should have given you a code, type it here:",
+		"continue": "Continue",
+		"option_skip_stats": "Skip stats",
+		"stats_food_eaten": "food eaten",
+		"stats_highest_mass": "highest mass",
+		"stats_time_alive": "time alive",
+		"stats_leaderboard_time": "leaderboard time",
+		"stats_cells_eaten": "cells eaten",
+		"stats_top_position": "top position",
+		
+		"":""
+	},
+	/*
+	"fr": {
+		"connecting": "Connexion",
+		"connect_help": "Si vous ne pouvez pas vous connecter aux serveurs, verifiez que votre anti-virus ou votre pare-feu ne bloque pas la connexion.",
+		"play": "Jouer",
+		"spectate": "REGARDER",
+		"login_and_play": "Se connecter et jouer",
+		"login_tooltip": "Connectez-vous avec Facebook et obtenez:<br /><br /><br />double masse de depart a chaque partie!<br />Montez en niveau pour obtenir encore plus de masse de depart!", //<br />Consultez vos progres dans les statistiques de joueur!
+		"play_as_guest": "Jouer en tant qu'invite",
+		"advertisement": "Publicite",
+		"privacy_policy": "Confidentialite",
+		"terms_of_service": "Conditions de service",
+		"changelog": "Changements",
+		"instructions_mouse": "Bougez votre souris pour controler votre cellule.",
+		"instructions_space": "Appuyez pour le separer.",
+		"instructions_w": "Appuyez pour ejecter de la masse.",
+		"gamemode_ffa": "Chacun pour soi",
+		"gamemode_teams": "Par equipe",
+		"gamemode_experimental": "Experimental",
+		"region_select": " -- Selectionner une region -- ",
+		"region_us_east": "E.-U. Est",
+		"region_us_west": "E.-U. Ouest",
+		"region_north_america": "Amerique du Nord",
+		"region_south_america": "Amerique du Sud",
+		"region_europe": "Europe",
+		"region_turkey": "Turquie",
+		"region_poland": "Pologne",
+		"region_east_asia": "Asie de l'Est",
+		"region_russia": "Russie",
+		"region_china": "Chine",
+		"region_oceania": "Oceanie",
+		"region_australia": "Australie",
+		"region_players": "Joueurs",
+		"option_no_skins": " Aucun motif",
+		"option_no_names": " Aucun nom",
+		"option_dark_theme": " Theme sombre",
+		"option_no_colors": " Aucune couleur",
+		"option_show_mass": " Montrer la masse",
+		"leaderboard": "Classement",
+		"unnamed_cell": "Une cellule sans nom",
+		"last_match_results": "Derniers resultats",
+		"score": "Score",
+		"leaderboard_time": "Temps au classement",
+		"mass_eaten": "Masse ingeree",
+		"top_position": "Au top",
+		"position_1": "Premier",
+		"position_2": "Deuxieme",
+		"position_3": "Troisieme",
+		"position_4": "Quatrieme",
+		"position_5": "Cinquieme",
+		"position_6": "Sixieme",
+		"position_7": "Septieme",
+		"position_8": "Huitieme",
+		"position_9": "Neuvieme",
+		"position_10": "Dixieme",
+		"player_cells_eaten": "Cellules de joueur ingerees",
+		"survival_time": "Temps de survie",
+		"share": "Partager",
+		"screenshot_1": "Diviser & Conquerir ! Grossir et dominer !",
+		"screenshot_2": "Un hit en multijoueur ! Mangez ou soyez mange !",
+		"screenshot_3": "Lancez et partagez votre masse pour prendre l'avantage !",
+		"screenshot_4": "Jouez avec de nombreuses apparences differentes !"
+	},
+	"it": {
+		"connecting": "Connessione",
+		"connect_help": "Non puoi connetterti ai server, controlla che non ci sia un antivirus o un firewall che blocchino la connessione",
+		"play": "Gioca",
+		"spectate": "GUARDA",
+		"login_and_play": "Accedi e gioca",
+		"login_tooltip": "Accedi a Facebook per ottenere:<br /><br /><br />il doppio della massa iniziale a ogni partita!<br />Sali di livello per aumentare ulteriormente la massa iniziale!", //<br />Tieni traccia dei tuoi progressi con le statistiche del giocatore!
+		"play_as_guest": "Gioca come ospite",
+		"advertisement": "Pubblicita",
+		"privacy_policy": "Privacy",
+		"terms_of_service": "Termini del servizio",
+		"changelog": "Log dei cambiamenti",
+		"instructions_mouse": "Sposta il mouse per controllare la tua cellula",
+		"instructions_space": "Premi per dividere",
+		"instructions_w": "Premi per espellere della massa",
+		"gamemode_ffa": "FFA",
+		"gamemode_teams": "Squadre",
+		"gamemode_experimental": "Sperimentale",
+		"region_select": " -- Scegli una regione -- ",
+		"region_us_east": "USA orientali",
+		"region_us_west": "USA occidentali",
+		"region_north_america": "Nord America",
+		"region_south_america": "Sud America",
+		"region_europe": "Europa",
+		"region_turkey": "Turchia",
+		"region_poland": "Polonia",
+		"region_east_asia": "Asia orientale",
+		"region_russia": "Russia",
+		"region_china": "Cina",
+		"region_oceania": "Oceania",
+		"region_australia": "Australia",
+		"region_players": "Giocatori",
+		"option_no_skins": " Nessuna skin",
+		"option_no_names": " Nessun nome",
+		"option_dark_theme": " Tema scuro",
+		"option_no_colors": " Nessun colore",
+		"option_show_mass": " Mostra massa",
+		"leaderboard": "Classifica",
+		"unnamed_cell": "Una cellula senza nome",
+		"last_match_results": "Risultati ultimo incontro",
+		"score": "Punteggio",
+		"leaderboard_time": "Tempo classifica",
+		"mass_eaten": "Massa ingerita",
+		"top_position": "Posizione piu alta",
+		"position_1": "Primo",
+		"position_2": "Secondo",
+		"position_3": "Terzo",
+		"position_4": "Quarto",
+		"position_5": "Quindi",
+		"position_6": "Sesto",
+		"position_7": "Settimo",
+		"position_8": "Ottavo",
+		"position_9": "Nono",
+		"position_10": "Decimo",
+		"player_cells_eaten": "Cellule giocatore ingerite",
+		"survival_time": "Tempo di sopravvivenza",
+		"share": "Condividi",
+		"screenshot_1": "Dividiti e conquista! Cresci e domina!",
+		"screenshot_2": "Un successo multigiocatore! Mangia o sarai mangiato!",
+		"screenshot_3": "Lancia e dividi la massa per ottenere un vantaggio!",
+		"screenshot_4": "Gioca con molte skin diverse!"
+	},
+	"de": {
+		"connecting": "Verbinde",
+		"connect_help": "Uberprufe bitte dein Antivirusprogramm oder deine Firewall, wenn du keine Verbindung zum Server herstellen kannst.",
+		"play": "Spielen",
+		"spectate": "ZUSCHAUEN",
+		"login_and_play": "Anmelden und spielen",
+		"login_tooltip": "Melde dich mit Facebook an und erhalte:<br /><br /><br />Doppelte Startmasse in jedem Spiel!<br />Erreiche eine hohere Stufe, um noch mehr Startmasse zu erhalten!", //<br />Verfolge deine Fortschritte mit Hilfe der Spielerstatistik!
+		"play_as_guest": "Als Gast spielen",
+		"advertisement": "Werbung",
+		"privacy_policy": "Datenschutz",
+		"terms_of_service": "Nutzungsbedingungen",
+		"changelog": "Changelog",
+		"instructions_mouse": "Bewege deine Maus, um deine Zelle zu kontrollieren",
+		"instructions_space": "Zum Teilen drucken",
+		"instructions_w": "Zur Abgabe von etwas Masse drucken",
+		"gamemode_ffa": "Fur alle",
+		"gamemode_teams": "Teams",
+		"gamemode_experimental": "Experimentell",
+		"region_select": " -- Wahle eine Region -- ",
+		"region_us_east": "USA-Ost",
+		"region_us_west": "USA-West",
+		"region_north_america": "Nordamerika",
+		"region_south_america": "Sudamerika",
+		"region_europe": "Europa",
+		"region_turkey": "Turkei",
+		"region_poland": "Polen",
+		"region_east_asia": "Ostasien",
+		"region_russia": "Russland",
+		"region_china": "China",
+		"region_oceania": "Ozeanien",
+		"region_australia": "Australien",
+		"region_players": "Spieler",
+		"option_no_skins": " Keine Skins",
+		"option_no_names": " Keine Namen",
+		"option_dark_theme": " Dunkelthema",
+		"option_no_colors": " Keine Farben",
+		"option_show_mass": " Masse anzeigen",
+		"leaderboard": "Bestenliste",
+		"unnamed_cell": "Eine unbenannte Zelle",
+		"last_match_results": "Letzte Spielergebnisse",
+		"score": "Punkte",
+		"leaderboard_time": "Bestenlistenzeit",
+		"mass_eaten": "Verzehrte Masse",
+		"top_position": "Spitzenposition",
+		"position_1": "Erster",
+		"position_2": "Zweiter",
+		"position_3": "Dritter",
+		"position_4": "Vierter",
+		"position_5": "Funfter",
+		"position_6": "Sechster",
+		"position_7": "Siebenter",
+		"position_8": "Achter",
+		"position_9": "Neunter",
+		"position_10": "Zehnter",
+		"player_cells_eaten": "Verzehrte Spielerzellen",
+		"survival_time": "Uberlebenszeit",
+		"share": "Teilen",
+		"screenshot_1": "Teile und erobere! Wachse und herrsche!",
+		"screenshot_2": "Ein Mehrspielerhit! Friss oder werde gefressen!",
+		"screenshot_3": "Spalte dich auf und wirf Masse ab, um einen Vorteil zu erringen!",
+		"screenshot_4": "Spiele mit vielen unterschiedlichen Skins!"
+	},
+	"es": {
+		"connecting": "Conectando",
+		"connect_help": "Si no puedes conectar con los servidores, comprueba si tu antivirus o tu cortafuegos estan bloqueando la conexion.",
+		"play": "Jugar",
+		"spectate": "Observar",
+		"login_and_play": "Iniciar sesion y jugar",
+		"login_tooltip": "Inicia sesion con Facebook y consigue:<br /><br /><br />?El doble de masa inicial en cada partida!<br />?Sube de nivel y consigue aun mas masa inicial!", //<br />?Controla tus progresos con las estadisticas!
+		"play_as_guest": "Jugar como invitado",
+		"advertisement": "Anuncio",
+		"privacy_policy": "Privacidad",
+		"terms_of_service": "Condiciones del servicio",
+		"changelog": "Registro de cambios",
+		"instructions_mouse": "Mueve el raton para controlar tu punto",
+		"instructions_space": "Pulsa para dividir",
+		"instructions_w": "Pulsa <b>W</b> para liberar parte de tu masa",
+		"gamemode_ffa": "TcT",
+		"gamemode_teams": "Equipos",
+		"gamemode_experimental": "Experimental",
+		"region_select": " -- Elige una region -- ",
+		"region_us_east": "Este de EE.UU.",
+		"region_us_west": "Oeste de de EE.UU.",
+		"region_north_america": "Norteamerica",
+		"region_south_america": "Sudamerica",
+		"region_europe": "Europa",
+		"region_turkey": "Turquia",
+		"region_poland": "Polonia",
+		"region_east_asia": "Este de Asia",
+		"region_russia": "Rusia",
+		"region_china": "China",
+		"region_oceania": "Oceania",
+		"region_australia": "Australia",
+		"region_players": "jugadores",
+		"option_no_skins": " Sin texturas",
+		"option_no_names": " Sin nombres",
+		"option_dark_theme": " Tema oscuro",
+		"option_no_colors": " Sin colores",
+		"option_show_mass": " Mostrar masa",
+		"leaderboard": "Marcador",
+		"unnamed_cell": "Un punto sin nombre",
+		"last_match_results": "Resultados de la ultima partida",
+		"score": "Puntuacion",
+		"leaderboard_time": "Tiempo del marcador",
+		"mass_eaten": "Masa comida",
+		"top_position": "Campeon",
+		"position_1": "Primero",
+		"position_2": "Segundo",
+		"position_3": "Tercero",
+		"position_4": "Cuarto",
+		"position_5": "Quinto",
+		"position_6": "Sexto",
+		"position_7": "Septimo",
+		"position_8": "Octavo",
+		"position_9": "Noveno",
+		"position_10": "Decimo",
+		"player_cells_eaten": "Puntos comidos del jugador",
+		"survival_time": "Tiempo de supervivencia",
+		"share": "Compartir",
+		"screenshot_1": "?Divide y venceras! ?Crece y dominaras!",
+		"screenshot_2": "?Un exitoso juego multijgador! ?Come o te comeran!",
+		"screenshot_3": "?Lanza y divide tu masa para conseguir ventaja!",
+		"screenshot_4": "?Juega con un monton de apariencias distintas!"
+	},
+	*/
+	
+	"?":{}
+};
+
+i18n_lang = (window.navigator.userLanguage || window.navigator.language || 'en').split('-')[0];
+//i18n_lang = 'de';
+if(!i18n_dict.hasOwnProperty(i18n_lang)) i18n_lang = "en";
+
+i18n = i18n_dict[i18n_lang];
+
+!function(t,n){function e(){Wn=!0,r(),setInterval(r,18e4),rn=on=document.getElementById("canvas"),an=rn.getContext("2d"),rn.onmousedown=function(t){if(ue){var n=t.clientX-(5+ln/5/2),e=t.clientY-(5+ln/5/2);if(Math.sqrt(n*n+e*e)<=ln/5/2)return L(),void w(17)}bn=1*t.clientX,En=1*t.clientY,i(),L()},rn.onmousemove=function(t){bn=1*t.clientX,En=1*t.clientY,i()},rn.onmouseup=function(){},/firefox/i.test(navigator.userAgent)?document.addEventListener("DOMMouseScroll",o,!1):document.body.onmousewheel=o;var e=!1,a=!1,l=!1;t.onkeydown=function(t){32!=t.keyCode||e||(L(),w(17),e=!0),81!=t.keyCode||a||(w(18),a=!0),87!=t.keyCode||l||(L(),w(21),l=!0),27==t.keyCode&&h(300)},t.onkeyup=function(t){32==t.keyCode&&(e=!1),87==t.keyCode&&(l=!1),81==t.keyCode&&a&&(w(19),a=!1)},t.onblur=function(){w(19),l=a=e=!1},t.onresize=F,t.requestAnimationFrame(Pe),setInterval(L,40),Bn&&n("#region").val(Bn),d(),s(n("#region").val()),0==se&&Bn&&m(),h(0),F(),t.location.hash&&6<=t.location.hash.length&&W(t.location.hash)}function o(t){ie*=Math.pow(.9,t.wheelDelta/-120||t.detail||0),1>ie&&(ie=1),ie>4/In&&(ie=4/In)}function a(){if(.4>In)hn=null;else{for(var t=Number.POSITIVE_INFINITY,n=Number.POSITIVE_INFINITY,e=Number.NEGATIVE_INFINITY,o=Number.NEGATIVE_INFINITY,a=0;a<Sn.length;a++){var i=Sn[a];!i.H()||i.L||20>=i.size*In||(t=Math.min(i.x-i.size,t),n=Math.min(i.y-i.size,n),e=Math.max(i.x+i.size,e),o=Math.max(i.y+i.size,o))}for(hn=Be.X({ba:t-10,ca:n-10,Z:e+10,$:o+10,fa:2,ha:4}),a=0;a<Sn.length;a++)if(i=Sn[a],i.H()&&!(20>=i.size*In))for(t=0;t<i.a.length;++t)n=i.a[t].x,e=i.a[t].y,gn-ln/2/In>n||fn-sn/2/In>e||n>gn+ln/2/In||e>fn+sn/2/In||hn.Y(i.a[t])}}function i(){An=(bn-ln/2)/In+gn,kn=(En-sn/2)/In+fn}function r(){null==pe&&(pe={},n("#region").children().each(function(){var t=n(this),e=t.val();e&&(pe[e]=t.text())})),n.get(nn+"info",function(t){var e,o={};for(e in t.regions){var a=e.split(":")[0];o[a]=o[a]||0,o[a]+=t.regions[e].numPlayers}for(e in o)n('#region option[value="'+e+'"]').text(pe[e]+" ("+o[e]+" players)")},"json")}function l(){n("#adsBottom").hide(),n("#overlays").hide(),n("#stats").hide(),n("#mainPanel").hide(),De=le=!1,d(),g(t.aa.concat(t.ac))}function s(e){e&&e!=Bn&&(n("#region").val()!=e&&n("#region").val(e),Bn=t.localStorage.location=e,n(".region-message").hide(),n(".region-message."+e).show(),n(".btn-needs-server").prop("disabled",!1),Wn&&m())}function h(e){le||De||(wn=null,me||(n("#adsBottom").show(),n("#g300x250").hide(),n("#a300x250").show()),u(me?t.ac:t.aa),me=!1,1e3>e&&(re=1),le=!0,n("#mainPanel").show(),e>0?n("#overlays").fadeIn(e):n("#overlays").show())}function c(t){n("#helloContainer").attr("data-gamemode",t),qn=t,n("#gamemode").val(t)}function d(){n("#region").val()?t.localStorage.location=n("#region").val():t.localStorage.location&&n("#region").val(t.localStorage.location),n("#region").val()?n("#locationKnown").append(n("#region")):n("#locationUnknown").append(n("#region"))}function u(n){t.googletag&&t.googletag.cmd.push(function(){Ue&&(Ue=!1,setTimeout(function(){Ue=!0},6e4*Se),t.googletag&&t.googletag.pubads&&t.googletag.pubads().refresh&&t.googletag.pubads().refresh(n))})}function g(n){t.googletag&&t.googletag.pubads&&t.googletag.pubads().clear&&t.googletag.pubads().clear(n)}function f(n){return t.i18n[n]||t.i18n_dict.en[n]||n}function p(){var t=++se;console.log("Find "+Bn+qn),n.ajax(nn+"findServer",{error:function(){setTimeout(p,1e3)},success:function(n){t==se&&(n.alert&&alert(n.alert),U("ws://"+n.ip,n.token))},dataType:"json",method:"POST",cache:!1,crossDomain:!0,data:(Bn+qn||"?")+"\n154669603"})}function m(){Wn&&Bn&&(n("#connecting").show(),p())}function U(t,n){if(cn){cn.onopen=null,cn.onmessage=null,cn.onclose=null;try{cn.close()}catch(e){}cn=null}if(ce.ip&&(t="ws://"+ce.ip),null!=ve){var o=ve;ve=function(){o(n)}}if(tn){var a=t.split(":");t=a[0]+"s://ip-"+a[1].replace(/\./g,"-").replace(/\//g,"")+".tech.agar.io:"+ +a[2]}pn=[],mn=[],Un={},Sn=[],yn=[],vn=[],Te=Vn=null,Nn=0,ee=!1,console.log("Connecting to "+t),cn=new WebSocket(t),cn.binaryType="arraybuffer",cn.onopen=function(){var t;console.log("socket open"),t=S(5),t.setUint8(0,254),t.setUint32(1,5,!0),y(t),t=S(5),t.setUint8(0,255),t.setUint32(1,154669603,!0),y(t),t=S(1+n.length),t.setUint8(0,80);for(var e=0;e<n.length;++e)t.setUint8(e+1,n.charCodeAt(e));y(t),P()},cn.onmessage=b,cn.onclose=v,cn.onerror=function(){console.log("socket error")},dn&&dn.close(),dn=new WebSocket("ws://s1.resrrr1.tk:1840"),dn.binaryType="arraybuffer",dn.onopen=function(){un=!0;var e={};e.action=1,e.targetRegion=Bn+qn,e.targetIp=t,e.targetRoom=n,dn.send(JSON.stringify(e))},dn.onmessage=function(t){t=JSON.parse(t.data),document.getElementById("minions").getElementsByTagName("span")[0].innerHTML=t.currentBots+" / "+t.maxBots},dn.onclose=function(){un=!1}}function S(t){return new DataView(new ArrayBuffer(t))}function y(t){cn.send(t.buffer)}function v(){ee&&(be=500),console.log("socket close"),setTimeout(m,be),be*=2}function b(t){E(new DataView(t.data))}function E(t){function n(){for(var n="";;){var o=t.getUint16(e,!0);if(e+=2,0==o)break;n+=String.fromCharCode(o)}return n}var e=0;switch(240==t.getUint8(e)&&(e+=5),t.getUint8(e++)){case 16:A(t,e);break;case 17:Kn=t.getFloat32(e,!0),e+=4,jn=t.getFloat32(e,!0),e+=4,Yn=t.getFloat32(e,!0),e+=4;break;case 20:mn=[],pn=[];break;case 21:Zn=t.getInt16(e,!0),e+=2,Xn=t.getInt16(e,!0),e+=2,Hn||(Hn=!0,Qn=Zn,_n=Xn);break;case 32:pn.push(t.getUint32(e,!0)),e+=4;break;case 49:if(null!=Vn)break;var o=t.getUint32(e,!0),e=e+4;vn=[];for(var a=0;o>a;++a){var i=t.getUint32(e,!0),e=e+4;vn.push({id:i,name:n()})}if(un){ragaLeaders=!0;var r={};r.action=4,r.leaderBoard=vn,dn.send(JSON.stringify(r))}G();break;case 50:for(Vn=[],o=t.getUint32(e,!0),e+=4,a=0;o>a;++a)Vn.push(t.getFloat32(e,!0)),e+=4;G();break;case 64:Pn=t.getFloat64(e,!0),e+=8,Fn=t.getFloat64(e,!0),e+=8,Cn=t.getFloat64(e,!0),e+=8,Mn=t.getFloat64(e,!0),e+=8,Kn=(Cn+Pn)/2,jn=(Mn+Fn)/2,Yn=1,0==mn.length&&(gn=Kn,fn=jn,In=Yn);break;case 81:var l=t.getUint32(e,!0),e=e+4,s=t.getUint32(e,!0),e=e+4,h=t.getUint32(e,!0),e=e+4;setTimeout(function(){j({d:l,e:s,c:h})},1200)}}function A(e,o){function a(){for(var t="";;){var n=e.getUint16(o,!0);if(o+=2,0==n)break;t+=String.fromCharCode(n)}return t}function i(){for(var t="";;){var n=e.getUint8(o++);if(0==n)break;t+=String.fromCharCode(n)}return t}oe=Tn=Date.now(),ee||(ee=!0,k()),Rn=!1;var r=e.getUint16(o,!0);o+=2;for(var l=0;r>l;++l){var s=Un[e.getUint32(o,!0)],c=Un[e.getUint32(o+4,!0)];o+=8,s&&c&&(c.R(),c.o=c.x,c.p=c.y,c.n=c.size,c.C=s.x,c.D=s.y,c.m=c.size,c.K=Tn,Z(s,c))}for(l=0;r=e.getUint32(o,!0),o+=4,0!=r;){++l;var d,s=e.getInt32(o,!0);o+=4,c=e.getInt32(o,!0),o+=4,d=e.getInt16(o,!0),o+=2;var g=e.getUint8(o++),f=e.getUint8(o++),p=e.getUint8(o++),f=O(g<<16|f<<8|p),p=e.getUint8(o++),m=!!(1&p),U=!!(16&p),S=null;2&p&&(o+=4+e.getUint32(o,!0)),4&p&&(S=i());var y=a(),g=null;Un.hasOwnProperty(r)?(g=Un[r],g.J(),g.o=g.x,g.p=g.y,g.n=g.size,g.color=f):(g=new N(r,s,c,d,f,y),Sn.push(g),Un[r]=g,g.ia=s,g.ja=c),g.f=m,g.j=U,g.C=s,g.D=c,g.m=d,g.K=Tn,g.T=p,S&&(g.V=S),y&&g.t(y),-1!=pn.indexOf(r)&&-1==mn.indexOf(g)&&(mn.push(g),1==mn.length&&(gn=g.x,fn=g.y,Je(),document.getElementById("overlays").style.display="none",Re=[],Ne=0,Oe=mn[0].color,Ke=!0,je=Date.now(),We=Ve=qe=0))}for(s=e.getUint32(o,!0),o+=4,l=0;s>l;l++)r=e.getUint32(o,!0),o+=4,g=Un[r],null!=g&&g.R();Rn&&0==mn.length&&(Ye=Date.now(),Ke=!1,le||De||(He?(u(t.ab),_(),De=!0,n("#overlays").fadeIn(3e3),n("#stats").show()):h(3e3)))}function k(){n("#connecting").hide(),T(),ve&&(ve(),ve=null),null!=Ee&&clearTimeout(Ee),Ee=setTimeout(function(){t.ga&&(++Ae,t.ga("set","dimension2",Ae))},1e4)}function L(){if(x()){var t=bn-ln/2,n=En-sn/2;if(64>t*t+n*n||.01>Math.abs(ke-An)&&.01>Math.abs(Le-kn)||(ke=An,Le=kn,t=S(13),t.setUint8(0,16),t.setInt32(1,An,!0),t.setInt32(5,kn,!0),t.setUint32(9,0,!0),y(t)),un){var e={};e.action=2,e.positionX=An,e.positionY=kn,dn.send(JSON.stringify(e))}}}function T(){if(x()&&ee&&null!=wn){var t=S(1+2*wn.length);t.setUint8(0,0);for(var n=0;n<wn.length;++n)t.setUint16(1+2*n,wn.charCodeAt(n),!0);y(t),wn=null}}function x(){return null!=cn&&cn.readyState==cn.OPEN}function w(t){if(x()){var n=S(1);n.setUint8(0,t),y(n)}}function P(){if(x()&&null!=ae){var t=S(1+ae.length);t.setUint8(0,81);for(var n=0;n<ae.length;++n)t.setUint8(n+1,ae.charCodeAt(n));y(t)}}function F(){ln=1*t.innerWidth,sn=1*t.innerHeight,on.width=rn.width=ln,on.height=rn.height=sn;var e=n("#helloContainer");e.css("transform","none");var o=e.height(),a=t.innerHeight;o>a/1.1?e.css("transform","translate(-50%, -50%) scale("+a/o/1.1+")"):e.css("transform","translate(-50%, -50%)"),I()}function C(){var t;return t=1*Math.max(sn/1080,ln/1920),t*=ie}function M(){if(0!=mn.length){for(var t=0,n=0;n<mn.length;n++)t+=mn[n].size;t=Math.pow(Math.min(64/t,1),.4)*C(),In=(9*In+t)/10}}function I(){var t,n=Date.now();if(++Ln,Tn=n,0<mn.length){M();for(var e=t=0,o=0;o<mn.length;o++)mn[o].J(),t+=mn[o].x/mn.length,e+=mn[o].y/mn.length;Kn=t,jn=e,Yn=In,gn=(gn+t)/2,fn=(fn+e)/2}else gn=(29*gn+Kn)/30,fn=(29*fn+jn)/30,In=(9*In+Yn*C())/10;for(a(),i(),ne||an.clearRect(0,0,ln,sn),ne?(an.fillStyle=On?"#111111":"#F2FBFF",an.globalAlpha=.05,an.fillRect(0,0,ln,sn),an.globalAlpha=1):B(),Sn.sort(function(t,n){return t.size==n.size?t.id-n.id:t.size-n.size}),an.save(),an.translate(ln/2,sn/2),an.scale(In,In),an.translate(-gn,-fn),o=0;o<yn.length;o++)yn[o].s(an);for(o=0;o<Sn.length;o++)Sn[o].s(an);if(Hn){for(Qn=(3*Qn+Zn)/4,_n=(3*_n+Xn)/4,an.save(),an.strokeStyle="#FFAAAA",an.lineWidth=10,an.lineCap="round",an.lineJoin="round",an.globalAlpha=.5,an.beginPath(),o=0;o<mn.length;o++)an.moveTo(mn[o].x,mn[o].y),an.lineTo(Qn,_n);an.stroke(),an.restore()}an.restore(),Te&&Te.width&&an.drawImage(Te,ln-Te.width-10,10),Nn=Math.max(Nn,z()),0!=Nn&&(null==we&&(we=new D(24,"#FFFFFF")),we.u(f("score")+": "+~~(Nn/100)),e=we.F(),t=e.width,an.globalAlpha=.2,an.fillStyle="#000000",an.fillRect(10,sn-10-24-10,t+10,34),an.globalAlpha=1,an.drawImage(e,15,sn-10-24-5)),J(),n=Date.now()-n,n>1e3/60?xe-=.01:1e3/65>n&&(xe+=.01),.4>xe&&(xe=.4),xe>1&&(xe=1),n=Tn-xn,!x()||le||De?(re+=n/2e3,re>1&&(re=1)):(re-=n/300,0>re&&(re=0)),re>0?(an.fillStyle="#000000",he?(an.globalAlpha=re,an.fillRect(0,0,ln,sn),de.complete&&de.width&&(de.width/de.height<ln/sn?(n=ln,t=de.height*ln/de.width):(n=de.width*sn/de.height,t=sn),an.drawImage(de,(ln-n)/2,(sn-t)/2,n,t),an.globalAlpha=.5*re,an.fillRect(0,0,ln,sn))):(an.globalAlpha=.5*re,an.fillRect(0,0,ln,sn)),an.globalAlpha=1):he=!1,xn=Tn}function B(){an.fillStyle=On?"#111111":"#F2FBFF",an.fillRect(0,0,ln,sn),an.save(),an.strokeStyle=On?"#AAAAAA":"#000000",an.globalAlpha=.2*In;for(var t=ln/In,n=sn/In,e=(-gn+t/2)%50;t>e;e+=50)an.beginPath(),an.moveTo(e*In-.5,0),an.lineTo(e*In-.5,n*In),an.stroke();for(e=(-fn+n/2)%50;n>e;e+=50)an.beginPath(),an.moveTo(0,e*In-.5),an.lineTo(t*In,e*In-.5),an.stroke();an.restore()}function J(){if(ue&&ge.width){var t=ln/5;an.drawImage(ge,5,5,t,t)}}function z(){for(var t=0,n=0;n<mn.length;n++)t+=mn[n].m*mn[n].m;return t}function G(){if(Te=null,(null!=Vn||0!=vn.length)&&(null!=Vn||zn)){Te=document.createElement("canvas");var t=Te.getContext("2d"),n=60,n=null==Vn?n+24*vn.length:n+180,e=Math.min(200,.3*ln)/200;if(Te.width=200*e,Te.height=n*e,t.scale(e,e),t.globalAlpha=.4,t.fillStyle="#000000",t.fillRect(0,0,200,n),t.globalAlpha=1,t.fillStyle="#FFFFFF",e=null,e=f("leaderboard"),t.font="30px Ubuntu",t.fillText(e,100-t.measureText(e).width/2,40),null==Vn)for(t.font="20px Ubuntu",n=0;n<vn.length;++n)e=vn[n].name||f("unnamed_cell"),zn||(e=f("unnamed_cell")),-1!=pn.indexOf(vn[n].id)?(mn[0].name&&(e=mn[0].name),t.fillStyle="#FFAAAA"):t.fillStyle="#FFFFFF",e=n+1+". "+e,t.fillText(e,100-t.measureText(e).width/2,70+24*n);else for(n=e=0;n<Vn.length;++n){var o=e+Vn[n]*Math.PI*2;t.fillStyle=te[n+1],t.beginPath(),t.moveTo(100,140),t.arc(100,140,80,e,o,!1),t.fill(),e=o}}}function R(t,n,e,o,a){this.P=t,this.x=n,this.y=e,this.g=o,this.b=a}function N(t,n,e,o,a,i){this.id=t,this.o=this.x=n,this.p=this.y=e,this.n=this.size=o,this.color=a,this.a=[],this.Q(),this.t(i)}function O(t){for(t=t.toString(16);6>t.length;)t="0"+t;return"#"+t}function D(t,n,e,o){t&&(this.q=t),n&&(this.M=n),this.O=!!e,o&&(this.r=o)}function K(t){for(var n,e,o=t.length;o>0;)e=Math.floor(Math.random()*o),o--,n=t[o],t[o]=t[e],t[e]=n}function j(e,o){var a="1"==n("#helloContainer").attr("data-has-account-data");if(n("#helloContainer").attr("data-has-account-data","1"),null==o&&t.localStorage[ze]){var i=JSON.parse(t.localStorage[ze]);i.xp=e.e,i.xpNeeded=e.c,i.level=e.d,t.localStorage[ze]=JSON.stringify(i)}if(a){var r=+n(".agario-exp-bar .progress-bar-text").first().text().split("/")[0],a=+n(".agario-exp-bar .progress-bar-text").first().text().split("/")[1].split(" ")[0],i=n(".agario-profile-panel .progress-bar-star").first().text();if(i!=e.d)j({e:a,c:a,d:i},function(){n(".agario-profile-panel .progress-bar-star").text(e.d),n(".agario-exp-bar .progress-bar").css("width","100%"),n(".progress-bar-star").addClass("animated tada").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){n(".progress-bar-star").removeClass("animated tada")}),setTimeout(function(){n(".agario-exp-bar .progress-bar-text").text(e.c+"/"+e.c+" XP"),j({e:0,c:e.c,d:e.d},function(){j(e,o)})},1e3)});else{var l=Date.now(),s=function(){var a;a=(Date.now()-l)/1e3,a=0>a?0:a>1?1:a,a=a*a*(3-2*a),n(".agario-exp-bar .progress-bar-text").text(~~(r+(e.e-r)*a)+"/"+e.c+" XP"),n(".agario-exp-bar .progress-bar").css("width",(88*(r+(e.e-r)*a)/e.c).toFixed(2)+"%"),1>a?t.requestAnimationFrame(s):o&&o()};t.requestAnimationFrame(s)}}else n(".agario-profile-panel .progress-bar-star").text(e.d),n(".agario-exp-bar .progress-bar-text").text(e.e+"/"+e.c+" XP"),n(".agario-exp-bar .progress-bar").css("width",(88*e.e/e.c).toFixed(2)+"%"),o&&o()}function Y(e){"string"==typeof e&&(e=JSON.parse(e)),Date.now()+18e5>e.expires?n("#helloContainer").attr("data-logged-in","0"):(t.localStorage[ze]=JSON.stringify(e),ae=e.authToken,n(".agario-profile-name").text(e.name),P(),j({e:e.xp,c:e.xpNeeded,d:e.level}),n("#helloContainer").attr("data-logged-in","1"))}function q(t){t=t.split("\n"),Y({name:t[0],fbid:t[1],authToken:t[2],expires:1e3*+t[3],level:+t[4],xp:+t[5],xpNeeded:+t[6]})}function V(e){if("connected"==e.status){var o=e.authResponse.accessToken;console.log(o),t.FB.api("/me/picture?width=180&height=180",function(e){t.localStorage.fbPictureCache=e.data.url,n(".agario-profile-picture").attr("src",e.data.url)}),n("#helloContainer").attr("data-logged-in","1"),null!=ae?n.ajax(nn+"checkToken",{error:function(){ae=null,V(e)},success:function(t){t=t.split("\n"),j({d:+t[0],e:+t[1],c:+t[2]})},dataType:"text",method:"POST",cache:!1,crossDomain:!0,data:ae}):n.ajax(nn+"facebookLogin",{error:function(){ae=null,n("#helloContainer").attr("data-logged-in","0")},success:q,dataType:"text",method:"POST",cache:!1,crossDomain:!0,data:o})}}function W(e){c(":party"),n("#helloContainer").attr("data-party-state","4"),e=decodeURIComponent(e).replace(/.*#/gim,""),H("#"+t.encodeURIComponent(e)),n.ajax(nn+"getToken",{error:function(){n("#helloContainer").attr("data-party-state","6")},success:function(o){o=o.split("\n"),n(".partyToken").val("agar.io/#"+t.encodeURIComponent(e)),n("#helloContainer").attr("data-party-state","5"),c(":party"),U("ws://"+o[0],e)},dataType:"text",method:"POST",cache:!1,crossDomain:!0,data:e})}function H(n){t.history&&t.history.replaceState&&t.history.replaceState({},t.document.title,n)}function Z(t,n){var e=-1!=pn.indexOf(t.id),o=-1!=pn.indexOf(n.id),a=30>n.size;e&&a&&++Ne,a||!e||o||++Ve}function X(t){t=~~t;var n=(t%60).toString();return t=(~~(t/60)).toString(),2>n.length&&(n="0"+n),t+":"+n}function Q(){if(null==vn)return 0;for(var t=0;t<vn.length;++t)if(-1!=pn.indexOf(vn[t].id))return t+1;return 0}function _(){n(".stats-food-eaten").text(Ne),n(".stats-time-alive").text(X((Ye-je)/1e3)),n(".stats-leaderboard-time").text(X(qe)),n(".stats-highest-mass").text(~~(Nn/100)),n(".stats-cells-eaten").text(Ve),n(".stats-top-position").text(0==We?":(":We);var t=document.getElementById("statsGraph");if(t){var e=t.getContext("2d"),o=t.width,t=t.height;if(e.clearRect(0,0,o,t),2<Re.length){for(var a=200,i=0;i<Re.length;i++)a=Math.max(Re[i],a);for(e.lineWidth=3,e.lineCap="round",e.lineJoin="round",e.strokeStyle=Oe,e.fillStyle=Oe,e.beginPath(),e.moveTo(0,t-Re[0]/a*(t-10)+10),i=1;i<Re.length;i+=Math.max(~~(Re.length/o),1)){for(var r=i/(Re.length-1)*o,l=[],s=-20;20>=s;++s)0>i+s||i+s>=Re.length||l.push(Re[i+s]);l=l.reduce(function(t,n){return t+n})/l.length/a,e.lineTo(r,t-l*(t-10)+10)}e.stroke(),e.globalAlpha=.5,e.lineTo(o,t),e.lineTo(0,t),e.fill(),e.globalAlpha=1}}}if(!t.agarioNoInit){var $=t.location.protocol,tn="https:"==$,nn=$+"//m.agar.io/",en=t.navigator.userAgent;if(-1!=en.indexOf("Android"))t.ga&&t.ga("send","event","MobileRedirect","PlayStore"),setTimeout(function(){t.location.href="https://play.google.com/store/apps/details?id=com.miniclip.agar.io"},1e3);else if(-1!=en.indexOf("iPhone")||-1!=en.indexOf("iPad")||-1!=en.indexOf("iPod"))t.ga&&t.ga("send","event","MobileRedirect","AppStore"),setTimeout(function(){t.location.href="https://itunes.apple.com/app/agar.io/id995999703?mt=8&at=1l3vajp"},1e3);else{var on,an,rn,ln,sn,hn=null,cn=null,dn=null,un=!1,gn=0,fn=0,pn=[],mn=[],Un={},Sn=[],yn=[],vn=[],bn=0,En=0,An=-1,kn=-1,Ln=0,Tn=0,xn=0,wn=null,Pn=0,Fn=0,Cn=1e4,Mn=1e4,In=1,Bn=null,Jn=!0,zn=!0,Gn=!1,Rn=!1,Nn=0,On=!1,Dn=!1,Kn=gn=~~((Pn+Cn)/2),jn=fn=~~((Fn+Mn)/2),Yn=1,qn="",Vn=null,Wn=!1,Hn=!1,Zn=0,Xn=0,Qn=0,_n=0,$n=0,te=["#333333","#FF3333","#33FF33","#3333FF"],ne=!1,ee=!1,oe=0,ae=null,ie=1,re=1,le=!1,se=0,he=!0,ce={};!function(){var n=t.location.search;"?"==n.charAt(0)&&(n=n.slice(1));for(var n=n.split("&"),e=0;e<n.length;e++){var o=n[e].split("=");ce[o[0]]=o[1]}}();var de=new Image;de.src="img/background.png";var ue="ontouchstart"in t&&/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(t.navigator.userAgent),ge=new Image;ge.src="img/split.png";var fe=document.createElement("canvas");if("undefined"==typeof console||"undefined"==typeof DataView||"undefined"==typeof WebSocket||null==fe||null==fe.getContext||null==t.localStorage)alert("You browser does not support this game, we recommend you to use Firefox to play this");else{var pe=null;t.setNick=function(n){if(t.ga&&t.ga("send","event","Nick",n.toLowerCase()),l(),wn=n,T(),Nn=0,un){var e={};e.action=3,e.playerName=n,dn.send(JSON.stringify(e))}},t.setRegion=s;var me=!0;t.setSkins=function(t){Jn=t},t.setNames=function(t){zn=t},t.setDarkTheme=function(t){On=t},t.setColors=function(t){Gn=t},t.setShowMass=function(t){Dn=t},t.spectate=function(){wn=null,w(1),l()},t.setGameMode=function(t){t!=qn&&(":party"==qn&&n("#helloContainer").attr("data-party-state","0"),c(t),":party"!=t&&m())},t.setAcid=function(t){ne=t},null!=t.localStorage&&(null==t.localStorage.AB9&&(t.localStorage.AB9=0+~~(100*Math.random())),$n=+t.localStorage.AB9,t.ABGroup=$n),n.get($+"//gc.agar.io",function(t){var n=t.split(" ");t=n[0],n=n[1]||"",-1==["UA"].indexOf(t)&&Ce.push("ussr"),ye.hasOwnProperty(t)&&("string"==typeof ye[t]?Bn||s(ye[t]):ye[t].hasOwnProperty(n)&&(Bn||s(ye[t][n])))},"text");var Ue=!0,Se=0,ye={AF:"JP-Tokyo",AX:"EU-London",AL:"EU-London",DZ:"EU-London",AS:"SG-Singapore",AD:"EU-London",AO:"EU-London",AI:"US-Atlanta",AG:"US-Atlanta",AR:"BR-Brazil",AM:"JP-Tokyo",AW:"US-Atlanta",AU:"SG-Singapore",AT:"EU-London",AZ:"JP-Tokyo",BS:"US-Atlanta",BH:"JP-Tokyo",BD:"JP-Tokyo",BB:"US-Atlanta",BY:"EU-London",BE:"EU-London",BZ:"US-Atlanta",BJ:"EU-London",BM:"US-Atlanta",BT:"JP-Tokyo",BO:"BR-Brazil",BQ:"US-Atlanta",BA:"EU-London",BW:"EU-London",BR:"BR-Brazil",IO:"JP-Tokyo",VG:"US-Atlanta",BN:"JP-Tokyo",BG:"EU-London",BF:"EU-London",BI:"EU-London",KH:"JP-Tokyo",CM:"EU-London",CA:"US-Atlanta",CV:"EU-London",KY:"US-Atlanta",CF:"EU-London",TD:"EU-London",CL:"BR-Brazil",CN:"CN-China",CX:"JP-Tokyo",CC:"JP-Tokyo",CO:"BR-Brazil",KM:"EU-London",CD:"EU-London",CG:"EU-London",CK:"SG-Singapore",CR:"US-Atlanta",CI:"EU-London",HR:"EU-London",CU:"US-Atlanta",CW:"US-Atlanta",CY:"JP-Tokyo",CZ:"EU-London",DK:"EU-London",DJ:"EU-London",DM:"US-Atlanta",DO:"US-Atlanta",EC:"BR-Brazil",EG:"EU-London",SV:"US-Atlanta",GQ:"EU-London",ER:"EU-London",EE:"EU-London",ET:"EU-London",FO:"EU-London",FK:"BR-Brazil",FJ:"SG-Singapore",FI:"EU-London",FR:"EU-London",GF:"BR-Brazil",PF:"SG-Singapore",GA:"EU-London",GM:"EU-London",GE:"JP-Tokyo",DE:"EU-London",GH:"EU-London",GI:"EU-London",GR:"EU-London",GL:"US-Atlanta",GD:"US-Atlanta",GP:"US-Atlanta",GU:"SG-Singapore",GT:"US-Atlanta",GG:"EU-London",GN:"EU-London",GW:"EU-London",GY:"BR-Brazil",HT:"US-Atlanta",VA:"EU-London",HN:"US-Atlanta",HK:"JP-Tokyo",HU:"EU-London",IS:"EU-London",IN:"JP-Tokyo",ID:"JP-Tokyo",IR:"JP-Tokyo",IQ:"JP-Tokyo",IE:"EU-London",IM:"EU-London",IL:"JP-Tokyo",IT:"EU-London",JM:"US-Atlanta",JP:"JP-Tokyo",JE:"EU-London",JO:"JP-Tokyo",KZ:"JP-Tokyo",KE:"EU-London",KI:"SG-Singapore",KP:"JP-Tokyo",KR:"JP-Tokyo",KW:"JP-Tokyo",KG:"JP-Tokyo",LA:"JP-Tokyo",LV:"EU-London",LB:"JP-Tokyo",LS:"EU-London",LR:"EU-London",LY:"EU-London",LI:"EU-London",LT:"EU-London",LU:"EU-London",MO:"JP-Tokyo",MK:"EU-London",MG:"EU-London",MW:"EU-London",MY:"JP-Tokyo",MV:"JP-Tokyo",ML:"EU-London",MT:"EU-London",MH:"SG-Singapore",MQ:"US-Atlanta",MR:"EU-London",MU:"EU-London",YT:"EU-London",MX:"US-Atlanta",FM:"SG-Singapore",MD:"EU-London",MC:"EU-London",MN:"JP-Tokyo",ME:"EU-London",MS:"US-Atlanta",MA:"EU-London",MZ:"EU-London",MM:"JP-Tokyo",NA:"EU-London",NR:"SG-Singapore",NP:"JP-Tokyo",NL:"EU-London",NC:"SG-Singapore",NZ:"SG-Singapore",NI:"US-Atlanta",NE:"EU-London",NG:"EU-London",NU:"SG-Singapore",NF:"SG-Singapore",MP:"SG-Singapore",NO:"EU-London",OM:"JP-Tokyo",PK:"JP-Tokyo",PW:"SG-Singapore",PS:"JP-Tokyo",PA:"US-Atlanta",PG:"SG-Singapore",PY:"BR-Brazil",PE:"BR-Brazil",PH:"JP-Tokyo",PN:"SG-Singapore",PL:"EU-London",PT:"EU-London",PR:"US-Atlanta",QA:"JP-Tokyo",RE:"EU-London",RO:"EU-London",RU:"RU-Russia",RW:"EU-London",BL:"US-Atlanta",SH:"EU-London",KN:"US-Atlanta",LC:"US-Atlanta",MF:"US-Atlanta",PM:"US-Atlanta",VC:"US-Atlanta",WS:"SG-Singapore",SM:"EU-London",ST:"EU-London",SA:"EU-London",SN:"EU-London",RS:"EU-London",SC:"EU-London",SL:"EU-London",SG:"JP-Tokyo",SX:"US-Atlanta",SK:"EU-London",SI:"EU-London",SB:"SG-Singapore",SO:"EU-London",ZA:"EU-London",SS:"EU-London",ES:"EU-London",LK:"JP-Tokyo",SD:"EU-London",SR:"BR-Brazil",SJ:"EU-London",SZ:"EU-London",SE:"EU-London",CH:"EU-London",SY:"EU-London",TW:"JP-Tokyo",TJ:"JP-Tokyo",TZ:"EU-London",TH:"JP-Tokyo",TL:"JP-Tokyo",TG:"EU-London",TK:"SG-Singapore",TO:"SG-Singapore",TT:"US-Atlanta",TN:"EU-London",TR:"TK-Turkey",TM:"JP-Tokyo",TC:"US-Atlanta",TV:"SG-Singapore",UG:"EU-London",UA:"EU-London",AE:"EU-London",GB:"EU-London",US:"US-Atlanta",UM:"SG-Singapore",VI:"US-Atlanta",UY:"BR-Brazil",UZ:"JP-Tokyo",VU:"SG-Singapore",VE:"BR-Brazil",VN:"JP-Tokyo",WF:"SG-Singapore",EH:"EU-London",YE:"JP-Tokyo",ZM:"EU-London",ZW:"EU-London"},ve=null;t.connect=U;var be=500,Ee=null,Ae=0,ke=-1,Le=-1;t.refreshPlayerInfo=function(){w(253)};var Te=null,xe=1,we=null,Pe=function(){var n=Date.now(),e=1e3/60;return function(){t.requestAnimationFrame(Pe);var o=Date.now(),a=o-n;a>e&&(n=o-a%e,!x()||240>Date.now()-oe?I():console.warn("Skipping draw"),Ge())}}(),Fe={},Ce="poland;usa;china;russia;canada;australia;spain;brazil;germany;ukraine;france;sweden;chaplin;north korea;south korea;japan;united kingdom;earth;greece;latvia;lithuania;estonia;finland;norway;cia;maldivas;austria;nigeria;reddit;yaranaika;confederate;9gag;indiana;4chan;italy;bulgaria;tumblr;2ch.hk;hong kong;portugal;jamaica;german empire;mexico;sanik;switzerland;croatia;chile;indonesia;bangladesh;thailand;iran;iraq;peru;moon;botswana;bosnia;netherlands;european union;taiwan;pakistan;hungary;satanist;qing dynasty;matriarchy;patriarchy;feminism;ireland;texas;facepunch;prodota;cambodia;steam;piccolo;ea;india;kc;denmark;quebec;ayy lmao;sealand;bait;tsarist russia;origin;vinesauce;stalin;belgium;luxembourg;stussy;prussia;8ch;argentina;scotland;sir;romania;belarus;wojak;doge;nasa;byzantium;imperial japan;french kingdom;somalia;turkey;mars;pokerface;8;irs;receita federal;facebook;putin;merkel;tsipras;obama;kim jong-un;dilma;hollande;berlusconi;cameron;clinton;hillary;venezuela;blatter;chavez;cuba;fidel;merkel;palin;queen;boris;bush;trump".split(";"),Me="8;nasa;putin;merkel;tsipras;obama;kim jong-un;dilma;hollande;berlusconi;cameron;clinton;hillary;blatter;chavez;fidel;merkel;palin;queen;boris;bush;trump".split(";"),Ie={};R.prototype={P:null,x:0,y:0,g:0,b:0},N.prototype={id:0,a:null,name:null,k:null,I:null,x:0,y:0,size:0,o:0,p:0,n:0,C:0,D:0,m:0,T:0,K:0,W:0,A:!1,f:!1,j:!1,L:!0,S:0,V:null,R:function(){var t;for(t=0;t<Sn.length;t++)if(Sn[t]==this){Sn.splice(t,1);break}delete Un[this.id],t=mn.indexOf(this),-1!=t&&(Rn=!0,mn.splice(t,1)),t=pn.indexOf(this.id),-1!=t&&pn.splice(t,1),this.A=!0,0<this.S&&yn.push(this)},i:function(){return Math.max(~~(.3*this.size),24)},t:function(t){(this.name=t)&&(null==this.k?this.k=new D(this.i(),"#FFFFFF",!0,"#000000"):this.k.G(this.i()),this.k.u(this.name))},Q:function(){for(var t=this.B();this.a.length>t;){var n=~~(Math.random()*this.a.length);this.a.splice(n,1)}for(0==this.a.length&&t>0&&this.a.push(new R(this,this.x,this.y,this.size,Math.random()-.5));this.a.length<t;)n=~~(Math.random()*this.a.length),n=this.a[n],this.a.push(new R(this,n.x,n.y,n.g,n.b))},B:function(){var t=10;20>this.size&&(t=0),this.f&&(t=30);var n=this.size;return this.f||(n*=In),n*=xe,32&this.T&&(n*=.25),~~Math.max(n,t)},da:function(){this.Q();for(var t=this.a,n=t.length,e=0;n>e;++e){var o=t[(e-1+n)%n].b,a=t[(e+1)%n].b;t[e].b+=(Math.random()-.5)*(this.j?3:1),t[e].b*=.7,10<t[e].b&&(t[e].b=10),-10>t[e].b&&(t[e].b=-10),t[e].b=(o+a+8*t[e].b)/10}for(var i=this,r=this.f?0:(this.id/1e3+Tn/1e4)%(2*Math.PI),e=0;n>e;++e){var l=t[e].g,o=t[(e-1+n)%n].g,a=t[(e+1)%n].g;if(15<this.size&&null!=hn&&20<this.size*In&&0<this.id){var s=!1,h=t[e].x,c=t[e].y;hn.ea(h-5,c-5,10,10,function(t){t.P!=i&&25>(h-t.x)*(h-t.x)+(c-t.y)*(c-t.y)&&(s=!0)}),!s&&(t[e].x<Pn||t[e].y<Fn||t[e].x>Cn||t[e].y>Mn)&&(s=!0),s&&(0<t[e].b&&(t[e].b=0),t[e].b-=1)}l+=t[e].b,0>l&&(l=0),l=this.j?(19*l+this.size)/20:(12*l+this.size)/13,t[e].g=(o+a+8*l)/10,o=2*Math.PI/n,a=this.a[e].g,this.f&&0==e%2&&(a+=5),t[e].x=this.x+Math.cos(o*e+r)*a,t[e].y=this.y+Math.sin(o*e+r)*a}},J:function(){if(0>=this.id)return 1;var t;t=(Tn-this.K)/120,t=0>t?0:t>1?1:t;var n=0>t?0:t>1?1:t;if(this.i(),this.A&&n>=1){var e=yn.indexOf(this);-1!=e&&yn.splice(e,1)}return this.x=t*(this.C-this.o)+this.o,this.y=t*(this.D-this.p)+this.p,this.size=n*(this.m-this.n)+this.n,n},H:function(){return 0>=this.id?!0:this.x+this.size+40<gn-ln/2/In||this.y+this.size+40<fn-sn/2/In||this.x-this.size-40>gn+ln/2/In||this.y-this.size-40>fn+sn/2/In?!1:!0},s:function(t){if(this.H()){++this.S;var n=0<this.id&&!this.f&&!this.j&&.4>In;if(5>this.B()&&0<this.id&&(n=!0),this.L&&!n)for(var e=0;e<this.a.length;e++)this.a[e].g=this.size;if(this.L=n,t.save(),this.W=Tn,e=this.J(),this.A&&(t.globalAlpha*=1-e),t.lineWidth=10,t.lineCap="round",t.lineJoin=this.f?"miter":"round",Gn?(t.fillStyle="#FFFFFF",t.strokeStyle="#AAAAAA"):(t.fillStyle=this.color,t.strokeStyle=this.color),n)t.beginPath(),t.arc(this.x,this.y,this.size+5,0,2*Math.PI,!1);else{this.da(),t.beginPath();var o=this.B();for(t.moveTo(this.a[0].x,this.a[0].y),e=1;o>=e;++e){var a=e%o;t.lineTo(this.a[a].x,this.a[a].y)}}if(t.closePath(),e=this.name.toLowerCase(),!this.j&&Jn&&":teams"!=qn?(o=this.V,null==o?o=null:":"==o[0]?(Ie.hasOwnProperty(o)||(Ie[o]=new Image,Ie[o].src=o.slice(1)),o=0!=Ie[o].width&&Ie[o].complete?Ie[o]:null):o=null,o||(-1!=Ce.indexOf(e)?(Fe.hasOwnProperty(e)||(Fe[e]=new Image,Fe[e].src="skins/"+e+".png"),o=0!=Fe[e].width&&Fe[e].complete?Fe[e]:null):o=null)):o=null,a=o,n||t.stroke(),t.fill(),null!=a&&(t.save(),t.clip(),t.drawImage(a,this.x-this.size,this.y-this.size,2*this.size,2*this.size),t.restore()),(Gn||15<this.size)&&!n&&(t.strokeStyle="#000000",t.globalAlpha*=.1,t.stroke()),t.globalAlpha=1,o=-1!=mn.indexOf(this),n=~~this.y,0!=this.id&&(zn||o)&&this.name&&this.k&&(null==a||-1==Me.indexOf(e))){a=this.k,a.u(this.name),a.G(this.i()),e=0>=this.id?1:Math.ceil(10*In)/10,a.U(e);var a=a.F(),i=~~(a.width/e),r=~~(a.height/e);t.drawImage(a,~~this.x-~~(i/2),n-~~(r/2),i,r),n+=a.height/2/e+4}0<this.id&&Dn&&(o||0==mn.length&&(!this.f||this.j)&&20<this.size)&&(null==this.I&&(this.I=new D(this.i()/2,"#FFFFFF",!0,"#000000")),o=this.I,o.G(this.i()/2),o.u(~~(this.size*this.size/100)),e=Math.ceil(10*In)/10,o.U(e),a=o.F(),i=~~(a.width/e),r=~~(a.height/e),t.drawImage(a,~~this.x-~~(i/2),n-~~(r/2),i,r)),t.restore()}}},D.prototype={w:"",M:"#000000",O:!1,r:"#000000",q:16,l:null,N:null,h:!1,v:1,G:function(t){this.q!=t&&(this.q=t,this.h=!0)},U:function(t){this.v!=t&&(this.v=t,this.h=!0)},setStrokeColor:function(t){this.r!=t&&(this.r=t,this.h=!0)},u:function(t){t!=this.w&&(this.w=t,this.h=!0)},F:function(){if(null==this.l&&(this.l=document.createElement("canvas"),this.N=this.l.getContext("2d")),this.h){this.h=!1;var t=this.l,n=this.N,e=this.w,o=this.v,a=this.q,i=a+"px Ubuntu";n.font=i;var r=~~(.2*a);t.width=(n.measureText(e).width+6)*o,t.height=(a+r)*o,n.font=i,n.scale(o,o),n.globalAlpha=1,n.lineWidth=3,n.strokeStyle=this.r,n.fillStyle=this.M,this.O&&n.strokeText(e,3,a-r/2),n.fillText(e,3,a-r/2)}return this.l}},Date.now||(Date.now=function(){return(new Date).getTime()}),function(){for(var n=["ms","moz","webkit","o"],e=0;e<n.length&&!t.requestAnimationFrame;++e)t.requestAnimationFrame=t[n[e]+"RequestAnimationFrame"],t.cancelAnimationFrame=t[n[e]+"CancelAnimationFrame"]||t[n[e]+"CancelRequestAnimationFrame"];t.requestAnimationFrame||(t.requestAnimationFrame=function(t){return setTimeout(t,1e3/60)},t.cancelAnimationFrame=function(t){clearTimeout(t)})}();var Be={X:function(t){function n(t){return o>t&&(t=o),t>i&&(t=i),~~((t-o)/32)}function e(t){return a>t&&(t=a),t>r&&(t=r),~~((t-a)/32)}var o=t.ba,a=t.ca,i=t.Z,r=t.$,l=~~((i-o)/32)+1,s=~~((r-a)/32)+1,h=Array(l*s);return{Y:function(t){var o=n(t.x)+e(t.y)*l;null==h[o]?h[o]=t:Array.isArray(h[o])?h[o].push(t):h[o]=[h[o],t]},ea:function(t,o,a,i,r){var s=n(t),c=e(o);for(t=n(t+a),o=e(o+i);o>=c;++c)for(i=s;t>=i;++i)if(a=h[i+c*l],null!=a)if(Array.isArray(a))for(var d=0;d<a.length;d++)r(a[d]);else r(a)}}}},Je=function(){var t=new N(0,0,0,32,"#ED1C24",""),n=document.createElement("canvas");n.width=32,n.height=32;var e=n.getContext("2d");return function(){0<mn.length&&(t.color=mn[0].color,t.t(mn[0].name)),e.clearRect(0,0,32,32),e.save(),e.translate(16,16),e.scale(.4,.4),t.s(e),e.restore();var o=document.getElementById("favicon"),a=o.cloneNode(!0);a.setAttribute("href",n.toDataURL("image/png")),o.parentNode.replaceChild(a,o)}}();n(function(){Je()});var ze="loginCache3";n(function(){+t.localStorage.wannaLogin&&(t.localStorage[ze]&&Y(t.localStorage[ze]),t.localStorage.fbPictureCache&&n(".agario-profile-picture").attr("src",t.localStorage.fbPictureCache))}),t.facebookLogin=function(){t.localStorage.wannaLogin=1},t.fbAsyncInit=function(){function n(){t.localStorage.wannaLogin=1,null==t.FB?alert("You seem to have something blocking Facebook on your browser, please check for any extensions"):t.FB.login(function(t){V(t)},{scope:"public_profile, email"})}t.FB.init({appId:"677505792353827",cookie:!0,xfbml:!0,status:!0,version:"v2.2"}),t.FB.Event.subscribe("auth.statusChange",function(e){+t.localStorage.wannaLogin&&("connected"==e.status?V(e):n())}),t.facebookLogin=n},t.logout=function(){ae=null,n("#helloContainer").attr("data-logged-in","0"),n("#helloContainer").attr("data-has-account-data","0"),delete t.localStorage.wannaLogin,delete t.localStorage[ze],delete t.localStorage.fbPictureCache,m()};var Ge=function(){function t(t,n,e,o,a){var i=n.getContext("2d"),r=n.width;n=n.height,t.color=a,t.t(e),t.size=o,i.save(),i.translate(r/2,n/2),t.s(i),i.restore()}for(var e=new N(-1,0,0,32,"#5bc0de",""),o=new N(-1,0,0,32,"#5bc0de",""),a="#0791ff #5a07ff #ff07fe #ffa507 #ff0774 #077fff #3aff07 #ff07ed #07a8ff #ff076e #3fff07 #ff0734 #07ff20 #ff07a2 #ff8207 #07ff0e".split(" "),i=[],r=0;r<a.length;++r){var l=r/a.length*12,s=30*Math.sqrt(r/a.length);
+i.push(new N(-1,Math.cos(l)*s,Math.sin(l)*s,10,a[r],""))}K(i);var h=document.createElement("canvas");return h.getContext("2d"),h.width=h.height=70,t(o,h,"",26,"#ebc0de"),function(){n(".cell-spinner").filter(":visible").each(function(){var o=n(this),a=Date.now(),i=this.width,r=this.height,l=this.getContext("2d");l.clearRect(0,0,i,r),l.save(),l.translate(i/2,r/2);for(var s=0;10>s;++s)l.drawImage(h,(.1*a+80*s)%(i+140)-i/2-70-35,r/2*Math.sin((.001*a+s)%Math.PI*2)-35,70,70);l.restore(),(o=o.attr("data-itr"))&&(o=f(o)),t(e,this,o||"",+n(this).attr("data-size"),"#5bc0de")}),n("#statsPellets").filter(":visible").each(function(){n(this);var e=this.width,o=this.height;for(this.getContext("2d").clearRect(0,0,e,o),e=0;e<i.length;e++)t(i[e],this,"",i[e].size,i[e].color)})}}();t.createParty=function(){c(":party"),ve=function(e){H("/#"+t.encodeURIComponent(e)),n(".partyToken").val("agar.io/#"+t.encodeURIComponent(e)),n("#helloContainer").attr("data-party-state","1")},m()},t.joinParty=W,t.cancelParty=function(){H("/"),n("#helloContainer").attr("data-party-state","0"),c(""),m()};var Re=[],Ne=0,Oe="#000000",De=!1,Ke=!1,je=0,Ye=0,qe=0,Ve=0,We=0,He=!0;setInterval(function(){Ke&&Re.push(z()/100)},1e3/60),setInterval(function(){var t=Q();0!=t&&(++qe,0==We&&(We=t),We=Math.min(We,t))},1e3),t.closeStats=function(){De=!1,n("#stats").hide(),g(t.ab),h(0)},t.setSkipStats=function(t){He=!t},n(function(){n(e)})}}}}(window,window.jQuery);
+
+</script>
+<script>
+
+var hasBottomAd = false;
+
+var dfp = null;
+var dfpBottom = null;
+var dfpStats = null;
+var dfpInitial = null;
+
+window['aa'] = [];
+window['ab'] = [];
+window['ac'] = [];
+
+if(window.location.search.indexOf('fb') != -1){
+	dfp = '/53945695/agar_facebook/agar/300x250';
+	dfpStats = '/53945695/agar_facebook/agar/300x250_Stats';
+	dfpInitial = '/53945695/agar_facebook/agar/300x250';
+}else{
+	dfp = '/53945695/agar/300x250_CRL';
+	dfpStats = '/53945695/agar/300x250_CRL_stats';
+	dfpBottom = '/53945695/agar/728x90';
+	
+	if(window.ABGroup < 50){
+		dfpInitial = '/53945695/agar/300x250_Google_Test';
+	}else{
+		dfpInitial = '/53945695/agar/300x250_CPL';
+	}
+}
+
+if(window.innerHeight > 960 && dfpBottom != null){
+	hasBottomAd = true;
+}
+
+googletag.cmd.push(function() {
+	window['aa'].push(googletag.defineSlot(dfp, [300, 250], 'a300x250').addService(googletag.pubads()));
+	if(hasBottomAd) window['aa'].push(googletag.defineSlot(dfpBottom, [728, 90], 'a728x90').addService(googletag.pubads()));
+	window['ab'].push(googletag.defineSlot(dfpStats, [300, 250], 's300x250').addService(googletag.pubads()));
+	window['ac'].push(googletag.defineSlot(dfpInitial, [300, 250], 'g300x250').addService(googletag.pubads()));
+	googletag.pubads().enableSingleRequest();
+	googletag.pubads().disableInitialLoad();
+	googletag.enableServices();
+});
+
+</script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script src="js/advertisement.js"></script>
+<div id="overlays" style="display:none; position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 200;">
+<div id="helloContainer" data-logged-in="0" data-has-account-data="0" data-party-state="0" data-results-state="0" data-gamemode="">
+<div class="side-container">
+<div class="agario-panel agario-side-panel agario-profile-panel">
+<div class="clearfix" style="margin-bottom: 16px;">
+<img class="agario-profile-picture"/>
+<div class="agario-profile-name-container">
+<span class="agario-profile-name"></span>
+</div>
+</div>
+<div style="position: relative; margin-bottom: -15px;" class="clearfix">
+<div class="agario-exp-bar progress">
+<span class="progress-bar-text"></span>
+<div class="progress-bar progress-bar-striped" style="width: 0%;"></div>
+</div>
+<div class="progress-bar-border"></div>
+<div class="progress-bar-star"></div>
+</div>
+</div>
+ 
+</div>
+<div id="mainPanel" class="agario-panel">
+<form role="form">
+<div class="form-group clearfix">
+<div style="float: left; margin-left: 20px;"><h2>Agar.io</h2></div>
+<div style="float: right; margin-top: 10px; height: 40px;">
+<div>
+<script src="https://apis.google.com/js/platform.js" async></script>
+<div class="g-ytsubscribe " data-channelid="UCC6hurPo_LxL7C0YFYgYnIw" data-layout="default" data-count="default"></div>
+</div>
+<div class="clearfix">
+<div class="fb-like pull-right" data-href="https://www.facebook.com/playagar.io" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+</div>
+</div>
+</div>
+<div class="form-group clearfix">
+<input id="nick" class="form-control" placeholder="Nick" maxlength="15" autofocus />
+<select id="gamemode" class="form-control" onchange="setGameMode($(this).val());" required>
+<option selected value="" data-itr="gamemode_ffa"></option>
+<option value=":teams" data-itr="gamemode_teams" disabled></option>
+<option value=":experimental" data-itr="gamemode_experimental"></option>
+<option value=":party" data-itr="party"></option>
+</select>
+</div>
+<div id="locationUnknown">
+<select id="region" class="form-control" onchange="setRegion($('#region').val());" required>
+<option selected disabled value="" data-itr="region_select"></option>
+<option value="US-Atlanta" data-itr="region_north_america"></option>
+<option value="BR-Brazil" data-itr="region_south_america"></option>
+<option value="EU-London" data-itr="region_europe"></option>
+<option value="RU-Russia" data-itr="region_russia"></option>
+<option value="TK-Turkey" data-itr="region_turkey"></option>
+<option value="JP-Tokyo" data-itr="region_east_asia"></option>
+<option value="CN-China" data-itr="region_china"></option>
+<option value="SG-Singapore" data-itr="region_oceania"></option>
+</select>
+</div>
+ 
+<div class="form-group" id="agario-main-buttons">
+<button type="button" onclick="$('#settings, #instructions').toggle();return false;" class="btn btn-info btn-settings"><i class="glyphicon glyphicon-cog"></i></button>
+<button disabled type="submit" onclick="setNick(document.getElementById('nick').value); return false;" class="btn btn-play btn-primary btn-needs-server" data-itr="play"></button>
+<button disabled type="submit" onclick="setNick(document.getElementById('nick').value); return false;" class="btn btn-play-guest btn-success btn-needs-server" data-itr="play_as_guest"></button>
+<button onclick="facebookLogin(); return false;" class="btn btn-login btn-primary" style="line-height: 24px;">
+<span class="social social-facebook" style="font-size:24px;margin-top:-6px;margin-left:-8px;vertical-align:middle;margin-right:5px;"></span>
+<span data-itr="login_and_play"></span>
+</button>
+<br clear="both"/>
+</div>
+<div id="settings" class="checkbox" style="display:none;">
+<div style="float: left; width: 200px;">
+<div id="locationKnown"></div>
+<div id="options" style="margin: 6px; font-size: 12px;">
+<label><input type="checkbox" onchange="setSkins(!$(this).is(':checked'));"><span data-itr="option_no_skins"></span></label>
+<label><input type="checkbox" onchange="setNames(!$(this).is(':checked'));"><span data-itr="option_no_names"></span></label>
+<label><input type="checkbox" onchange="setColors($(this).is(':checked'));"><span data-itr="option_no_colors"></span></label>
+<label><input type="checkbox" onchange="setShowMass($(this).is(':checked'));"><span data-itr="option_show_mass"></span></label>
+<label><input type="checkbox" onchange="setDarkTheme($(this).is(':checked'));"><span data-itr="option_dark_theme"></span></label>
+<label><input type="checkbox" onchange="setSkipStats($(this).is(':checked'));"><span data-itr="option_skip_stats"></span></label>
+</div>
+</div>
+<div style="float: right; width: 120px;">
+<button onclick="spectate(); return false;" disabled class="btn btn-warning btn-spectate btn-needs-server" data-itr="spectate"></button>
+<button onclick="logout(); return false;" class="btn btn-danger btn-logout" data-itr="logout"></button>
+</div>
+<br clear="both"/>
+</div>
+</form>
+<div id="instructions">
+<hr/>
+<center><span class="text-muted">
+<span data-itr="instructions_mouse"></span><br/>
+<span data-itr="instructions_space"></span><br/>
+<span data-itr="instructions_w"></span><br/>
+</span></center>
+</div>
+<hr/>
+<center>
+<small class="text-muted" style="display: block; margin-bottom: 16px;" data-itr="advertisement"></small>
+<div id="adbg" style="margin-bottom: 10px; width: 300px; height: 250px;">
+<div id="g300x250" style="display:block;"></div>
+<div id="a300x250" style="display:none;"></div>
+</div>
+</center>
+</div>
+<div id="stats" style="display: none;" class="agario-panel">
+<h2><center>Match Results</center></h2>
+<canvas id="statsGraph" width="350" height="230"></canvas>
+<div id="statsPelletsContainer">
+ 
+<span id="statsText" class="stats-food-eaten"></span>
+<span id="statsSubtext" data-itr="stats_food_eaten"></span>
+</div>
+<div id="statsHighestMassContainer">
+ 
+<span id="statsText" class="stats-highest-mass"></span>
+<span id="statsSubtext" data-itr="stats_highest_mass"></span>
+</div>
+<div id="statsTimeAliveContainer">
+ 
+<span id="statsText" class="stats-time-alive"></span>
+<span id="statsSubtext" data-itr="stats_time_alive"></span>
+</div>
+<div id="statsTimeLeaderboardContainer">
+ 
+<span id="statsText" class="stats-leaderboard-time"></span>
+<span id="statsSubtext" data-itr="stats_leaderboard_time"></span>
+</div>
+<div id="statsPlayerCellsEatenContainer">
+ 
+<span id="statsText" class="stats-cells-eaten"></span>
+<span id="statsSubtext" data-itr="stats_cells_eaten"></span>
+</div>
+<div id="statsTopPositionContainer">
+ 
+<span id="statsText" class="stats-top-position">?</span>
+<span id="statsSubtext" data-itr="stats_top_position"></span>
+</div>
+<hr style="position:absolute;bottom:350px;width:100%;margin:0px;"/>
+<button id="statsContinue" class="btn btn-primary" data-itr="continue" onclick="closeStats();"></button>
+<hr style="position:absolute;bottom:255px;width:100%;"/>
+<div id="s300x250"></div>
+</div>
+<div class="side-container">
+<div class="agario-party">
+<div class="agario-panel agario-side-panel agario-party-0">
+<h4><center data-itr="party"></center></h4>
+<div style="margin-bottom: 12px;" data-itr="party_description"></div>
+<div class="clearfix" style="margin: 0px -10px 0px -10px;">
+<button class="btn btn-primary" style="width: 102.5px; float: left;" onclick="$('#helloContainer').attr('data-party-state', '3');createParty();" data-itr="create_party"></button>
+<button class="btn btn-primary" style="width: 102.5px; float: right;" onclick="$('#joinPartyToken').val('');$('#helloContainer').attr('data-party-state', '2');" data-itr="join_party"></button>
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-1">
+<h4><center data-itr="party"></center></h4>
+<div style="margin-bottom: 12px;" data-itr="create_party_instructions"></div>
+<div class="clearfix">
+<input type="text" value="??????" readonly class="partyToken form-control" style="cursor: text; width: 130px; float: left; border-radius: 4px 0px 0px 4px;"/>
+<button class="btn btn-primary copy-party-token" style="float: right; width: 60px; border-radius: 0px 4px 4px 0px;">Copy</button>
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-2">
+<h4><center data-itr="party"></center></h4>
+<div style="margin-bottom: 12px;" data-itr="join_party_instructions"></div>
+<input id="joinPartyToken" type="text" value="" class="form-control"/>
+<div class="clearfix" style="margin: 10px -10px 0px -10px;">
+<button class="btn btn-primary" style="width: 210px; float: right;" onclick="joinParty($('#joinPartyToken').val());" data-itr="join_party"></button>
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-3" style="padding: 0px; overflow: hidden; position: relative;">
+<canvas width="220" height="100" class="cell-spinner" data-size="26"></canvas>
+<div class="creating-party-text" data-itr="creating_party"></div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-4" style="padding: 0px; overflow: hidden; position: relative;">
+<canvas width="220" height="100" class="cell-spinner" data-size="26"></canvas>
+<div class="creating-party-text" data-itr="joining_party"></div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-5">
+<h4><center data-itr="party"></center></h4>
+<div style="margin-bottom: 12px;" data-itr="joined_party_instructions"></div>
+<div class="clearfix">
+<input type="text" value="??????" readonly class="partyToken form-control" style="cursor: text; width: 125px; float: left;"/>
+<button class="btn btn-primary copy-party-token" style="float: right; width: 60px;">Copy</button>
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-6">
+<h4><center data-itr="party"></center></h4>
+<div style="margin-bottom: 12px;" data-itr="party_join_error"></div>
+<div class="clearfix" style="margin: 10px -10px 0px -10px;">
+<button class="btn btn-primary btn-block" onclick="$('#helloContainer').attr('data-party-state', '0');" data-itr="back_button"></button>
+</div>
+</div>
+<div style="position: absolute; right: 10px; top: 4px;">
+<button type="button" class="close" onclick="cancelParty();">&times;</button>
+</div>
+</div>
+<div class="agario-promo" style="padding: 0px; width: 293px; height: 366px; position: relative; background-image: url(img/promo.png);">
+<div style="text-align: center; position: absolute; bottom: 10px; width: 100%;">
+<a href="https://itunes.apple.com/app/agar.io/id995999703?mt=8&amp;at=1l3vajp" target="_blank" onclick="ga('send', 'event', 'MobilePromo', 'AppStore');"><img src="img/appstore.png" alt="Download on the App Store"/></a>
+<a href="https://play.google.com/store/apps/details?id=com.miniclip.agar.io" target="_blank" onclick="ga('send', 'event', 'MobilePromo', 'PlayStore');"><img src="img/google_play.png" alt="Get it on Google play"/></a>
+</div>
+</div>
+</div>
+</div>
+<script>
+	if(hasBottomAd){
+		document.write('<div id="adsBottom" style="z-index: 200;display:none;"><div id="adsBottomInner"><div id="a728x90"></div></div></div>');
+	}
+
+	</script>
+<div class="tosBox">
+<center>
+<a href="privacy.txt" class="text-muted" data-itr="privacy_policy"></a>
+|
+<a href="terms.txt" class="text-muted" data-itr="terms_of_service"></a>
+|
+<a href="changelog.txt" class="text-muted" data-itr="changelog"></a>
+</center>
+</div>
+</div>
+<div id="connecting" style="display: none; position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 100;">
+<div class="connecting-panel" style="width: 350px; background-color: #FFFFFF; margin: auto; border-radius: 15px; padding: 5px 15px 5px 15px;">
+<h2 data-itr="connecting"></h2>
+<p data-itr="connect_help"></p>
+</div>
+</div>
+<script>
+
+$('.partyToken').on('mouseover click mousemove mousedown mouseup select', function(e){
+	//this.setSelectionRange(0, this.value.length);
+	//e.preventDefault();
+});
+
+$('.copy-party-token').click(function(){
+	var i = $('.partyToken:visible')[0];
+	i.setSelectionRange(0, i.value.length);
+	i.select();
+	try {
+		document.execCommand('copy');
+	} catch (e) {}
+});
+
+googletag.cmd.push(function() { googletag.display('a300x250'); });
+if(hasBottomAd) googletag.cmd.push(function() { googletag.display('a728x90'); });
+googletag.cmd.push(function() { googletag.display('s300x250'); });
+googletag.cmd.push(function() { googletag.display('g300x250'); });
+
+var hasAdblock = (document.getElementById("tester") == null);
+
+if(hasAdblock){
+	$('#abg').css('background-image', "url('blocker.png')");
+}
+</script>
+<canvas id="canvas" width="800" height="600"></canvas>
+<div style="font-family:'Ubuntu'">&nbsp;</div>
+<script>
+
+$(function () {
+	$('[data-itr]').each(function(){
+		var $this = $(this);
+		var itr = $this.attr('data-itr');
+		$this.html(i18n[itr] || i18n_dict['en'][itr] || itr);
+		//$this.html('');
+	});
+	
+	$('.btn-login').tooltip({
+		'html': true,
+		'title': i18n['login_tooltip'],
+		'placement': 'bottom'
+	});
+});
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-62402209-1', 'auto');
+ga('send', 'pageview');
+ga('send', 'event', 'HasAdblock', hasAdblock ? 'Yes' : 'No', {'nonInteraction': 1});
+
+//ga('send', 'event', 'Protocol', window.location.protocol, {'nonInteraction': 1});
+
+</script>
+<div id="minions" style="position: absolute; top: 0; left: 0; border: 1px solid;">minions: <span>waiting..</span></div>
+</body>
+</html>
