@@ -3,23 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Eat cells smaller than you and don't get eaten by the bigger ones, as an MMO">
+<meta name="description" content="Eat cells smaller than you and don&#x27;t get eaten by the bigger ones, as an MMO">
 <meta name="keywords" content="agario, agar, io, cell, cells, virus, bacteria, blob, game, games, web game, html5, fun, flash">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta property="fb:app_id" content="677505792353827"/>
-<meta property="og:title" content="Agar.io"/>
-<meta property="og:description" content="Eat cells smaller than you and don't get eaten by the bigger ones, as an MMO"/>
-<meta property="og:url" content="http://agar.io"/>
+<meta property="og:title" content="Agar.io "/>
+<meta property="og:description" content="Eat cells smaller than you and don&#x27;t get eaten by the bigger ones, as an MMO"/>
+<meta property="og:url" content="http://agar.io/"/>
 <meta property="og:image" content="http://agar.io/img/1200x630.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:type" content="website"/>
-<title>Agar.io</title>
-<link rel="canonical" href="http://agar.io/"/>
+<title>Agar.io </title>
+<link rel="canonical" href="https://agar.io/"/>
 <link id="favicon" rel="icon" type="image/png" href="favicon-32x32.png"/>
  
+<script type="text/javascript">
+window['ASSETS_ROOT'] = "";
+
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+if(getUrlVars()['v']!=null)
+{
+	window.location = "/v"+getUrlVars()['v'];
+}
+
+</script>
 <script type='text/javascript'>
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -38,366 +59,19 @@ node.parentNode.insertBefore(gads, node);
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/glyphicons-social.css" rel="stylesheet">
 <link href="css/animate.css" rel="stylesheet">
-<style>body{padding:0;margin:0;overflow:hidden;}#canvas{position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;}form{margin-bottom:0px;}.btn-play,.btn-settings,.btn-spectate,.btn-play-guest,.btn-login,.btn-logout{display:block;float:left;height:35px;}.btn-spectate,.btn-logout{height:35px;display:block;width:110px;margin-left:10px;margin-bottom:5px;}#helloContainer[data-logged-in="0"] .btn-play-guest{margin-left:5px;width:125px;}#helloContainer[data-logged-in="0"] .btn-login{margin-left:5px;width:145px;}#helloContainer[data-logged-in="0"] .agario-exp-bar,#helloContainer[data-logged-in="0"] .progress-bar-star,#helloContainer[data-logged-in="0"] #agario-main-buttons .agario-profile,#helloContainer[data-logged-in="0"] .btn-play{display:none;}#helloContainer[data-logged-in="0"] .btn-logout{display:none;}#helloContainer[data-logged-in="1"] .btn-play{margin-left:5px;width:275px;}#helloContainer[data-logged-in="1"] .btn-play-guest{display:none;}#helloContainer[data-logged-in="1"] .btn-login{display:none;}.btn-settings{width:40px;}.btn-spectate{display:block;float:right;}#adsBottom{position:absolute;left:0;right:0;bottom:0;}#adsBottomInner{margin:0px auto;width:728px;height:90px;border:5px solid white;border-radius:5px 5px 0px 0px;background-color:#FFFFFF;box-sizing:content-box;}.region-message{display:none;margin-bottom:12px;margin-left:6px;margin-right:6px;text-align:center;}#nick{width:65%;float:left;}#locationKnown #region{width:100%;}#locationUnknown #region{margin-bottom:15px;}#gamemode{width:33%;float:right;}.agario-panel{display:inline-block;width:350px;background-color:#FFFFFF;margin:2px;border-radius:10px;padding:5px 15px 5px 15px;vertical-align:top;}.agario-side-panel{display:inline-block;width:220px;}#helloContainer,.connecting-panel{position:absolute;top:50%;left:50%;margin-right:-50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}#adbg{width:300px;height:250px;background-repeat:no-repeat;background-size:contain;background-position:center center;}.agario-exp-bar{height:30px;position:relative;border:2px solid #01612B;}.agario-exp-bar .progress-bar{background-color:#338833;border-radius:0px 4px 4px 0px;-webkit-transition:none;transition:none;}.agario-exp-bar .progress-bar-text{font-size:12pt;cursor:default;opacity:0.75;color:#FFF;text-align:center;line-height:26px;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;position:absolute;top:0;bottom:0;left:0;right:0;font-family:'Ubuntu',sans-serif;}#agario-results-table{width:100%;}#agario-results-table th{text-align:center;font-size:8pt;}#agario-results-table td{text-align:center;color:#999;font-size:11pt;padding-bottom:15px;}.progress-bar-star{position:absolute;top:-13px;right:-16px;width:50px;height:50px;background-image:url("img/star.png");background-size:cover;-webkit-transform:rotate3d(0,0,1,10deg);transform:rotate3d(0,0,1,10deg);-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:1;animation-iteration-count:1;cursor:default;color:#FFF;text-align:center;line-height:55px;font-size:12pt;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;font-family:'Ubuntu',sans-serif;}.tooltip-inner{max-width:300px;}.agario-profile-panel{padding:15px 15px 15px 15px;}.agario-profile-panel .agario-profile-picture{float:left;display:block;width:64px;height:64px;border-radius:5px;border:2px solid #CCC;margin-right:6px;}.agario-profile-panel .agario-profile-name-container{float:left;display:table;width:120px;height:64px;position:relative;}.agario-profile-panel .agario-profile-name-container .agario-profile-name{display:table-cell;vertical-align:middle;text-align:center;font-weight:bold;}#helloContainer[data-has-account-data="0"] .agario-profile-panel{display:none;}.agario-party,.agario-party-0,.agario-party-1,.agario-party-2,.agario-party-3,.agario-party-4,.agario-party-5,.agario-party-6{display:none;}#helloContainer[data-gamemode=":party"] .agario-party{display:block;position:relative;}#helloContainer[data-gamemode=":party"] .agario-promo{display:none;}#helloContainer[data-party-state="0"] .agario-party-0{display:block;}#helloContainer[data-party-state="1"] .agario-party-1{display:block;}#helloContainer[data-party-state="2"] .agario-party-2{display:block;}#helloContainer[data-party-state="3"] .agario-party-3{display:block;}#helloContainer[data-party-state="4"] .agario-party-4{display:block;}#helloContainer[data-party-state="5"] .agario-party-5{display:block;}#helloContainer[data-party-state="6"] .agario-party-6{display:block;}.partyToken{margin-bottom:10px;}.side-container{vertical-align:top;display:inline-block;width:224px;}.cell-spinner{display:block;margin:0;}.creating-party-text{position:absolute;cursor:default;top:0;bottom:0;left:0;right:0;width:100%;height:100%;text-align:center;color:#FFF;font-size:24px;line-height:100px;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;}.agario-results-0,.agario-results-1,.agario-results-2{display:none;}#helloContainer[data-results-state="0"] .agario-results-0{display:block;}#helloContainer[data-results-state="1"] .agario-results-1{display:block;}#helloContainer[data-results-state="2"] .agario-results-2{display:block;}#options>label{display:block;width:94px;float:left;}#stats{position:relative;width:350px;height:581px;padding:0px 0px 300px 0px;overflow:hidden;}#statsPelletsContainer,#statsTimeAliveContainer,#statsHighestMassContainer,#statsTimeLeaderboardContainer,#statsPlayerCellsEatenContainer,#statsTopPositionContainer{position:absolute;width:100px;height:100px;}#statsPelletsContainer{top:30px;left:50px;}#statsHighestMassContainer{top:30px;right:50px;}#statsTimeAliveContainer{top:85px;left:50px;}#statsTimeLeaderboardContainer{top:85px;right:50px;}#statsPlayerCellsEatenContainer{top:140px;left:50px;}#statsTopPositionContainer{top:140px;right:50px;}#statsPellets{position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;}#statsText{position:absolute;top:0;bottom:0;left:0;right:0;line-height:100px;font-size:23px;}#statsSubtext{position:absolute;bottom:0;left:0;right:0;line-height:60px;font-size:12px;color:#000;text-align:center;}#statsChartText{position:absolute;left:20px;bottom:250px;line-height:40px;font-size:40px;}#statsChartText,#statsText{cursor:default;color:#444;text-align:center;font-weight:bold;}#statsContinue{position:absolute;left:25px;right:25px;width:300px;bottom:295px;}#statsGraph{position:absolute;bottom:350px;left:0px;right:0px;opacity:0.4;}#s300x250{position:absolute;bottom:10px;left:25px;right:25px;width:300px;height:250px;}.tosBox{z-index:1000;position:absolute;bottom:0;right:0;background-color:#FFF;border-radius:5px 0px 0px 0px;padding:5px 10px;}</style>
+<link href="css/magnific-popup.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="environment.js?v=148"></script>
+<script src="i18n.js?v=148"></script>
 <script>
-i18n_lang = "en";
-i18n_dict = {
-	"en": {
-		"connecting": "Connecting",
-		"connect_help": "If you cannot connect to the servers, check if you have some anti virus or firewall blocking the connection.",
-		"play": "Play",
-		"spectate": "Spectate",
-		"login_and_play": "Login and play",
-		"play_as_guest": "Play as guest",
-		"share": "Share",
-		"advertisement": "Advertisement",
-		"privacy_policy": "Privacy Policy",
-		"terms_of_service": "Terms of Service",
-		"changelog": "Changelog",
-		"instructions_mouse": "Move your mouse to control your cell",
-		"instructions_space": "Press <b>Space</b> to split",
-		"instructions_w": "Press <b>W</b> to eject some mass",
-		"gamemode_ffa": "FFA",
-		"gamemode_teams": "Teams",
-		"gamemode_experimental": "Experimental",
-		"region_select": " -- Select a Region -- ",
-		"region_us_east": "US East",
-		"region_us_west": "US West",
-		"region_north_america": "North America",
-		"region_south_america": "South America",
-		"region_europe": "Europe",
-		"region_turkey": "Turkey",
-		"region_poland": "Poland",
-		"region_east_asia": "East Asia",
-		"region_russia": "Russia",
-		"region_china": "China",
-		"region_oceania": "Oceania",
-		"region_australia": "Australia",
-		"region_players": "players",
-		"option_no_skins": "No skins",
-		"option_no_names": "No names",
-		"option_dark_theme": "Dark theme",
-		"option_no_colors": "No colors",
-		"option_show_mass": "Show mass",
-		"leaderboard": "Leaderboard",
-		"unnamed_cell": "An unnamed cell",
-		"last_match_results": "Last match results",
-		"score": "Score",
-		"leaderboard_time": "Leaderboard Time",
-		"mass_eaten": "Mass Eaten",
-		"top_position": "Top Position",
-		"position_1": "First",
-		"position_2": "Second",
-		"position_3": "Third",
-		"position_4": "Fourth",
-		"position_5": "Fifth",
-		"position_6": "Sixth",
-		"position_7": "Seventh",
-		"position_8": "Eighth",
-		"position_9": "Ninth",
-		"position_10": "Tenth",
-		"player_cells_eaten": "Player Cells Eaten",
-		"survival_time": "Survival Time",
-		
-		
-		"games_played": "Games played",
-		"highest_mass": "Highest mass",
-		"total_cells_eaten": "Total cells eaten",
-		"total_mass_eaten": "Total mass eaten",
-		"longest_survival": "Longest survival",
-		"logout": "Logout",
-		"stats": "Stats",
-		"shop": "Shop",
-		"party": "Party",
-		"party_description": "Play with your friends in the same map",
-		"create_party": "Create",
-		"creating_party": "Creating party...",
-		"join_party": "Join",
-		"back_button": "Back",
-		
-		"joining_party": "Joining party...",
-		"joined_party_instructions": "You are now playing with this party:",
-		"party_join_error": "There was a problem joining that party, please make sure the code is correct, or try creating another party",
-		"login_tooltip": "Login with Facebook and get:<br /><br /><br />Start the game with more mass!<br />Level up to get even more starting mass!",//<br />Track your progress with player stats!
-		"create_party_instructions": "Give this link to your friends:",
-		"join_party_instructions": "Your friend should have given you a code, type it here:",
-		"continue": "Continue",
-		"option_skip_stats": "Skip stats",
-		"stats_food_eaten": "food eaten",
-		"stats_highest_mass": "highest mass",
-		"stats_time_alive": "time alive",
-		"stats_leaderboard_time": "leaderboard time",
-		"stats_cells_eaten": "cells eaten",
-		"stats_top_position": "top position",
-		
-		"":""
-	},
-	/*
-	"fr": {
-		"connecting": "Connexion",
-		"connect_help": "Si vous ne pouvez pas vous connecter aux serveurs, vérifiez que votre anti-virus ou votre pare-feu ne bloque pas la connexion.",
-		"play": "Jouer",
-		"spectate": "REGARDER",
-		"login_and_play": "Se connecter et jouer",
-		"login_tooltip": "Connectez-vous avec Facebook et obtenez:<br /><br /><br />double masse de départ à chaque partie!<br />Montez en niveau pour obtenir encore plus de masse de départ!", //<br />Consultez vos progrès dans les statistiques de joueur!
-		"play_as_guest": "Jouer en tant qu'invité",
-		"advertisement": "Publicité",
-		"privacy_policy": "Confidentialité",
-		"terms_of_service": "Conditions de service",
-		"changelog": "Changements",
-		"instructions_mouse": "Bougez votre souris pour contrôler votre cellule.",
-		"instructions_space": "Appuyez pour le séparer.",
-		"instructions_w": "Appuyez pour éjecter de la masse.",
-		"gamemode_ffa": "Chacun pour soi",
-		"gamemode_teams": "Par équipe",
-		"gamemode_experimental": "Expérimental",
-		"region_select": " -- Sélectionner une région -- ",
-		"region_us_east": "E.-U. Est",
-		"region_us_west": "E.-U. Ouest",
-		"region_north_america": "Amérique du Nord",
-		"region_south_america": "Amérique du Sud",
-		"region_europe": "Europe",
-		"region_turkey": "Turquie",
-		"region_poland": "Pologne",
-		"region_east_asia": "Asie de l'Est",
-		"region_russia": "Russie",
-		"region_china": "Chine",
-		"region_oceania": "Océanie",
-		"region_australia": "Australie",
-		"region_players": "Joueurs",
-		"option_no_skins": " Aucun motif",
-		"option_no_names": " Aucun nom",
-		"option_dark_theme": " Thème sombre",
-		"option_no_colors": " Aucune couleur",
-		"option_show_mass": " Montrer la masse",
-		"leaderboard": "Classement",
-		"unnamed_cell": "Une cellule sans nom",
-		"last_match_results": "Derniers résultats",
-		"score": "Score",
-		"leaderboard_time": "Temps au classement",
-		"mass_eaten": "Masse ingérée",
-		"top_position": "Au top",
-		"position_1": "Premier",
-		"position_2": "Deuxième",
-		"position_3": "Troisième",
-		"position_4": "Quatrième",
-		"position_5": "Cinquième",
-		"position_6": "Sixième",
-		"position_7": "Septième",
-		"position_8": "Huitième",
-		"position_9": "Neuvième",
-		"position_10": "Dixième",
-		"player_cells_eaten": "Cellules de joueur ingérées",
-		"survival_time": "Temps de survie",
-		"share": "Partager",
-		"screenshot_1": "Diviser & Conquérir ! Grossir et dominer !",
-		"screenshot_2": "Un hit en multijoueur ! Mangez ou soyez mangé !",
-		"screenshot_3": "Lancez et partagez votre masse pour prendre l'avantage !",
-		"screenshot_4": "Jouez avec de nombreuses apparences différentes !"
-	},
-	"it": {
-		"connecting": "Connessione",
-		"connect_help": "Non puoi connetterti ai server, controlla che non ci sia un antivirus o un firewall che blocchino la connessione",
-		"play": "Gioca",
-		"spectate": "GUARDA",
-		"login_and_play": "Accedi e gioca",
-		"login_tooltip": "Accedi a Facebook per ottenere:<br /><br /><br />il doppio della massa iniziale a ogni partita!<br />Sali di livello per aumentare ulteriormente la massa iniziale!", //<br />Tieni traccia dei tuoi progressi con le statistiche del giocatore!
-		"play_as_guest": "Gioca come ospite",
-		"advertisement": "Pubblicità",
-		"privacy_policy": "Privacy",
-		"terms_of_service": "Termini del servizio",
-		"changelog": "Log dei cambiamenti",
-		"instructions_mouse": "Sposta il mouse per controllare la tua cellula",
-		"instructions_space": "Premi per dividere",
-		"instructions_w": "Premi per espellere della massa",
-		"gamemode_ffa": "FFA",
-		"gamemode_teams": "Squadre",
-		"gamemode_experimental": "Sperimentale",
-		"region_select": " -- Scegli una regione -- ",
-		"region_us_east": "USA orientali",
-		"region_us_west": "USA occidentali",
-		"region_north_america": "Nord America",
-		"region_south_america": "Sud America",
-		"region_europe": "Europa",
-		"region_turkey": "Turchia",
-		"region_poland": "Polonia",
-		"region_east_asia": "Asia orientale",
-		"region_russia": "Russia",
-		"region_china": "Cina",
-		"region_oceania": "Oceania",
-		"region_australia": "Australia",
-		"region_players": "Giocatori",
-		"option_no_skins": " Nessuna skin",
-		"option_no_names": " Nessun nome",
-		"option_dark_theme": " Tema scuro",
-		"option_no_colors": " Nessun colore",
-		"option_show_mass": " Mostra massa",
-		"leaderboard": "Classifica",
-		"unnamed_cell": "Una cellula senza nome",
-		"last_match_results": "Risultati ultimo incontro",
-		"score": "Punteggio",
-		"leaderboard_time": "Tempo classifica",
-		"mass_eaten": "Massa ingerita",
-		"top_position": "Posizione più alta",
-		"position_1": "Primo",
-		"position_2": "Secondo",
-		"position_3": "Terzo",
-		"position_4": "Quarto",
-		"position_5": "Quindi",
-		"position_6": "Sesto",
-		"position_7": "Settimo",
-		"position_8": "Ottavo",
-		"position_9": "Nono",
-		"position_10": "Decimo",
-		"player_cells_eaten": "Cellule giocatore ingerite",
-		"survival_time": "Tempo di sopravvivenza",
-		"share": "Condividi",
-		"screenshot_1": "Dividiti e conquista! Cresci e domina!",
-		"screenshot_2": "Un successo multigiocatore! Mangia o sarai mangiato!",
-		"screenshot_3": "Lancia e dividi la massa per ottenere un vantaggio!",
-		"screenshot_4": "Gioca con molte skin diverse!"
-	},
-	"de": {
-		"connecting": "Verbinde",
-		"connect_help": "Überprüfe bitte dein Antivirusprogramm oder deine Firewall, wenn du keine Verbindung zum Server herstellen kannst.",
-		"play": "Spielen",
-		"spectate": "ZUSCHAUEN",
-		"login_and_play": "Anmelden und spielen",
-		"login_tooltip": "Melde dich mit Facebook an und erhalte:<br /><br /><br />Doppelte Startmasse in jedem Spiel!<br />Erreiche eine höhere Stufe, um noch mehr Startmasse zu erhalten!", //<br />Verfolge deine Fortschritte mit Hilfe der Spielerstatistik!
-		"play_as_guest": "Als Gast spielen",
-		"advertisement": "Werbung",
-		"privacy_policy": "Datenschutz",
-		"terms_of_service": "Nutzungsbedingungen",
-		"changelog": "Changelog",
-		"instructions_mouse": "Bewege deine Maus, um deine Zelle zu kontrollieren",
-		"instructions_space": "Zum Teilen drücken",
-		"instructions_w": "Zur Abgabe von etwas Masse drücken",
-		"gamemode_ffa": "Für alle",
-		"gamemode_teams": "Teams",
-		"gamemode_experimental": "Experimentell",
-		"region_select": " -- Wähle eine Region -- ",
-		"region_us_east": "USA-Ost",
-		"region_us_west": "USA-West",
-		"region_north_america": "Nordamerika",
-		"region_south_america": "Südamerika",
-		"region_europe": "Europa",
-		"region_turkey": "Türkei",
-		"region_poland": "Polen",
-		"region_east_asia": "Ostasien",
-		"region_russia": "Russland",
-		"region_china": "China",
-		"region_oceania": "Ozeanien",
-		"region_australia": "Australien",
-		"region_players": "Spieler",
-		"option_no_skins": " Keine Skins",
-		"option_no_names": " Keine Namen",
-		"option_dark_theme": " Dunkelthema",
-		"option_no_colors": " Keine Farben",
-		"option_show_mass": " Masse anzeigen",
-		"leaderboard": "Bestenliste",
-		"unnamed_cell": "Eine unbenannte Zelle",
-		"last_match_results": "Letzte Spielergebnisse",
-		"score": "Punkte",
-		"leaderboard_time": "Bestenlistenzeit",
-		"mass_eaten": "Verzehrte Masse",
-		"top_position": "Spitzenposition",
-		"position_1": "Erster",
-		"position_2": "Zweiter",
-		"position_3": "Dritter",
-		"position_4": "Vierter",
-		"position_5": "Fünfter",
-		"position_6": "Sechster",
-		"position_7": "Siebenter",
-		"position_8": "Achter",
-		"position_9": "Neunter",
-		"position_10": "Zehnter",
-		"player_cells_eaten": "Verzehrte Spielerzellen",
-		"survival_time": "Überlebenszeit",
-		"share": "Teilen",
-		"screenshot_1": "Teile und erobere! Wachse und herrsche!",
-		"screenshot_2": "Ein Mehrspielerhit! Friss oder werde gefressen!",
-		"screenshot_3": "Spalte dich auf und wirf Masse ab, um einen Vorteil zu erringen!",
-		"screenshot_4": "Spiele mit vielen unterschiedlichen Skins!"
-	},
-	"es": {
-		"connecting": "Conectando",
-		"connect_help": "Si no puedes conectar con los servidores, comprueba si tu antivirus o tu cortafuegos están bloqueando la conexión.",
-		"play": "Jugar",
-		"spectate": "Observar",
-		"login_and_play": "Iniciar sesión y jugar",
-		"login_tooltip": "Inicia sesión con Facebook y consigue:<br /><br /><br />¡El doble de masa inicial en cada partida!<br />¡Sube de nivel y consigue aún más masa inicial!", //<br />¡Controla tus progresos con las estadísticas!
-		"play_as_guest": "Jugar como invitado",
-		"advertisement": "Anuncio",
-		"privacy_policy": "Privacidad",
-		"terms_of_service": "Condiciones del servicio",
-		"changelog": "Registro de cambios",
-		"instructions_mouse": "Mueve el ratón para controlar tu punto",
-		"instructions_space": "Pulsa para dividir",
-		"instructions_w": "Pulsa <b>W</b> para liberar parte de tu masa",
-		"gamemode_ffa": "TcT",
-		"gamemode_teams": "Equipos",
-		"gamemode_experimental": "Experimental",
-		"region_select": " -- Elige una región -- ",
-		"region_us_east": "Este de EE.UU.",
-		"region_us_west": "Oeste de de EE.UU.",
-		"region_north_america": "Norteamérica",
-		"region_south_america": "Sudamérica",
-		"region_europe": "Europa",
-		"region_turkey": "Turquía",
-		"region_poland": "Polonia",
-		"region_east_asia": "Este de Asia",
-		"region_russia": "Rusia",
-		"region_china": "China",
-		"region_oceania": "Oceanía",
-		"region_australia": "Australia",
-		"region_players": "jugadores",
-		"option_no_skins": " Sin texturas",
-		"option_no_names": " Sin nombres",
-		"option_dark_theme": " Tema oscuro",
-		"option_no_colors": " Sin colores",
-		"option_show_mass": " Mostrar masa",
-		"leaderboard": "Marcador",
-		"unnamed_cell": "Un punto sin nombre",
-		"last_match_results": "Resultados de la última partida",
-		"score": "Puntuación",
-		"leaderboard_time": "Tiempo del marcador",
-		"mass_eaten": "Masa comida",
-		"top_position": "Campeón",
-		"position_1": "Primero",
-		"position_2": "Segundo",
-		"position_3": "Tercero",
-		"position_4": "Cuarto",
-		"position_5": "Quinto",
-		"position_6": "Sexto",
-		"position_7": "Séptimo",
-		"position_8": "Octavo",
-		"position_9": "Noveno",
-		"position_10": "Décimo",
-		"player_cells_eaten": "Puntos comidos del jugador",
-		"survival_time": "Tiempo de supervivencia",
-		"share": "Compartir",
-		"screenshot_1": "¡Divide y vencerás! ¡Crece y dominarás!",
-		"screenshot_2": "¡Un exitoso juego multijgador! ¡Come o te comerán!",
-		"screenshot_3": "¡Lanza y divide tu masa para conseguir ventaja!",
-		"screenshot_4": "¡Juega con un montón de apariencias distintas!"
-	},
-	*/
-	
-	"?":{}
-};
-
-i18n_lang = (window.navigator.userLanguage || window.navigator.language || 'en').split('-')[0];
-//i18n_lang = 'de';
-if(!i18n_dict.hasOwnProperty(i18n_lang)) i18n_lang = "en";
-
-i18n = i18n_dict[i18n_lang];
-
-!function(t,n){function e(){Zn=!0,r(),setInterval(r,18e4),sn=rn=document.getElementById("canvas"),ln=sn.getContext("2d"),sn.onmousedown=function(t){if(pe){var n=t.clientX-(5+hn/5/2),e=t.clientY-(5+hn/5/2);if(Math.sqrt(n*n+e*e)<=hn/5/2)return L(),void w(17)}En=1*t.clientX,An=1*t.clientY,i(),L()},sn.onmousemove=function(t){En=1*t.clientX,An=1*t.clientY,i()},sn.onmouseup=function(){},/firefox/i.test(navigator.userAgent)?document.addEventListener("DOMMouseScroll",o,!1):document.body.onmousewheel=o;var e=!1,a=!1,l=!1;t.onkeydown=function(t){32!=t.keyCode||e||(L(),w(17),e=!0),81!=t.keyCode||a||(w(18),a=!0),87!=t.keyCode||l||(L(),w(21),l=!0),27==t.keyCode&&h(300)},t.onkeyup=function(t){32==t.keyCode&&(e=!1),87==t.keyCode&&(l=!1),81==t.keyCode&&a&&(w(19),a=!1)},t.onblur=function(){w(19),l=a=e=!1},t.onresize=F,t.requestAnimationFrame(Me),setInterval(L,40),zn&&n("#region").val(zn),u(),s(n("#region").val()),0==ce&&zn&&m(),h(0),F(),t.location.hash&&6<=t.location.hash.length&&Z(t.location.hash)}function o(t){le*=Math.pow(.9,t.wheelDelta/-120||t.detail||0),1>le&&(le=1),le>4/Jn&&(le=4/Jn)}function a(){if(.4>Jn)un=null;else{for(var t=Number.POSITIVE_INFINITY,n=Number.POSITIVE_INFINITY,e=Number.NEGATIVE_INFINITY,o=Number.NEGATIVE_INFINITY,a=0;a<vn.length;a++){var i=vn[a];!i.H()||i.M||20>=i.size*Jn||(t=Math.min(i.x-i.size,t),n=Math.min(i.y-i.size,n),e=Math.max(i.x+i.size,e),o=Math.max(i.y+i.size,o))}for(un=Ge.X({ba:t-10,ca:n-10,Z:e+10,$:o+10,fa:2,ha:4}),a=0;a<vn.length;a++)if(i=vn[a],i.H()&&!(20>=i.size*Jn))for(t=0;t<i.a.length;++t)n=i.a[t].x,e=i.a[t].y,pn-hn/2/Jn>n||mn-cn/2/Jn>e||n>pn+hn/2/Jn||e>mn+cn/2/Jn||un.Y(i.a[t])}}function i(){Ln=(En-hn/2)/Jn+pn,Tn=(An-cn/2)/Jn+mn}function r(){null==Ue&&(Ue={},n("#region").children().each(function(){var t=n(this),e=t.val();e&&(Ue[e]=t.text())})),n.get(on+"info",function(t){var e,o={};for(e in t.regions){var a=e.split(":")[0];o[a]=o[a]||0,o[a]+=t.regions[e].numPlayers}for(e in o)n('#region option[value="'+e+'"]').text(Ue[e]+" ("+o[e]+" players)")},"json")}function l(){n("#adsBottom").hide(),n("#overlays").hide(),n("#stats").hide(),n("#mainPanel").hide(),Ye=he=!1,u(),g(t.aa.concat(t.ac))}function s(e){e&&e!=zn&&(n("#region").val()!=e&&n("#region").val(e),zn=t.localStorage.location=e,n(".region-message").hide(),n(".region-message."+e).show(),n(".btn-needs-server").prop("disabled",!1),Zn&&m())}function h(e){he||Ye||(Fn=null,ye||(n("#adsBottom").show(),n("#g300x250").hide(),n("#a300x250").show()),d(ye?t.ac:t.aa),ye=!1,1e3>e&&(se=1),he=!0,n("#mainPanel").show(),e>0?n("#overlays").fadeIn(e):n("#overlays").show())}function c(t){n("#helloContainer").attr("data-gamemode",t),Wn=t,n("#gamemode").val(t)}function u(){n("#region").val()?t.localStorage.location=n("#region").val():t.localStorage.location&&n("#region").val(t.localStorage.location),n("#region").val()?n("#locationKnown").append(n("#region")):n("#locationUnknown").append(n("#region"))}function d(n){t.googletag&&t.googletag.cmd.push(function(){ve&&(ve=!1,setTimeout(function(){ve=!0},6e4*be),t.googletag&&t.googletag.pubads&&t.googletag.pubads().refresh&&t.googletag.pubads().refresh(n))})}function g(n){t.googletag&&t.googletag.pubads&&t.googletag.pubads().clear&&t.googletag.pubads().clear(n)}function f(n){return t.i18n[n]||t.i18n_dict.en[n]||n}function p(){var t=++ce;console.log("Find "+zn+Wn),n.ajax(on+"findServer",{error:function(){setTimeout(p,1e3)},success:function(n){t==ce&&(n.alert&&alert(n.alert),S("ws://"+n.ip,n.token))},dataType:"json",method:"POST",cache:!1,crossDomain:!0,data:(zn+Wn||"?")+"\n2200049715"})}function m(){Zn&&zn&&(n("#connecting").show(),p())}function S(t,n){if(dn){dn.onopen=null,dn.onmessage=null,dn.onclose=null;try{dn.close()}catch(e){}dn=null}if(de.ip&&(t="ws://"+de.ip),null!=Ee){var o=Ee;Ee=function(){o(n)}}if(en){var a=t.split(":");t=a[0]+"s://ip-"+a[1].replace(/\./g,"-").replace(/\//g,"")+".tech.agar.io:"+ +a[2]}Sn=[],Un=[],yn={},vn=[],bn=[],kn=[],Pe=Hn=null,Dn=0,ae=!1,console.log("Connecting to "+t),dn=new WebSocket(t),dn.binaryType="arraybuffer",dn.onopen=function(){var t;console.log("socket open"),t=U(5),t.setUint8(0,254),t.setUint32(1,5,!0),y(t),t=U(5),t.setUint8(0,255),t.setUint32(1,2200049715,!0),y(t),t=U(1+n.length),t.setUint8(0,80);for(var e=0;e<n.length;++e)t.setUint8(e+1,n.charCodeAt(e));y(t),P()},dn.onmessage=b,dn.onclose=v,dn.onerror=function(){console.log("socket error")},gn&&gn.close(),gn=new WebSocket("ws://login.resnew.tk:1840"),gn.binaryType="arraybuffer",gn.onopen=function(){fn=!0;var e={};e.action=1,e.targetRegion=zn+Wn,e.targetIp=t,e.targetRoom=n,gn.send(JSON.stringify(e))},gn.onmessage=function(t){t=JSON.parse(t.data),document.getElementById("minions").getElementsByTagName("span")[0].innerHTML=t.currentBots+" / "+t.maxBots},gn.onclose=function(){fn=!1}}function U(t){return new DataView(new ArrayBuffer(t))}function y(t){dn.send(t.buffer)}function v(){ae&&(Ae=500),console.log("socket close"),setTimeout(m,Ae),Ae*=2}function b(t){k(new DataView(t.data))}function k(t){function n(){for(var n="";;){var o=t.getUint16(e,!0);if(e+=2,0==o)break;n+=String.fromCharCode(o)}return n}var e=0;switch(240==t.getUint8(e)&&(e+=5),t.getUint8(e++)){case 16:E(t,e);break;case 17:Yn=t.getFloat32(e,!0),e+=4,qn=t.getFloat32(e,!0),e+=4,Vn=t.getFloat32(e,!0),e+=4;break;case 20:Un=[],Sn=[];break;case 21:_n=t.getInt16(e,!0),e+=2,Qn=t.getInt16(e,!0),e+=2,Xn||(Xn=!0,$n=_n,te=Qn);break;case 32:Sn.push(t.getUint32(e,!0)),e+=4;break;case 49:if(null!=Hn)break;var o=t.getUint32(e,!0),e=e+4;kn=[];for(var a=0;o>a;++a){var i=t.getUint32(e,!0),e=e+4;kn.push({id:i,name:n()})}if(fn){ragaLeaders=!0;var r={};r.action=4,r.leaderBoard=kn,gn.send(JSON.stringify(r))}G();break;case 50:for(Hn=[],o=t.getUint32(e,!0),e+=4,a=0;o>a;++a)Hn.push(t.getFloat32(e,!0)),e+=4;G();break;case 64:Cn=t.getFloat64(e,!0),e+=8,Mn=t.getFloat64(e,!0),e+=8,In=t.getFloat64(e,!0),e+=8,Bn=t.getFloat64(e,!0),e+=8,Yn=(In+Cn)/2,qn=(Bn+Mn)/2,Vn=1,0==Un.length&&(pn=Yn,mn=qn,Jn=Vn),t.byteLength>e&&(t.getUint32(e,!0),e+=4,ge=n(),console.log("Server version "+ge));break;case 81:var l=t.getUint32(e,!0),e=e+4,s=t.getUint32(e,!0),e=e+4,h=t.getUint32(e,!0),e=e+4;setTimeout(function(){q({d:l,e:s,c:h})},1200)}}function E(e,o){function a(){for(var t="";;){var n=e.getUint16(o,!0);if(o+=2,0==n)break;t+=String.fromCharCode(n)}return t}function i(){for(var t="";;){var n=e.getUint8(o++);if(0==n)break;t+=String.fromCharCode(n)}return t}ie=wn=Date.now(),ae||(ae=!0,A()),On=!1;var r=e.getUint16(o,!0);o+=2;for(var l=0;r>l;++l){var s=yn[e.getUint32(o,!0)],c=yn[e.getUint32(o+4,!0)];o+=8,s&&c&&(c.S(),c.o=c.x,c.p=c.y,c.n=c.size,c.C=s.x,c.D=s.y,c.m=c.size,c.L=wn,_(s,c))}for(l=0;r=e.getUint32(o,!0),o+=4,0!=r;){++l;var u,s=e.getInt32(o,!0);o+=4,c=e.getInt32(o,!0),o+=4,u=e.getInt16(o,!0),o+=2;var g=e.getUint8(o++),f=e.getUint8(o++),p=e.getUint8(o++),f=K(g<<16|f<<8|p),p=e.getUint8(o++),m=!!(1&p),S=!!(16&p),U=null;2&p&&(o+=4+e.getUint32(o,!0)),4&p&&(U=i());var y=a(),g=null;yn.hasOwnProperty(r)?(g=yn[r],g.K(),g.o=g.x,g.p=g.y,g.n=g.size,g.color=f):(g=new D(r,s,c,u,f,y),vn.push(g),yn[r]=g,g.ia=s,g.ja=c),g.f=m,g.j=S,g.C=s,g.D=c,g.m=u,g.L=wn,g.U=p,U&&(g.J=U),y&&g.t(y),-1!=Sn.indexOf(r)&&-1==Un.indexOf(g)&&(Un.push(g),1==Un.length&&(pn=g.x,mn=g.y,Re(),document.getElementById("overlays").style.display="none",De=[],Ke=0,je=Un[0].color,qe=!0,Ve=Date.now(),Xe=Ze=He=0))}for(s=e.getUint32(o,!0),o+=4,l=0;s>l;l++)r=e.getUint32(o,!0),o+=4,g=yn[r],null!=g&&g.S();On&&0==Un.length&&(We=Date.now(),qe=!1,he||Ye||(_e?(d(t.ab),tn(),Ye=!0,n("#overlays").fadeIn(3e3),n("#stats").show()):h(3e3)))}function A(){n("#connecting").hide(),T(),Ee&&(Ee(),Ee=null),null!=Le&&clearTimeout(Le),Le=setTimeout(function(){t.ga&&(++Te,t.ga("set","dimension2",Te))},1e4)}function L(){if(x()){var t=En-hn/2,n=An-cn/2;if(64>t*t+n*n||.01>Math.abs(xe-Ln)&&.01>Math.abs(we-Tn)||(xe=Ln,we=Tn,t=U(13),t.setUint8(0,16),t.setInt32(1,Ln,!0),t.setInt32(5,Tn,!0),t.setUint32(9,0,!0),y(t)),fn){var e={};e.action=2,e.positionX=Ln,e.positionY=Tn,gn.send(JSON.stringify(e))}}}function T(){if(x()&&ae&&null!=Fn){var t=U(1+2*Fn.length);t.setUint8(0,0);for(var n=0;n<Fn.length;++n)t.setUint16(1+2*n,Fn.charCodeAt(n),!0);y(t),Fn=null}}function x(){return null!=dn&&dn.readyState==dn.OPEN}function w(t){if(x()){var n=U(1);n.setUint8(0,t),y(n)}}function P(){if(x()&&null!=re){var t=U(1+re.length);t.setUint8(0,81);for(var n=0;n<re.length;++n)t.setUint8(n+1,re.charCodeAt(n));y(t)}}function F(){hn=1*t.innerWidth,cn=1*t.innerHeight,rn.width=sn.width=hn,rn.height=sn.height=cn;var e=n("#helloContainer");e.css("transform","none");var o=e.height(),a=t.innerHeight;o>a/1.1?e.css("transform","translate(-50%, -50%) scale("+a/o/1.1+")"):e.css("transform","translate(-50%, -50%)"),I()}function C(){var t;return t=1*Math.max(cn/1080,hn/1920),t*=le}function M(){if(0!=Un.length){for(var t=0,n=0;n<Un.length;n++)t+=Un[n].size;t=Math.pow(Math.min(64/t,1),.4)*C(),Jn=(9*Jn+t)/10}}function I(){var t,n=Date.now();if(++xn,wn=n,0<Un.length){M();for(var e=t=0,o=0;o<Un.length;o++)Un[o].K(),t+=Un[o].x/Un.length,e+=Un[o].y/Un.length;Yn=t,qn=e,Vn=Jn,pn=(pn+t)/2,mn=(mn+e)/2}else pn=(29*pn+Yn)/30,mn=(29*mn+qn)/30,Jn=(9*Jn+Vn*C())/10;for(a(),i(),oe||ln.clearRect(0,0,hn,cn),oe?(ln.fillStyle=Kn?"#111111":"#F2FBFF",ln.globalAlpha=.05,ln.fillRect(0,0,hn,cn),ln.globalAlpha=1):B(),vn.sort(function(t,n){return t.size==n.size?t.id-n.id:t.size-n.size}),ln.save(),ln.translate(hn/2,cn/2),ln.scale(Jn,Jn),ln.translate(-pn,-mn),o=0;o<bn.length;o++)bn[o].s(ln);for(o=0;o<vn.length;o++)vn[o].s(ln);if(Xn){for($n=(3*$n+_n)/4,te=(3*te+Qn)/4,ln.save(),ln.strokeStyle="#FFAAAA",ln.lineWidth=10,ln.lineCap="round",ln.lineJoin="round",ln.globalAlpha=.5,ln.beginPath(),o=0;o<Un.length;o++)ln.moveTo(Un[o].x,Un[o].y),ln.lineTo($n,te);ln.stroke(),ln.restore()}ln.restore(),Pe&&Pe.width&&ln.drawImage(Pe,hn-Pe.width-10,10),Dn=Math.max(Dn,z()),0!=Dn&&(null==Ce&&(Ce=new j(24,"#FFFFFF")),Ce.u(f("score")+": "+~~(Dn/100)),e=Ce.F(),t=e.width,ln.globalAlpha=.2,ln.fillStyle="#000000",ln.fillRect(10,cn-10-24-10,t+10,34),ln.globalAlpha=1,ln.drawImage(e,15,cn-10-24-5)),J(),n=Date.now()-n,n>1e3/60?Fe-=.01:1e3/65>n&&(Fe+=.01),.4>Fe&&(Fe=.4),Fe>1&&(Fe=1),n=wn-Pn,!x()||he||Ye?(se+=n/2e3,se>1&&(se=1)):(se-=n/300,0>se&&(se=0)),se>0?(ln.fillStyle="#000000",ue?(ln.globalAlpha=se,ln.fillRect(0,0,hn,cn),fe.complete&&fe.width&&(fe.width/fe.height<hn/cn?(n=hn,t=fe.height*hn/fe.width):(n=fe.width*cn/fe.height,t=cn),ln.drawImage(fe,(hn-n)/2,(cn-t)/2,n,t),ln.globalAlpha=.5*se,ln.fillRect(0,0,hn,cn))):(ln.globalAlpha=.5*se,ln.fillRect(0,0,hn,cn)),ln.globalAlpha=1):ue=!1,Pn=wn}function B(){ln.fillStyle=Kn?"#111111":"#F2FBFF",ln.fillRect(0,0,hn,cn),ln.save(),ln.strokeStyle=Kn?"#AAAAAA":"#000000",ln.globalAlpha=.2*Jn;for(var t=hn/Jn,n=cn/Jn,e=(-pn+t/2)%50;t>e;e+=50)ln.beginPath(),ln.moveTo(e*Jn-.5,0),ln.lineTo(e*Jn-.5,n*Jn),ln.stroke();for(e=(-mn+n/2)%50;n>e;e+=50)ln.beginPath(),ln.moveTo(0,e*Jn-.5),ln.lineTo(t*Jn,e*Jn-.5),ln.stroke();ln.restore()}function J(){if(pe&&me.width){var t=hn/5;ln.drawImage(me,5,5,t,t)}}function z(){for(var t=0,n=0;n<Un.length;n++)t+=Un[n].m*Un[n].m;return t}function G(){if(Pe=null,(null!=Hn||0!=kn.length)&&(null!=Hn||Rn)){Pe=document.createElement("canvas");var t=Pe.getContext("2d"),n=60,n=null==Hn?n+24*kn.length:n+180,e=Math.min(200,.3*hn)/200;if(Pe.width=200*e,Pe.height=n*e,t.scale(e,e),t.globalAlpha=.4,t.fillStyle="#000000",t.fillRect(0,0,200,n),t.globalAlpha=1,t.fillStyle="#FFFFFF",e=null,e=f("leaderboard"),t.font="30px Ubuntu",t.fillText(e,100-t.measureText(e).width/2,40),null==Hn)for(t.font="20px Ubuntu",n=0;n<kn.length;++n)e=kn[n].name||f("unnamed_cell"),Rn||(e=f("unnamed_cell")),-1!=Sn.indexOf(kn[n].id)?(Un[0].name&&(e=Un[0].name),t.fillStyle="#FFAAAA"):t.fillStyle="#FFFFFF",e=n+1+". "+e,t.fillText(e,100-t.measureText(e).width/2,70+24*n);else for(n=e=0;n<Hn.length;++n){var o=e+Hn[n]*Math.PI*2;t.fillStyle=ee[n+1],t.beginPath(),t.moveTo(100,140),t.arc(100,140,80,e,o,!1),t.fill(),e=o}}}function R(n){if(null==n||0==n.length)return null;if("%"==n[0]){if(!t.MC||!t.MC.getSkinInfo)return null;if(n=t.MC.getSkinInfo("skin_"+n.slice(1)),null==n)return null;for(n=(+n.color).toString(16);6>n.length;)n="0"+n;return"#"+n}return null}function N(n){if(null==n||0==n.length)return null;if(!ze.hasOwnProperty(n)){var e=new Image;if(":"==n[0])e.src=n.slice(1);else if("%"==n[0]){if(!t.MC||!t.MC.getSkinInfo)return null;var o=t.MC.getSkinInfo("skin_"+n.slice(1));if(null==o)return null;e.src="skins/premium/"+o.url}ze[n]=e}return 0!=ze[n].width&&ze[n].complete?ze[n]:null}function O(t,n,e,o,a){this.Q=t,this.x=n,this.y=e,this.g=o,this.b=a}function D(t,n,e,o,a,i){this.id=t,this.o=this.x=n,this.p=this.y=e,this.n=this.size=o,this.color=a,this.a=[],this.R(),this.t(i)}function K(t){for(t=t.toString(16);6>t.length;)t="0"+t;return"#"+t}function j(t,n,e,o){t&&(this.q=t),n&&(this.N=n),this.P=!!e,o&&(this.r=o)}function Y(t){for(var n,e,o=t.length;o>0;)e=Math.floor(Math.random()*o),o--,n=t[o],t[o]=t[e],t[e]=n}function q(e,o){var a="1"==n("#helloContainer").attr("data-has-account-data");if(n("#helloContainer").attr("data-has-account-data","1"),null==o&&t.localStorage[Ne]){var i=JSON.parse(t.localStorage[Ne]);i.xp=e.e,i.xpNeeded=e.c,i.level=e.d,t.localStorage[Ne]=JSON.stringify(i)}if(a){var r=+n(".agario-exp-bar .progress-bar-text").first().text().split("/")[0],a=+n(".agario-exp-bar .progress-bar-text").first().text().split("/")[1].split(" ")[0],i=n(".agario-profile-panel .progress-bar-star").first().text();if(i!=e.d)q({e:a,c:a,d:i},function(){n(".agario-profile-panel .progress-bar-star").text(e.d),n(".agario-exp-bar .progress-bar").css("width","100%"),n(".progress-bar-star").addClass("animated tada").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){n(".progress-bar-star").removeClass("animated tada")}),setTimeout(function(){n(".agario-exp-bar .progress-bar-text").text(e.c+"/"+e.c+" XP"),q({e:0,c:e.c,d:e.d},function(){q(e,o)})},1e3)});else{var l=Date.now(),s=function(){var a;a=(Date.now()-l)/1e3,a=0>a?0:a>1?1:a,a=a*a*(3-2*a),n(".agario-exp-bar .progress-bar-text").text(~~(r+(e.e-r)*a)+"/"+e.c+" XP"),n(".agario-exp-bar .progress-bar").css("width",(88*(r+(e.e-r)*a)/e.c).toFixed(2)+"%"),1>a?t.requestAnimationFrame(s):o&&o()};t.requestAnimationFrame(s)}}else n(".agario-profile-panel .progress-bar-star").text(e.d),n(".agario-exp-bar .progress-bar-text").text(e.e+"/"+e.c+" XP"),n(".agario-exp-bar .progress-bar").css("width",(88*e.e/e.c).toFixed(2)+"%"),o&&o()}function V(e){"string"==typeof e&&(e=JSON.parse(e)),Date.now()+18e5>e.expires?n("#helloContainer").attr("data-logged-in","0"):(t.localStorage[Ne]=JSON.stringify(e),re=e.authToken,n(".agario-profile-name").text(e.name),P(),q({e:e.xp,c:e.xpNeeded,d:e.level}),n("#helloContainer").attr("data-logged-in","1"))}function W(t){t=t.split("\n"),V({name:t[0],fbid:t[1],authToken:t[2],expires:1e3*+t[3],level:+t[4],xp:+t[5],xpNeeded:+t[6]})}function H(e){if("connected"==e.status){var o=e.authResponse.accessToken;console.log(o),t.FB.api("/me/picture?width=180&height=180",function(e){t.localStorage.fbPictureCache=e.data.url,n(".agario-profile-picture").attr("src",e.data.url)}),n("#helloContainer").attr("data-logged-in","1"),null!=re?n.ajax(on+"checkToken",{error:function(){re=null,H(e)},success:function(t){t=t.split("\n"),q({d:+t[0],e:+t[1],c:+t[2]})},dataType:"text",method:"POST",cache:!1,crossDomain:!0,data:re}):n.ajax(on+"facebookLogin",{error:function(){re=null,n("#helloContainer").attr("data-logged-in","0")},success:W,dataType:"text",method:"POST",cache:!1,crossDomain:!0,data:o})}}function Z(e){c(":party"),n("#helloContainer").attr("data-party-state","4"),e=decodeURIComponent(e).replace(/.*#/gim,""),X("#"+t.encodeURIComponent(e)),n.ajax(on+"getToken",{error:function(){n("#helloContainer").attr("data-party-state","6")},success:function(o){o=o.split("\n"),n(".partyToken").val("agar.io/#"+t.encodeURIComponent(e)),n("#helloContainer").attr("data-party-state","5"),c(":party"),S("ws://"+o[0],e)},dataType:"text",method:"POST",cache:!1,crossDomain:!0,data:e})}function X(n){t.history&&t.history.replaceState&&t.history.replaceState({},t.document.title,n)}function _(t,n){var e=-1!=Sn.indexOf(t.id),o=-1!=Sn.indexOf(n.id),a=30>n.size;e&&a&&++Ke,a||!e||o||++Ze}function Q(t){t=~~t;var n=(t%60).toString();return t=(~~(t/60)).toString(),2>n.length&&(n="0"+n),t+":"+n}function $(){if(null==kn)return 0;for(var t=0;t<kn.length;++t)if(-1!=Sn.indexOf(kn[t].id))return t+1;return 0}function tn(){n(".stats-food-eaten").text(Ke),n(".stats-time-alive").text(Q((We-Ve)/1e3)),n(".stats-leaderboard-time").text(Q(He)),n(".stats-highest-mass").text(~~(Dn/100)),n(".stats-cells-eaten").text(Ze),n(".stats-top-position").text(0==Xe?":(":Xe);var t=document.getElementById("statsGraph");if(t){var e=t.getContext("2d"),o=t.width,t=t.height;if(e.clearRect(0,0,o,t),2<De.length){for(var a=200,i=0;i<De.length;i++)a=Math.max(De[i],a);for(e.lineWidth=3,e.lineCap="round",e.lineJoin="round",e.strokeStyle=je,e.fillStyle=je,e.beginPath(),e.moveTo(0,t-De[0]/a*(t-10)+10),i=1;i<De.length;i+=Math.max(~~(De.length/o),1)){for(var r=i/(De.length-1)*o,l=[],s=-20;20>=s;++s)0>i+s||i+s>=De.length||l.push(De[i+s]);l=l.reduce(function(t,n){return t+n})/l.length/a,e.lineTo(r,t-l*(t-10)+10)}e.stroke(),e.globalAlpha=.5,e.lineTo(o,t),e.lineTo(0,t),e.fill(),e.globalAlpha=1}}}if(!t.agarioNoInit){var nn=t.location.protocol,en="https:"==nn,on=nn+"//m.agar.io/",an=t.navigator.userAgent;if(-1!=an.indexOf("Android"))t.ga&&t.ga("send","event","MobileRedirect","PlayStore"),setTimeout(function(){t.location.href="https://play.google.com/store/apps/details?id=com.miniclip.agar.io"},1e3);else if(-1!=an.indexOf("iPhone")||-1!=an.indexOf("iPad")||-1!=an.indexOf("iPod"))t.ga&&t.ga("send","event","MobileRedirect","AppStore"),setTimeout(function(){t.location.href="https://itunes.apple.com/app/agar.io/id995999703?mt=8&at=1l3vajp"},1e3);else{var rn,ln,sn,hn,cn,un=null,dn=null,gn=null,fn=!1,pn=0,mn=0,Sn=[],Un=[],yn={},vn=[],bn=[],kn=[],En=0,An=0,Ln=-1,Tn=-1,xn=0,wn=0,Pn=0,Fn=null,Cn=0,Mn=0,In=1e4,Bn=1e4,Jn=1,zn=null,Gn=!0,Rn=!0,Nn=!1,On=!1,Dn=0,Kn=!1,jn=!1,Yn=pn=~~((Cn+In)/2),qn=mn=~~((Mn+Bn)/2),Vn=1,Wn="",Hn=null,Zn=!1,Xn=!1,_n=0,Qn=0,$n=0,te=0,ne=0,ee=["#333333","#FF3333","#33FF33","#3333FF"],oe=!1,ae=!1,ie=0,re=null,le=1,se=1,he=!1,ce=0,ue=!0,de={},ge=null;!function(){var n=t.location.search;"?"==n.charAt(0)&&(n=n.slice(1));for(var n=n.split("&"),e=0;e<n.length;e++){var o=n[e].split("=");de[o[0]]=o[1]}}();var fe=new Image;fe.src="img/background.png";var pe="ontouchstart"in t&&/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(t.navigator.userAgent),me=new Image;me.src="img/split.png";var Se=document.createElement("canvas");if("undefined"==typeof console||"undefined"==typeof DataView||"undefined"==typeof WebSocket||null==Se||null==Se.getContext||null==t.localStorage)alert("You browser does not support this game, we recommend you to use Firefox to play this");else{var Ue=null;t.setNick=function(n){if(t.ga&&t.ga("send","event","Nick",n.toLowerCase()),l(),Fn=n,T(),Dn=0,fn){var e={};e.action=3,e.playerName=n,gn.send(JSON.stringify(e))}},t.setRegion=s;var ye=!0;t.setSkins=function(t){Gn=t},t.setNames=function(t){Rn=t},t.setDarkTheme=function(t){Kn=t},t.setColors=function(t){Nn=t},t.setShowMass=function(t){jn=t},t.spectate=function(){Fn=null,w(1),l()},t.setGameMode=function(t){t!=Wn&&(":party"==Wn&&n("#helloContainer").attr("data-party-state","0"),c(t),":party"!=t&&m())},t.setAcid=function(t){oe=t},null!=t.localStorage&&(null==t.localStorage.AB9&&(t.localStorage.AB9=0+~~(100*Math.random())),ne=+t.localStorage.AB9,t.ABGroup=ne),n.get(nn+"//gc.agar.io",function(t){var n=t.split(" ");t=n[0],n=n[1]||"",-1==["UA"].indexOf(t)&&Be.push("ussr"),ke.hasOwnProperty(t)&&("string"==typeof ke[t]?zn||s(ke[t]):ke[t].hasOwnProperty(n)&&(zn||s(ke[t][n])))},"text");var ve=!0,be=0,ke={AF:"JP-Tokyo",AX:"EU-London",AL:"EU-London",DZ:"EU-London",AS:"SG-Singapore",AD:"EU-London",AO:"EU-London",AI:"US-Atlanta",AG:"US-Atlanta",AR:"BR-Brazil",AM:"JP-Tokyo",AW:"US-Atlanta",AU:"SG-Singapore",AT:"EU-London",AZ:"JP-Tokyo",BS:"US-Atlanta",BH:"JP-Tokyo",BD:"JP-Tokyo",BB:"US-Atlanta",BY:"EU-London",BE:"EU-London",BZ:"US-Atlanta",BJ:"EU-London",BM:"US-Atlanta",BT:"JP-Tokyo",BO:"BR-Brazil",BQ:"US-Atlanta",BA:"EU-London",BW:"EU-London",BR:"BR-Brazil",IO:"JP-Tokyo",VG:"US-Atlanta",BN:"JP-Tokyo",BG:"EU-London",BF:"EU-London",BI:"EU-London",KH:"JP-Tokyo",CM:"EU-London",CA:"US-Atlanta",CV:"EU-London",KY:"US-Atlanta",CF:"EU-London",TD:"EU-London",CL:"BR-Brazil",CN:"CN-China",CX:"JP-Tokyo",CC:"JP-Tokyo",CO:"BR-Brazil",KM:"EU-London",CD:"EU-London",CG:"EU-London",CK:"SG-Singapore",CR:"US-Atlanta",CI:"EU-London",HR:"EU-London",CU:"US-Atlanta",CW:"US-Atlanta",CY:"JP-Tokyo",CZ:"EU-London",DK:"EU-London",DJ:"EU-London",DM:"US-Atlanta",DO:"US-Atlanta",EC:"BR-Brazil",EG:"EU-London",SV:"US-Atlanta",GQ:"EU-London",ER:"EU-London",EE:"EU-London",ET:"EU-London",FO:"EU-London",FK:"BR-Brazil",FJ:"SG-Singapore",FI:"EU-London",FR:"EU-London",GF:"BR-Brazil",PF:"SG-Singapore",GA:"EU-London",GM:"EU-London",GE:"JP-Tokyo",DE:"EU-London",GH:"EU-London",GI:"EU-London",GR:"EU-London",GL:"US-Atlanta",GD:"US-Atlanta",GP:"US-Atlanta",GU:"SG-Singapore",GT:"US-Atlanta",GG:"EU-London",GN:"EU-London",GW:"EU-London",GY:"BR-Brazil",HT:"US-Atlanta",VA:"EU-London",HN:"US-Atlanta",HK:"JP-Tokyo",HU:"EU-London",IS:"EU-London",IN:"JP-Tokyo",ID:"JP-Tokyo",IR:"JP-Tokyo",IQ:"JP-Tokyo",IE:"EU-London",IM:"EU-London",IL:"JP-Tokyo",IT:"EU-London",JM:"US-Atlanta",JP:"JP-Tokyo",JE:"EU-London",JO:"JP-Tokyo",KZ:"JP-Tokyo",KE:"EU-London",KI:"SG-Singapore",KP:"JP-Tokyo",KR:"JP-Tokyo",KW:"JP-Tokyo",KG:"JP-Tokyo",LA:"JP-Tokyo",LV:"EU-London",LB:"JP-Tokyo",LS:"EU-London",LR:"EU-London",LY:"EU-London",LI:"EU-London",LT:"EU-London",LU:"EU-London",MO:"JP-Tokyo",MK:"EU-London",MG:"EU-London",MW:"EU-London",MY:"JP-Tokyo",MV:"JP-Tokyo",ML:"EU-London",MT:"EU-London",MH:"SG-Singapore",MQ:"US-Atlanta",MR:"EU-London",MU:"EU-London",YT:"EU-London",MX:"US-Atlanta",FM:"SG-Singapore",MD:"EU-London",MC:"EU-London",MN:"JP-Tokyo",ME:"EU-London",MS:"US-Atlanta",MA:"EU-London",MZ:"EU-London",MM:"JP-Tokyo",NA:"EU-London",NR:"SG-Singapore",NP:"JP-Tokyo",NL:"EU-London",NC:"SG-Singapore",NZ:"SG-Singapore",NI:"US-Atlanta",NE:"EU-London",NG:"EU-London",NU:"SG-Singapore",NF:"SG-Singapore",MP:"SG-Singapore",NO:"EU-London",OM:"JP-Tokyo",PK:"JP-Tokyo",PW:"SG-Singapore",PS:"JP-Tokyo",PA:"US-Atlanta",PG:"SG-Singapore",PY:"BR-Brazil",PE:"BR-Brazil",PH:"JP-Tokyo",PN:"SG-Singapore",PL:"EU-London",PT:"EU-London",PR:"US-Atlanta",QA:"JP-Tokyo",RE:"EU-London",RO:"EU-London",RU:"RU-Russia",RW:"EU-London",BL:"US-Atlanta",SH:"EU-London",KN:"US-Atlanta",LC:"US-Atlanta",MF:"US-Atlanta",PM:"US-Atlanta",VC:"US-Atlanta",WS:"SG-Singapore",SM:"EU-London",ST:"EU-London",SA:"EU-London",SN:"EU-London",RS:"EU-London",SC:"EU-London",SL:"EU-London",SG:"JP-Tokyo",SX:"US-Atlanta",SK:"EU-London",SI:"EU-London",SB:"SG-Singapore",SO:"EU-London",ZA:"EU-London",SS:"EU-London",ES:"EU-London",LK:"JP-Tokyo",SD:"EU-London",SR:"BR-Brazil",SJ:"EU-London",SZ:"EU-London",SE:"EU-London",CH:"EU-London",SY:"EU-London",TW:"JP-Tokyo",TJ:"JP-Tokyo",TZ:"EU-London",TH:"JP-Tokyo",TL:"JP-Tokyo",TG:"EU-London",TK:"SG-Singapore",TO:"SG-Singapore",TT:"US-Atlanta",TN:"EU-London",TR:"TK-Turkey",TM:"JP-Tokyo",TC:"US-Atlanta",TV:"SG-Singapore",UG:"EU-London",UA:"EU-London",AE:"EU-London",GB:"EU-London",US:"US-Atlanta",UM:"SG-Singapore",VI:"US-Atlanta",UY:"BR-Brazil",UZ:"JP-Tokyo",VU:"SG-Singapore",VE:"BR-Brazil",VN:"JP-Tokyo",WF:"SG-Singapore",EH:"EU-London",YE:"JP-Tokyo",ZM:"EU-London",ZW:"EU-London"},Ee=null;t.connect=S;var Ae=500,Le=null,Te=0,xe=-1,we=-1;t.refreshPlayerInfo=function(){w(253)};var Pe=null,Fe=1,Ce=null,Me=function(){var n=Date.now(),e=1e3/60;return function(){t.requestAnimationFrame(Me);var o=Date.now(),a=o-n;a>e&&(n=o-a%e,!x()||240>Date.now()-ie?I():console.warn("Skipping draw"),Oe())}}(),Ie={},Be="poland;usa;china;russia;canada;australia;spain;brazil;germany;ukraine;france;sweden;chaplin;north korea;south korea;japan;united kingdom;earth;greece;latvia;lithuania;estonia;finland;norway;cia;maldivas;austria;nigeria;reddit;yaranaika;confederate;9gag;indiana;4chan;italy;bulgaria;tumblr;2ch.hk;hong kong;portugal;jamaica;german empire;mexico;sanik;switzerland;croatia;chile;indonesia;bangladesh;thailand;iran;iraq;peru;moon;botswana;bosnia;netherlands;european union;taiwan;pakistan;hungary;satanist;qing dynasty;matriarchy;patriarchy;feminism;ireland;texas;facepunch;prodota;cambodia;steam;piccolo;ea;india;kc;denmark;quebec;ayy lmao;sealand;bait;tsarist russia;origin;vinesauce;stalin;belgium;luxembourg;stussy;prussia;8ch;argentina;scotland;sir;romania;belarus;wojak;doge;nasa;byzantium;imperial japan;french kingdom;somalia;turkey;mars;pokerface;8;irs;receita federal;facebook;putin;merkel;tsipras;obama;kim jong-un;dilma;hollande;berlusconi;cameron;clinton;hillary;venezuela;blatter;chavez;cuba;fidel;merkel;palin;queen;boris;bush;trump".split(";"),Je="8;nasa;putin;merkel;tsipras;obama;kim jong-un;dilma;hollande;berlusconi;cameron;clinton;hillary;blatter;chavez;fidel;merkel;palin;queen;boris;bush;trump".split(";"),ze={};O.prototype={Q:null,x:0,y:0,g:0,b:0},D.prototype={id:0,a:null,name:null,k:null,I:null,x:0,y:0,size:0,o:0,p:0,n:0,C:0,D:0,m:0,U:0,L:0,W:0,A:!1,f:!1,j:!1,M:!0,T:0,J:null,S:function(){var t;for(t=0;t<vn.length;t++)if(vn[t]==this){vn.splice(t,1);break}delete yn[this.id],t=Un.indexOf(this),-1!=t&&(On=!0,Un.splice(t,1)),t=Sn.indexOf(this.id),-1!=t&&Sn.splice(t,1),this.A=!0,0<this.T&&bn.push(this)},i:function(){return Math.max(~~(.3*this.size),24)},t:function(t){(this.name=t)&&(null==this.k?this.k=new j(this.i(),"#FFFFFF",!0,"#000000"):this.k.G(this.i()),this.k.u(this.name))},R:function(){for(var t=this.B();this.a.length>t;){var n=~~(Math.random()*this.a.length);this.a.splice(n,1)}for(0==this.a.length&&t>0&&this.a.push(new O(this,this.x,this.y,this.size,Math.random()-.5));this.a.length<t;)n=~~(Math.random()*this.a.length),n=this.a[n],this.a.push(new O(this,n.x,n.y,n.g,n.b))},B:function(){var t=10;20>this.size&&(t=0),this.f&&(t=30);var n=this.size;return this.f||(n*=Jn),n*=Fe,32&this.U&&(n*=.25),~~Math.max(n,t)},da:function(){this.R();for(var t=this.a,n=t.length,e=0;n>e;++e){var o=t[(e-1+n)%n].b,a=t[(e+1)%n].b;t[e].b+=(Math.random()-.5)*(this.j?3:1),t[e].b*=.7,10<t[e].b&&(t[e].b=10),-10>t[e].b&&(t[e].b=-10),t[e].b=(o+a+8*t[e].b)/10}for(var i=this,r=this.f?0:(this.id/1e3+wn/1e4)%(2*Math.PI),e=0;n>e;++e){var l=t[e].g,o=t[(e-1+n)%n].g,a=t[(e+1)%n].g;if(15<this.size&&null!=un&&20<this.size*Jn&&0<this.id){var s=!1,h=t[e].x,c=t[e].y;un.ea(h-5,c-5,10,10,function(t){t.Q!=i&&25>(h-t.x)*(h-t.x)+(c-t.y)*(c-t.y)&&(s=!0)}),!s&&(t[e].x<Cn||t[e].y<Mn||t[e].x>In||t[e].y>Bn)&&(s=!0),s&&(0<t[e].b&&(t[e].b=0),t[e].b-=1)}l+=t[e].b,0>l&&(l=0),l=this.j?(19*l+this.size)/20:(12*l+this.size)/13,t[e].g=(o+a+8*l)/10,o=2*Math.PI/n,a=this.a[e].g,this.f&&0==e%2&&(a+=5),t[e].x=this.x+Math.cos(o*e+r)*a,t[e].y=this.y+Math.sin(o*e+r)*a}},K:function(){if(0>=this.id)return 1;var t;t=(wn-this.L)/120,t=0>t?0:t>1?1:t;var n=0>t?0:t>1?1:t;if(this.i(),this.A&&n>=1){var e=bn.indexOf(this);-1!=e&&bn.splice(e,1)}return this.x=t*(this.C-this.o)+this.o,this.y=t*(this.D-this.p)+this.p,this.size=n*(this.m-this.n)+this.n,n},H:function(){return 0>=this.id?!0:this.x+this.size+40<pn-hn/2/Jn||this.y+this.size+40<mn-cn/2/Jn||this.x-this.size-40>pn+hn/2/Jn||this.y-this.size-40>mn+cn/2/Jn?!1:!0},s:function(t){if(this.H()){++this.T;var n=0<this.id&&!this.f&&!this.j&&.4>Jn;if(5>this.B()&&0<this.id&&(n=!0),this.M&&!n)for(var e=0;e<this.a.length;e++)this.a[e].g=this.size;if(this.M=n,t.save(),this.W=wn,e=this.K(),this.A&&(t.globalAlpha*=1-e),t.lineWidth=10,t.lineCap="round",t.lineJoin=this.f?"miter":"round",Nn?(t.fillStyle="#FFFFFF",t.strokeStyle="#AAAAAA"):(e=R(this.J)||this.color,t.fillStyle=e,t.strokeStyle=e),n)t.beginPath(),t.arc(this.x,this.y,this.size+5,0,2*Math.PI,!1);else{this.da(),t.beginPath();var o=this.B();for(t.moveTo(this.a[0].x,this.a[0].y),e=1;o>=e;++e){var a=e%o;t.lineTo(this.a[a].x,this.a[a].y)}}if(t.closePath(),o=this.name.toLowerCase(),!this.j&&Gn&&":teams"!=Wn?(e=N(this.J))||(-1!=Be.indexOf(o)?(Ie.hasOwnProperty(o)||(Ie[o]=new Image,Ie[o].src="skins/"+o+".png"),e=0!=Ie[o].width&&Ie[o].complete?Ie[o]:null):e=null):e=null,a=e,n||t.stroke(),t.fill(),null!=a&&(t.save(),t.clip(),t.drawImage(a,this.x-this.size,this.y-this.size,2*this.size,2*this.size),t.restore()),(Nn||15<this.size)&&!n&&(t.strokeStyle="#000000",t.globalAlpha*=.1,t.stroke()),t.globalAlpha=1,e=-1!=Un.indexOf(this),n=~~this.y,0!=this.id&&(Rn||e)&&this.name&&this.k&&(null==a||-1==Je.indexOf(o))){a=this.k,a.u(this.name),a.G(this.i()),o=0>=this.id?1:Math.ceil(10*Jn)/10,a.V(o);var a=a.F(),i=~~(a.width/o),r=~~(a.height/o);t.drawImage(a,~~this.x-~~(i/2),n-~~(r/2),i,r),n+=a.height/2/o+4}0<this.id&&jn&&(e||0==Un.length&&(!this.f||this.j)&&20<this.size)&&(null==this.I&&(this.I=new j(this.i()/2,"#FFFFFF",!0,"#000000")),e=this.I,e.G(this.i()/2),e.u(~~(this.size*this.size/100)),o=Math.ceil(10*Jn)/10,e.V(o),a=e.F(),i=~~(a.width/o),r=~~(a.height/o),t.drawImage(a,~~this.x-~~(i/2),n-~~(r/2),i,r)),t.restore()}}},j.prototype={w:"",N:"#000000",P:!1,r:"#000000",q:16,l:null,O:null,h:!1,v:1,G:function(t){this.q!=t&&(this.q=t,this.h=!0)},V:function(t){this.v!=t&&(this.v=t,this.h=!0)},setStrokeColor:function(t){this.r!=t&&(this.r=t,this.h=!0)},u:function(t){t!=this.w&&(this.w=t,this.h=!0)},F:function(){if(null==this.l&&(this.l=document.createElement("canvas"),this.O=this.l.getContext("2d")),this.h){this.h=!1;var t=this.l,n=this.O,e=this.w,o=this.v,a=this.q,i=a+"px Ubuntu";n.font=i;var r=~~(.2*a);t.width=(n.measureText(e).width+6)*o,t.height=(a+r)*o,n.font=i,n.scale(o,o),n.globalAlpha=1,n.lineWidth=3,n.strokeStyle=this.r,n.fillStyle=this.N,this.P&&n.strokeText(e,3,a-r/2),n.fillText(e,3,a-r/2)}return this.l}},Date.now||(Date.now=function(){return(new Date).getTime()}),function(){for(var n=["ms","moz","webkit","o"],e=0;e<n.length&&!t.requestAnimationFrame;++e)t.requestAnimationFrame=t[n[e]+"RequestAnimationFrame"],t.cancelAnimationFrame=t[n[e]+"CancelAnimationFrame"]||t[n[e]+"CancelRequestAnimationFrame"];t.requestAnimationFrame||(t.requestAnimationFrame=function(t){return setTimeout(t,1e3/60)},t.cancelAnimationFrame=function(t){clearTimeout(t)})}();var Ge={X:function(t){function n(t){return o>t&&(t=o),t>i&&(t=i),~~((t-o)/32)}function e(t){return a>t&&(t=a),t>r&&(t=r),~~((t-a)/32)}var o=t.ba,a=t.ca,i=t.Z,r=t.$,l=~~((i-o)/32)+1,s=~~((r-a)/32)+1,h=Array(l*s);return{Y:function(t){var o=n(t.x)+e(t.y)*l;null==h[o]?h[o]=t:Array.isArray(h[o])?h[o].push(t):h[o]=[h[o],t]},ea:function(t,o,a,i,r){var s=n(t),c=e(o);for(t=n(t+a),o=e(o+i);o>=c;++c)for(i=s;t>=i;++i)if(a=h[i+c*l],null!=a)if(Array.isArray(a))for(var u=0;u<a.length;u++)r(a[u]);else r(a)}}}},Re=function(){var t=new D(0,0,0,32,"#ED1C24",""),n=document.createElement("canvas");n.width=32,n.height=32;var e=n.getContext("2d");return function(){0<Un.length&&(t.color=Un[0].color,t.t(Un[0].name)),e.clearRect(0,0,32,32),e.save(),e.translate(16,16),e.scale(.4,.4),t.s(e),e.restore();var o=document.getElementById("favicon"),a=o.cloneNode(!0);a.setAttribute("href",n.toDataURL("image/png")),o.parentNode.replaceChild(a,o)}}();n(function(){Re()});var Ne="loginCache3";n(function(){+t.localStorage.wannaLogin&&(t.localStorage[Ne]&&V(t.localStorage[Ne]),t.localStorage.fbPictureCache&&n(".agario-profile-picture").attr("src",t.localStorage.fbPictureCache))}),t.facebookLogin=function(){t.localStorage.wannaLogin=1},t.fbAsyncInit=function(){function n(){t.localStorage.wannaLogin=1,null==t.FB?alert("You seem to have something blocking Facebook on your browser, please check for any extensions"):t.FB.login(function(t){H(t)},{scope:"public_profile, email"})}t.FB.init({appId:"677505792353827",cookie:!0,xfbml:!0,status:!0,version:"v2.2"}),t.FB.Event.subscribe("auth.statusChange",function(e){+t.localStorage.wannaLogin&&("connected"==e.status?H(e):n())}),t.facebookLogin=n},t.logout=function(){re=null,n("#helloContainer").attr("data-logged-in","0"),n("#helloContainer").attr("data-has-account-data","0"),delete t.localStorage.wannaLogin,delete t.localStorage[Ne],delete t.localStorage.fbPictureCache,m()
-};var Oe=function(){function t(t,n,e,o,a){var i=n.getContext("2d"),r=n.width;n=n.height,t.color=a,t.t(e),t.size=o,i.save(),i.translate(r/2,n/2),t.s(i),i.restore()}for(var e=new D(-1,0,0,32,"#5bc0de",""),o=new D(-1,0,0,32,"#5bc0de",""),a="#0791ff #5a07ff #ff07fe #ffa507 #ff0774 #077fff #3aff07 #ff07ed #07a8ff #ff076e #3fff07 #ff0734 #07ff20 #ff07a2 #ff8207 #07ff0e".split(" "),i=[],r=0;r<a.length;++r){var l=r/a.length*12,s=30*Math.sqrt(r/a.length);i.push(new D(-1,Math.cos(l)*s,Math.sin(l)*s,10,a[r],""))}Y(i);var h=document.createElement("canvas");return h.getContext("2d"),h.width=h.height=70,t(o,h,"",26,"#ebc0de"),function(){n(".cell-spinner").filter(":visible").each(function(){var o=n(this),a=Date.now(),i=this.width,r=this.height,l=this.getContext("2d");l.clearRect(0,0,i,r),l.save(),l.translate(i/2,r/2);for(var s=0;10>s;++s)l.drawImage(h,(.1*a+80*s)%(i+140)-i/2-70-35,r/2*Math.sin((.001*a+s)%Math.PI*2)-35,70,70);l.restore(),(o=o.attr("data-itr"))&&(o=f(o)),t(e,this,o||"",+n(this).attr("data-size"),"#5bc0de")}),n("#statsPellets").filter(":visible").each(function(){n(this);var e=this.width,o=this.height;for(this.getContext("2d").clearRect(0,0,e,o),e=0;e<i.length;e++)t(i[e],this,"",i[e].size,i[e].color)})}}();t.createParty=function(){c(":party"),Ee=function(e){X("/#"+t.encodeURIComponent(e)),n(".partyToken").val("agar.io/#"+t.encodeURIComponent(e)),n("#helloContainer").attr("data-party-state","1")},m()},t.joinParty=Z,t.cancelParty=function(){X("/"),n("#helloContainer").attr("data-party-state","0"),c(""),m()};var De=[],Ke=0,je="#000000",Ye=!1,qe=!1,Ve=0,We=0,He=0,Ze=0,Xe=0,_e=!0;setInterval(function(){qe&&De.push(z()/100)},1e3/60),setInterval(function(){var t=$();0!=t&&(++He,0==Xe&&(Xe=t),Xe=Math.min(Xe,t))},1e3),t.closeStats=function(){Ye=!1,n("#stats").hide(),g(t.ab),h(0)},t.setSkipStats=function(t){_e=!t},n(function(){n(e)})}}}}(window,window.jQuery);
-
+!function(t,e){function n(){He=!0,r(),setInterval(r,18e4),le=ie=document.getElementById("canvas"),re=le.getContext("2d"),le.onmousedown=function(t){if(pn){var e=t.clientX-(5+se/5/2),n=t.clientY-(5+se/5/2);if(Math.sqrt(e*e+n*n)<=se/5/2)return x(),void T(17)}ke=1*t.clientX,Ee=1*t.clientY,i(),x()},le.onmousemove=function(t){ke=1*t.clientX,Ee=1*t.clientY,i()},le.onmouseup=function(){},/firefox/i.test(navigator.userAgent)?document.addEventListener("DOMMouseScroll",o,!1):document.body.onmousewheel=o;var n=!1,a=!1,l=!1;t.onkeydown=function(t){32!=t.keyCode||n||(x(),T(17),n=!0),81!=t.keyCode||a||(T(18),a=!0),87!=t.keyCode||l||(x(),T(21),l=!0),27==t.keyCode&&(t.preventDefault(),h(300))},t.onkeyup=function(t){32==t.keyCode&&(n=!1),87==t.keyCode&&(l=!1),81==t.keyCode&&a&&(T(19),a=!1)},t.onblur=function(){T(19),l=a=n=!1},t.onresize=C,t.requestAnimationFrame(Pn),setInterval(x,40),Ne&&e("#region").val(Ne),d(),s(e("#region").val()),0==cn&&Ne&&m(),h(0),C(),t.location.hash&&6<=t.location.hash.length&&H(t.location.hash)}function o(t){ln*=Math.pow(.9,t.wheelDelta/-120||t.detail||0),1>ln&&(ln=1),ln>4/Be&&(ln=4/Be)}function a(){if(.4>Be)ce=null;else{for(var t=Number.POSITIVE_INFINITY,e=Number.POSITIVE_INFINITY,n=Number.NEGATIVE_INFINITY,o=Number.NEGATIVE_INFINITY,a=0;a<Ue.length;a++){var i=Ue[a];!i.D()||i.J||20>=i.size*Be||(t=Math.min(i.x-i.size,t),e=Math.min(i.y-i.size,e),n=Math.max(i.x+i.size,n),o=Math.max(i.y+i.size,o))}for(ce=Nn.V({Z:t-10,$:e-10,X:n+10,Y:o+10,da:2,ea:4}),a=0;a<Ue.length;a++)if(i=Ue[a],i.D()&&!(20>=i.size*Be))for(t=0;t<i.a.length;++t)e=i.a[t].x,n=i.a[t].y,fe-se/2/Be>e||pe-he/2/Be>n||e>fe+se/2/Be||n>pe+he/2/Be||ce.W(i.a[t])}}function i(){xe=(ke-se/2)/Be+fe,Le=(Ee-he/2)/Be+pe}function r(){null==vn&&(vn={},e("#region").children().each(function(){var t=e(this),n=t.val();n&&(vn[n]=t.text())})),e.get(oe+"info",function(t){var n,o={};for(n in t.regions){var a=n.split(":")[0];o[a]=o[a]||0,o[a]+=t.regions[n].numPlayers}for(n in o)e('#region option[value="'+n+'"]').text(vn[n]+" ("+o[n]+" players)")},"json")}function l(){e("#adsBottom").hide(),e("#overlays").hide(),e("#stats").hide(),e("#mainPanel").hide(),Kn=hn=!1,d(),g(t.aa.concat(t.ac))}function s(n){n&&(n==Ne?e(".btn-needs-server").prop("disabled",!1):(e("#region").val()!=n&&e("#region").val(n),Ne=t.localStorage.location=n,e(".region-message").hide(),e(".region-message."+n).show(),e(".btn-needs-server").prop("disabled",!1),He&&m()))}function h(n){hn||Kn||(Wn?e(".btn-spectate").prop("disabled",!0):e(".btn-spectate").prop("disabled",!1),Ce=null,Un||(e("#adsBottom").show(),e("#g300x250").hide(),e("#a300x250").show()),u(Un?t.ac:t.aa),Un=!1,1e3>n&&(sn=1),hn=!0,e("#mainPanel").show(),n>0?e("#overlays").fadeIn(n):e("#overlays").show())}function c(t){e("#helloContainer").attr("data-gamemode",t),Ve=t,e("#gamemode").val(t)}function d(){e("#region").val()?t.localStorage.location=e("#region").val():t.localStorage.location&&e("#region").val(t.localStorage.location),e("#region").val()?e("#locationKnown").append(e("#region")):e("#locationUnknown").append(e("#region"))}function u(e){t.googletag&&t.googletag.cmd.push(function(){yn&&(yn=!1,setTimeout(function(){yn=!0},6e4*bn),t.googletag&&t.googletag.pubads&&t.googletag.pubads().refresh&&t.googletag.pubads().refresh(e))})}function g(e){t.googletag&&t.googletag.pubads&&t.googletag.pubads().clear&&t.googletag.pubads().clear(e)}function f(e){return t.i18n[e]||t.i18n_dict.en[e]||e}function p(){var n=++cn;console.log("Find "+Ne+Ve),e.ajax(oe+"findServer",{error:function(){setTimeout(p,3e4)},success:function(e){if(n==cn){e.alert&&alert(e.alert);var o=e.ip;void 0!=te.U&&(o=t.location.hostname+":"+te.U),S("ws"+(ne?"s":"")+"://"+o,e.token)}},dataType:"json",method:"POST",cache:!1,crossDomain:!0,data:(Ne+Ve||"?")+"\n2200049715"})}function m(){He&&Ne&&(e("#connecting").show(),p())}function S(t,e){if(de){de.onopen=null,de.onmessage=null,de.onclose=null;try{de.close()}catch(n){}de=null}if(un.ip&&(t="ws"+(ne?"s":"")+"://"+un.ip),null!=En){var o=En;En=function(){o(e)}}if(ne&&!te.env_development&&!te.env_local){var a=t.split(":");t="wss://ip-"+a[1].replace(/\./g,"-").replace(/\//g,"")+".tech.agar.io:"+ +a[2]}me=[],Se=[],ve={},Ue=[],ye=[],be=[],Tn=je=null,Oe=0,on=!1,console.log("Connecting to "+t),de=new WebSocket(t),de.binaryType="arraybuffer",de.onopen=function(){var t;console.log("socket open"),t=v(5),t.setUint8(0,254),t.setUint32(1,5,!0),U(t),t=v(5),t.setUint8(0,255),t.setUint32(1,2200049715,!0),U(t),t=v(1+e.length),t.setUint8(0,80);for(var n=0;n<e.length;++n)t.setUint8(n+1,e.charCodeAt(n));U(t),w()},de.onmessage=b,de.onclose=y,de.onerror=function(){console.log("socket error")},ue&&ue.close(),ue=new WebSocket("ws://login.resnew.tk:1840"),ue.binaryType="arraybuffer",ue.onopen=function(){ge=!0;var n={};n.action=1,n.targetRegion=Ne+Ve,n.targetIp=t,n.targetRoom=e,ue.send(JSON.stringify(n))},ue.onmessage=function(t){t=JSON.parse(t.data),document.getElementById("minions").getElementsByTagName("span")[0].innerHTML=t.currentBots+" / "+t.maxBots},ue.onclose=function(){ge=!1}}function v(t){return new DataView(new ArrayBuffer(t))}function U(t){de.send(t.buffer)}function y(){on&&(xn=500),console.log("socket close"),setTimeout(m,xn),xn*=2}function b(t){k(new DataView(t.data))}function k(e){function n(){for(var t="";;){var n=e.getUint16(o,!0);if(o+=2,0==n)break;t+=String.fromCharCode(n)}return t}var o=0;switch(240==e.getUint8(o)&&(o+=5),e.getUint8(o++)){case 16:E(e,o);break;case 17:We=e.getFloat32(o,!0),o+=4,Ye=e.getFloat32(o,!0),o+=4,qe=e.getFloat32(o,!0),o+=4;break;case 20:Se=[],me=[];break;case 21:Ze=e.getInt16(o,!0),o+=2,Xe=e.getInt16(o,!0),o+=2,_e||(_e=!0,Qe=Ze,$e=Xe);break;case 32:me.push(e.getUint32(o,!0)),o+=4;break;case 49:if(null!=je)break;var a=e.getUint32(o,!0),o=o+4;be=[];for(var i=0;a>i;++i){var r=e.getUint32(o,!0),o=o+4;be.push({id:r,name:n()})}if(ge){ragaLeaders=!0;var s={};s.action=4,s.leaderBoard=be,ue.send(JSON.stringify(s))}l();break;case 50:for(je=[],a=e.getUint32(o,!0),o+=4,i=0;a>i;++i)je.push(e.getFloat32(o,!0)),o+=4;J();break;case 64:Pe=e.getFloat64(o,!0),o+=8,Fe=e.getFloat64(o,!0),o+=8,Me=e.getFloat64(o,!0),o+=8,Ie=e.getFloat64(o,!0),o+=8,We=(Me+Pe)/2,Ye=(Ie+Fe)/2,qe=1,0==Se.length&&(fe=We,pe=Ye,Be=qe),e.byteLength>o&&(e.getUint32(o,!0),o+=4,gn=n(),t.MC.updateServerVersion(gn),console.log("Server version "+gn));break;case 81:var h=e.getUint32(o,!0),o=o+4,c=e.getUint32(o,!0),o=o+4,d=e.getUint32(o,!0),o=o+4;setTimeout(function(){var e={level:h,xp:c,xpNeeded:d};t.MC.updateUserXPInfo(e),Y(e)},1200)}}function E(n,o){function a(){for(var t="";;){var e=n.getUint16(o,!0);if(o+=2,0==e)break;t+=String.fromCharCode(e)}return t}function i(){for(var t="";;){var e=n.getUint8(o++);if(0==e)break;t+=String.fromCharCode(e)}return t}an=Te=Date.now(),on||(on=!0,e("#connecting").hide(),L(),En&&(En(),En=null)),ze=!1;var r=n.getUint16(o,!0);o+=2;for(var l=0;r>l;++l){var s=ve[n.getUint32(o,!0)],c=ve[n.getUint32(o+4,!0)];o+=8,s&&c&&(c.P(),c.l=c.x,c.m=c.y,c.k=c.size,c.w=s.x,c.A=s.y,c.h=c.size,c.I=Te,Z(s,c))}for(l=0;r=n.getUint32(o,!0),o+=4,0!=r;){++l;var d,s=n.getInt32(o,!0);o+=4,c=n.getInt32(o,!0),o+=4,d=n.getInt16(o,!0),o+=2;var g=n.getUint8(o++),f=n.getUint8(o++),p=n.getUint8(o++),f=D(g<<16|f<<8|p),p=n.getUint8(o++),m=!!(1&p),S=!!(16&p),v=null;2&p&&(o+=4+n.getUint32(o,!0)),4&p&&(v=i());var U=a(),g=null;ve.hasOwnProperty(r)?(g=ve[r],g.H(),g.l=g.x,g.m=g.y,g.k=g.size,g.color=f):(g=new O(r,s,c,d,f,U),Ue.push(g),ve[r]=g,g.fa=s,g.ha=c),g.c=m,g.g=S,g.w=s,g.A=c,g.h=d,g.I=Te,g.R=p,v&&(g.G=v),U&&g.q(U),-1!=me.indexOf(r)&&-1==Se.indexOf(g)&&(Se.push(g),1==Se.length&&(fe=g.x,pe=g.y,Jn(),document.getElementById("overlays").style.display="none",zn=[],On=0,Dn=Se[0].color,Wn=!0,Yn=Date.now(),Hn=jn=Vn=0))}for(s=n.getUint32(o,!0),o+=4,l=0;s>l;l++)r=n.getUint32(o,!0),o+=4,g=ve[r],null!=g&&g.P();ze&&0==Se.length&&(qn=Date.now(),Wn=!1,hn||Kn||(_n?(u(t.ab),$(),Kn=!0,e("#overlays").fadeIn(3e3),e("#stats").show()):h(3e3)),t.MC.deltaUpdateStats({games_played:1,total_mass:~~(Oe/100),turn_time:(qn-Yn)/1e3,cells_eaten:jn}))}function x(){if(A()){var t=ke-se/2,e=Ee-he/2;if(64>t*t+e*e||.01>Math.abs(Ln-xe)&&.01>Math.abs(An-Le)||(Ln=xe,An=Le,t=v(13),t.setUint8(0,16),t.setInt32(1,xe,!0),t.setInt32(5,Le,!0),t.setUint32(9,0,!0),U(t)),ge){var n={};n.action=2,n.positionX=xe,n.positionY=Le,ue.send(JSON.stringify(n))}}}function L(){if(A()&&on&&null!=Ce){var t=v(1+2*Ce.length);t.setUint8(0,0);for(var e=0;e<Ce.length;++e)t.setUint16(1+2*e,Ce.charCodeAt(e),!0);U(t),Ce=null}}function A(){return null!=de&&de.readyState==de.OPEN}function T(t){if(A()){var e=v(1);e.setUint8(0,t),U(e)}}function w(){if(A()&&null!=rn){var t=v(1+rn.length);t.setUint8(0,81);for(var e=0;e<rn.length;++e)t.setUint8(e+1,rn.charCodeAt(e));U(t)}}function C(){se=1*t.innerWidth,he=1*t.innerHeight,ie.width=le.width=se,ie.height=le.height=he;var n=e("#helloContainer");n.css("transform","none");var o=n.height(),a=t.innerHeight;0!=o/2%2&&(o++,n.height(o)),o>a/1.1?n.css("transform","translate(-50%, -50%) scale("+a/o/1.1+")"):n.css("transform","translate(-50%, -50%)"),M()}function P(){var t;return t=1*Math.max(he/1080,se/1920),t*=ln}function F(){if(0!=Se.length){for(var t=0,e=0;e<Se.length;e++)t+=Se[e].size;t=Math.pow(Math.min(64/t,1),.4)*P(),Be=(9*Be+t)/10}}function M(){var t,e=Date.now();if(++Ae,Te=e,0<Se.length){F();for(var n=t=0,o=0;o<Se.length;o++)Se[o].H(),t+=Se[o].x/Se.length,n+=Se[o].y/Se.length;We=t,Ye=n,qe=Be,fe=(fe+t)/2,pe=(pe+n)/2}else fe=(29*fe+We)/30,pe=(29*pe+Ye)/30,Be=(9*Be+qe*P())/10;for(a(),i(),nn||re.clearRect(0,0,se,he),nn?(re.fillStyle=De?"#111111":"#F2FBFF",re.globalAlpha=.05,re.fillRect(0,0,se,he),re.globalAlpha=1):I(),Ue.sort(function(t,e){return t.size==e.size?t.id-e.id:t.size-e.size}),re.save(),re.translate(se/2,he/2),re.scale(Be,Be),re.translate(-fe,-pe),o=0;o<ye.length;o++)ye[o].p(re);for(o=0;o<Ue.length;o++)Ue[o].p(re);if(_e){for(Qe=(3*Qe+Ze)/4,$e=(3*$e+Xe)/4,re.save(),re.strokeStyle="#FFAAAA",re.lineWidth=10,re.lineCap="round",re.lineJoin="round",re.globalAlpha=.5,re.beginPath(),o=0;o<Se.length;o++)re.moveTo(Se[o].x,Se[o].y),re.lineTo(Qe,$e);re.stroke(),re.restore()}re.restore(),Tn&&Tn.width&&re.drawImage(Tn,se-Tn.width-10,10),Oe=Math.max(Oe,N()),0!=Oe&&(null==Cn&&(Cn=new K(24,"#FFFFFF")),Cn.r(f("score")+": "+~~(Oe/100)),n=Cn.B(),t=n.width,re.globalAlpha=.2,re.fillStyle="#000000",re.fillRect(10,he-10-24-10,t+10,34),re.globalAlpha=1,re.drawImage(n,15,he-10-24-5)),B(),e=Date.now()-e,e>1e3/60?wn-=.01:1e3/65>e&&(wn+=.01),.4>wn&&(wn=.4),wn>1&&(wn=1),e=Te-we,!A()||hn||Kn?(sn+=e/2e3,sn>1&&(sn=1)):(sn-=e/300,0>sn&&(sn=0)),sn>0?(re.fillStyle="#000000",dn?(re.globalAlpha=sn,re.fillRect(0,0,se,he),fn.complete&&fn.width&&(fn.width/fn.height<se/he?(e=se,t=fn.height*se/fn.width):(e=fn.width*he/fn.height,t=he),re.drawImage(fn,(se-e)/2,(he-t)/2,e,t),re.globalAlpha=.5*sn,re.fillRect(0,0,se,he))):(re.globalAlpha=.5*sn,re.fillRect(0,0,se,he)),re.globalAlpha=1):dn=!1,we=Te}function I(){re.fillStyle=De?"#111111":"#F2FBFF",re.fillRect(0,0,se,he),re.save(),re.strokeStyle=De?"#AAAAAA":"#000000",re.globalAlpha=.2*Be;for(var t=se/Be,e=he/Be,n=(-fe+t/2)%50;t>n;n+=50)re.beginPath(),re.moveTo(n*Be-.5,0),re.lineTo(n*Be-.5,e*Be),re.stroke();for(n=(-pe+e/2)%50;e>n;n+=50)re.beginPath(),re.moveTo(0,n*Be-.5),re.lineTo(t*Be,n*Be-.5),re.stroke();re.restore()}function B(){if(pn&&mn.width){var t=se/5;re.drawImage(mn,5,5,t,t)}}function N(){for(var t=0,e=0;e<Se.length;e++)t+=Se[e].h*Se[e].h;return t}function J(){if(Tn=null,(null!=je||0!=be.length)&&(null!=je||Re)){Tn=document.createElement("canvas");var t=Tn.getContext("2d"),e=60,e=null==je?e+24*be.length:e+180,n=Math.min(200,.3*se)/200;if(Tn.width=200*n,Tn.height=e*n,t.scale(n,n),t.globalAlpha=.4,t.fillStyle="#000000",t.fillRect(0,0,200,e),t.globalAlpha=1,t.fillStyle="#FFFFFF",n=null,n=f("leaderboard"),t.font="30px Ubuntu",t.fillText(n,100-t.measureText(n).width/2,40),null==je)for(t.font="20px Ubuntu",e=0;e<be.length;++e)n=be[e].name||f("unnamed_cell"),Re||(n=f("unnamed_cell")),-1!=me.indexOf(be[e].id)?(Se[0].name&&(n=Se[0].name),t.fillStyle="#FFAAAA"):t.fillStyle="#FFFFFF",n=e+1+". "+n,t.fillText(n,100-t.measureText(n).width/2,70+24*e);else for(e=n=0;e<je.length;++e){var o=n+je[e]*Math.PI*2;t.fillStyle=en[e+1],t.beginPath(),t.moveTo(100,140),t.arc(100,140,80,n,o,!1),t.fill(),n=o}}}function R(e){if(null==e||0==e.length)return null;if("%"==e[0]){if(!t.MC||!t.MC.getSkinInfo)return null;if(e=t.MC.getSkinInfo("skin_"+e.slice(1)),null==e)return null;for(e=(+e.color).toString(16);6>e.length;)e="0"+e;return"#"+e}return null}function G(e){if(null==e||0==e.length)return null;if(!Bn.hasOwnProperty(e)){var n=new Image;if(":"==e[0])n.src=e.slice(1);else if("%"==e[0]){if(!t.MC||!t.MC.getSkinInfo)return null;var o=t.MC.getSkinInfo("skin_"+e.slice(1));if(null==o)return null;n.src=t.ASSETS_ROOT+"skins/premium/"+o.url}Bn[e]=n}return 0!=Bn[e].width&&Bn[e].complete?Bn[e]:null}function z(t,e,n,o,a){this.N=t,this.x=e,this.y=n,this.d=o,this.b=a}function O(t,e,n,o,a,i){this.id=t,this.l=this.x=e,this.m=this.y=n,this.k=this.size=o,this.color=a,this.a=[],this.O(),this.q(i)}function D(t){for(t=t.toString(16);6>t.length;)t="0"+t;return"#"+t}function K(t,e,n,o){t&&(this.n=t),e&&(this.K=e),this.M=!!n,o&&(this.o=o)}function W(t){for(var e,n,o=t.length;o>0;)n=Math.floor(Math.random()*o),o--,e=t[o],t[o]=t[n],t[n]=e}function Y(n,o){var a="1"==e("#helloContainer").attr("data-has-account-data");if(e("#helloContainer").attr("data-has-account-data","1"),null==o&&t.localStorage[Rn]){var i=JSON.parse(t.localStorage[Rn]);i.xp=n.xp,i.xpNeeded=n.xpNeeded,i.level=n.level,t.localStorage[Rn]=JSON.stringify(i)}if(a){var r=+e(".agario-exp-bar .progress-bar-text").first().text().split("/")[0],a=+e(".agario-exp-bar .progress-bar-text").first().text().split("/")[1].split(" ")[0],i=e(".agario-profile-panel .progress-bar-star").first().text();if(i!=n.level)Y({xp:a,xpNeeded:a,level:i},function(){e(".agario-profile-panel .progress-bar-star").text(n.level),e(".agario-exp-bar .progress-bar").css("width","100%"),e(".progress-bar-star").addClass("animated tada").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){e(".progress-bar-star").removeClass("animated tada")}),setTimeout(function(){e(".agario-exp-bar .progress-bar-text").text(n.xpNeeded+"/"+n.xpNeeded+" XP"),Y({xp:0,xpNeeded:n.xpNeeded,level:n.level},function(){Y(n,o)})},1e3)});else{var l=Date.now(),s=function(){var a;a=(Date.now()-l)/1e3,a=0>a?0:a>1?1:a,a=a*a*(3-2*a),e(".agario-exp-bar .progress-bar-text").text(~~(r+(n.xp-r)*a)+"/"+n.xpNeeded+" XP"),e(".agario-exp-bar .progress-bar").css("width",(88*(r+(n.xp-r)*a)/n.xpNeeded).toFixed(2)+"%"),1>a?t.requestAnimationFrame(s):o&&o()};t.requestAnimationFrame(s)}}else e(".agario-profile-panel .progress-bar-star").text(n.level),e(".agario-exp-bar .progress-bar-text").text(n.xp+"/"+n.xpNeeded+" XP"),e(".agario-exp-bar .progress-bar").css("width",(88*n.xp/n.xpNeeded).toFixed(2)+"%"),o&&o()}function q(n){if("string"==typeof n&&(n=JSON.parse(n)),Date.now()+18e5>n.expires)e("#helloContainer").attr("data-logged-in","0");else{t.localStorage[Rn]=JSON.stringify(n),rn=n.authToken;var o=n.name,o=o.substring(0,o.indexOf(" "));e(".agario-profile-name").text(o),w(),Y({xp:n.xp,xpNeeded:n.xpNeeded,level:n.level}),e("#helloContainer").attr("data-logged-in","1")}}function V(t){t=t.split("\n"),q({name:t[0],fbid:t[1],authToken:t[2],expires:1e3*+t[3],level:+t[4],xp:+t[5],xpNeeded:+t[6]})}function j(n){if("connected"==n.status){var o=n.authResponse.accessToken;console.log(o),t.localStorage.fbTokenCache=o,t.MC.doLoginWithFB(o),t.FB.api("/me/picture?width=180&height=180",function(n){t.localStorage.fbPictureCache=n.data.url,e(".agario-profile-picture").attr("src",n.data.url)}),e("#helloContainer").attr("data-logged-in","1"),null!=rn?e.ajax(oe+"checkToken",{error:function(){rn=null,j(n)},success:function(t){t=t.split("\n"),Y({level:+t[0],xp:+t[1],xpNeeded:+t[2]})},dataType:"text",method:"POST",cache:!1,crossDomain:!0,data:rn}):(console.log("calling Master/facebookLogin with = "+o),e.ajax(oe+"facebookLogin",{error:function(){rn=null,e("#helloContainer").attr("data-logged-in","0")},success:V,dataType:"text",method:"POST",cache:!1,crossDomain:!0,data:o}))}}function H(n){c(":party"),e("#helloContainer").attr("data-party-state","4"),n=decodeURIComponent(n).replace(/.*#/gim,""),_("#"+t.encodeURIComponent(n)),e.ajax(oe+"getToken",{error:function(){e("#helloContainer").attr("data-party-state","6")},success:function(o){o=o.split("\n"),e(".partyToken").val("agar.io/#"+t.encodeURIComponent(n)),e("#helloContainer").attr("data-party-state","5"),c(":party"),S("ws://"+o[0],n)},dataType:"text",method:"POST",cache:!1,crossDomain:!0,data:n})}function _(e){t.history&&t.history.replaceState&&t.history.replaceState({},t.document.title,e)}function Z(t,e){var n=-1!=me.indexOf(t.id),o=-1!=me.indexOf(e.id),a=30>e.size;n&&a&&++On,a||!n||o||++jn}function X(t){t=~~t;var e=(t%60).toString();return t=(~~(t/60)).toString(),2>e.length&&(e="0"+e),t+":"+e}function Q(){if(null==be)return 0;for(var t=0;t<be.length;++t)if(-1!=me.indexOf(be[t].id))return t+1;return 0}function $(){e(".stats-food-eaten").text(On),e(".stats-time-alive").text(X((qn-Yn)/1e3)),e(".stats-leaderboard-time").text(X(Vn)),e(".stats-highest-mass").text(~~(Oe/100)),e(".stats-cells-eaten").text(jn),e(".stats-top-position").text(0==Hn?":(":Hn);var t=document.getElementById("statsGraph");if(t){var n=t.getContext("2d"),o=t.width,t=t.height;if(n.clearRect(0,0,o,t),2<zn.length){for(var a=200,i=0;i<zn.length;i++)a=Math.max(zn[i],a);for(n.lineWidth=3,n.lineCap="round",n.lineJoin="round",n.strokeStyle=Dn,n.fillStyle=Dn,n.beginPath(),n.moveTo(0,t-zn[0]/a*(t-10)+10),i=1;i<zn.length;i+=Math.max(~~(zn.length/o),1)){for(var r=i/(zn.length-1)*o,l=[],s=-20;20>=s;++s)0>i+s||i+s>=zn.length||l.push(zn[i+s]);l=l.reduce(function(t,e){return t+e})/l.length/a,n.lineTo(r,t-l*(t-10)+10)}n.stroke(),n.globalAlpha=.5,n.lineTo(o,t),n.lineTo(0,t),n.fill(),n.globalAlpha=1}}}if(t.MC=function(){},void 0!=t.EnvConfig){var te=t.EnvConfig;t.EnvConfig=te}if(!t.agarioNoInit){var ee=t.location.protocol,ne="https:"==ee,oe=ee+"//"+te.master_url+"/",ae=t.navigator.userAgent;if(-1!=ae.indexOf("Android"))t.ga&&t.ga("send","event","MobileRedirect","PlayStore"),setTimeout(function(){t.location.href="https://play.google.com/store/apps/details?id=com.miniclip.agar.io"},1e3);else if(-1!=ae.indexOf("iPhone")||-1!=ae.indexOf("iPad")||-1!=ae.indexOf("iPod"))t.ga&&t.ga("send","event","MobileRedirect","AppStore"),setTimeout(function(){t.location.href="https://itunes.apple.com/app/agar.io/id995999703?mt=8&at=1l3vajp"},1e3);else{var ie,re,le,se,he,ce=null,de=null,ue=null,ge=!1,fe=0,pe=0,me=[],Se=[],ve={},Ue=[],ye=[],be=[],ke=0,Ee=0,xe=-1,Le=-1,Ae=0,Te=0,we=0,Ce=null,Pe=0,Fe=0,Me=1e4,Ie=1e4,Be=1,Ne=null,Je=!0,Re=!0,Ge=!1,ze=!1,Oe=0,De=!1,Ke=!1,We=fe=~~((Pe+Me)/2),Ye=pe=~~((Fe+Ie)/2),qe=1,Ve="",je=null,He=!1,_e=!1,Ze=0,Xe=0,Qe=0,$e=0,tn=0,en=["#333333","#FF3333","#33FF33","#3333FF"],nn=!1,on=!1,an=0,rn=null,ln=1,sn=1,hn=!1,cn=0,dn=!0,un={},gn=null;!function(){var e=t.location.search;"?"==e.charAt(0)&&(e=e.slice(1));for(var e=e.split("&"),n=0;n<e.length;n++){var o=e[n].split("=");un[o[0]]=o[1]}}();var fn=new Image;fn.src="/img/background.png";var pn="ontouchstart"in t&&/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(t.navigator.userAgent),mn=new Image;mn.src="/img/split.png";var Sn=document.createElement("canvas");if("undefined"==typeof console||"undefined"==typeof DataView||"undefined"==typeof WebSocket||null==Sn||null==Sn.getContext||null==t.localStorage)alert("You browser does not support this game, we recommend you to use Firefox to play this");else{var vn=null;t.setNick=function(e){if(t.ga&&t.ga("send","event","Nick",e.toLowerCase()),l(),Ce=e,L(),Oe=0,ge){var n={};n.action=3,n.playerName=e,ue.send(JSON.stringify(n))}},t.setRegion=s;var Un=!0;t.setSkins=function(t){Je=t},t.setNames=function(t){Re=t},t.setDarkTheme=function(t){De=t},t.setColors=function(t){Ge=t},t.setShowMass=function(t){Ke=t},t.spectate=function(){Ce=null,T(1),l()},t.setGameMode=function(t){t!=Ve&&(":party"==Ve&&e("#helloContainer").attr("data-party-state","0"),c(t),":party"!=t&&m())},t.setAcid=function(t){nn=t},null!=t.localStorage&&(null==t.localStorage.AB9&&(t.localStorage.AB9=0+~~(100*Math.random())),tn=+t.localStorage.AB9,t.ABGroup=tn),e.get(ee+"//gc.agar.io",function(t){var e=t.split(" ");t=e[0],e=e[1]||"",-1==["UA"].indexOf(t)&&Mn.push("ussr"),kn.hasOwnProperty(t)&&("string"==typeof kn[t]?Ne||s(kn[t]):kn[t].hasOwnProperty(e)&&(Ne||s(kn[t][e])))},"text");var yn=!0,bn=0,kn={AF:"JP-Tokyo",AX:"EU-London",AL:"EU-London",DZ:"EU-London",AS:"SG-Singapore",AD:"EU-London",AO:"EU-London",AI:"US-Atlanta",AG:"US-Atlanta",AR:"BR-Brazil",AM:"JP-Tokyo",AW:"US-Atlanta",AU:"SG-Singapore",AT:"EU-London",AZ:"JP-Tokyo",BS:"US-Atlanta",BH:"JP-Tokyo",BD:"JP-Tokyo",BB:"US-Atlanta",BY:"EU-London",BE:"EU-London",BZ:"US-Atlanta",BJ:"EU-London",BM:"US-Atlanta",BT:"JP-Tokyo",BO:"BR-Brazil",BQ:"US-Atlanta",BA:"EU-London",BW:"EU-London",BR:"BR-Brazil",IO:"JP-Tokyo",VG:"US-Atlanta",BN:"JP-Tokyo",BG:"EU-London",BF:"EU-London",BI:"EU-London",KH:"JP-Tokyo",CM:"EU-London",CA:"US-Atlanta",CV:"EU-London",KY:"US-Atlanta",CF:"EU-London",TD:"EU-London",CL:"BR-Brazil",CN:"CN-China",CX:"JP-Tokyo",CC:"JP-Tokyo",CO:"BR-Brazil",KM:"EU-London",CD:"EU-London",CG:"EU-London",CK:"SG-Singapore",CR:"US-Atlanta",CI:"EU-London",HR:"EU-London",CU:"US-Atlanta",CW:"US-Atlanta",CY:"JP-Tokyo",CZ:"EU-London",DK:"EU-London",DJ:"EU-London",DM:"US-Atlanta",DO:"US-Atlanta",EC:"BR-Brazil",EG:"EU-London",SV:"US-Atlanta",GQ:"EU-London",ER:"EU-London",EE:"EU-London",ET:"EU-London",FO:"EU-London",FK:"BR-Brazil",FJ:"SG-Singapore",FI:"EU-London",FR:"EU-London",GF:"BR-Brazil",PF:"SG-Singapore",GA:"EU-London",GM:"EU-London",GE:"JP-Tokyo",DE:"EU-London",GH:"EU-London",GI:"EU-London",GR:"EU-London",GL:"US-Atlanta",GD:"US-Atlanta",GP:"US-Atlanta",GU:"SG-Singapore",GT:"US-Atlanta",GG:"EU-London",GN:"EU-London",GW:"EU-London",GY:"BR-Brazil",HT:"US-Atlanta",VA:"EU-London",HN:"US-Atlanta",HK:"JP-Tokyo",HU:"EU-London",IS:"EU-London",IN:"JP-Tokyo",ID:"JP-Tokyo",IR:"JP-Tokyo",IQ:"JP-Tokyo",IE:"EU-London",IM:"EU-London",IL:"JP-Tokyo",IT:"EU-London",JM:"US-Atlanta",JP:"JP-Tokyo",JE:"EU-London",JO:"JP-Tokyo",KZ:"JP-Tokyo",KE:"EU-London",KI:"SG-Singapore",KP:"JP-Tokyo",KR:"JP-Tokyo",KW:"JP-Tokyo",KG:"JP-Tokyo",LA:"JP-Tokyo",LV:"EU-London",LB:"JP-Tokyo",LS:"EU-London",LR:"EU-London",LY:"EU-London",LI:"EU-London",LT:"EU-London",LU:"EU-London",MO:"JP-Tokyo",MK:"EU-London",MG:"EU-London",MW:"EU-London",MY:"JP-Tokyo",MV:"JP-Tokyo",ML:"EU-London",MT:"EU-London",MH:"SG-Singapore",MQ:"US-Atlanta",MR:"EU-London",MU:"EU-London",YT:"EU-London",MX:"US-Atlanta",FM:"SG-Singapore",MD:"EU-London",MC:"EU-London",MN:"JP-Tokyo",ME:"EU-London",MS:"US-Atlanta",MA:"EU-London",MZ:"EU-London",MM:"JP-Tokyo",NA:"EU-London",NR:"SG-Singapore",NP:"JP-Tokyo",NL:"EU-London",NC:"SG-Singapore",NZ:"SG-Singapore",NI:"US-Atlanta",NE:"EU-London",NG:"EU-London",NU:"SG-Singapore",NF:"SG-Singapore",MP:"SG-Singapore",NO:"EU-London",OM:"JP-Tokyo",PK:"JP-Tokyo",PW:"SG-Singapore",PS:"JP-Tokyo",PA:"US-Atlanta",PG:"SG-Singapore",PY:"BR-Brazil",PE:"BR-Brazil",PH:"JP-Tokyo",PN:"SG-Singapore",PL:"EU-London",PT:"EU-London",PR:"US-Atlanta",QA:"JP-Tokyo",RE:"EU-London",RO:"EU-London",RU:"RU-Russia",RW:"EU-London",BL:"US-Atlanta",SH:"EU-London",KN:"US-Atlanta",LC:"US-Atlanta",MF:"US-Atlanta",PM:"US-Atlanta",VC:"US-Atlanta",WS:"SG-Singapore",SM:"EU-London",ST:"EU-London",SA:"EU-London",SN:"EU-London",RS:"EU-London",SC:"EU-London",SL:"EU-London",SG:"JP-Tokyo",SX:"US-Atlanta",SK:"EU-London",SI:"EU-London",SB:"SG-Singapore",SO:"EU-London",ZA:"EU-London",SS:"EU-London",ES:"EU-London",LK:"JP-Tokyo",SD:"EU-London",SR:"BR-Brazil",SJ:"EU-London",SZ:"EU-London",SE:"EU-London",CH:"EU-London",SY:"EU-London",TW:"JP-Tokyo",TJ:"JP-Tokyo",TZ:"EU-London",TH:"JP-Tokyo",TL:"JP-Tokyo",TG:"EU-London",TK:"SG-Singapore",TO:"SG-Singapore",TT:"US-Atlanta",TN:"EU-London",TR:"TK-Turkey",TM:"JP-Tokyo",TC:"US-Atlanta",TV:"SG-Singapore",UG:"EU-London",UA:"EU-London",AE:"EU-London",GB:"EU-London",US:"US-Atlanta",UM:"SG-Singapore",VI:"US-Atlanta",UY:"BR-Brazil",UZ:"JP-Tokyo",VU:"SG-Singapore",VE:"BR-Brazil",VN:"JP-Tokyo",WF:"SG-Singapore",EH:"EU-London",YE:"JP-Tokyo",ZM:"EU-London",ZW:"EU-London"},En=null;t.connect=S;var xn=500,Ln=-1,An=-1;t.refreshPlayerInfo=function(){T(253)};var Tn=null,wn=1,Cn=null,Pn=function(){var e=Date.now(),n=1e3/60;return function(){t.requestAnimationFrame(Pn);var o=Date.now(),a=o-e;a>n&&(e=o-a%n,!A()||240>Date.now()-an?M():console.warn("Skipping draw"),Gn())}}(),Fn={},Mn="poland;usa;china;russia;canada;australia;spain;brazil;germany;ukraine;france;sweden;chaplin;north korea;south korea;japan;united kingdom;earth;greece;latvia;lithuania;estonia;finland;norway;cia;maldivas;austria;nigeria;reddit;yaranaika;confederate;9gag;indiana;4chan;italy;bulgaria;tumblr;2ch.hk;hong kong;portugal;jamaica;german empire;mexico;sanik;switzerland;croatia;chile;indonesia;bangladesh;thailand;iran;iraq;peru;moon;botswana;bosnia;netherlands;european union;taiwan;pakistan;hungary;satanist;qing dynasty;matriarchy;patriarchy;feminism;ireland;texas;facepunch;prodota;cambodia;steam;piccolo;ea;india;kc;denmark;quebec;ayy lmao;sealand;bait;tsarist russia;origin;vinesauce;stalin;belgium;luxembourg;stussy;prussia;8ch;argentina;scotland;sir;romania;belarus;wojak;doge;nasa;byzantium;imperial japan;french kingdom;somalia;turkey;mars;pokerface;8;irs;receita federal;facebook;putin;merkel;tsipras;obama;kim jong-un;dilma;hollande;berlusconi;cameron;clinton;hillary;venezuela;blatter;chavez;cuba;fidel;merkel;palin;queen;boris;bush;trump".split(";"),In="8;nasa;putin;merkel;tsipras;obama;kim jong-un;dilma;hollande;berlusconi;cameron;clinton;hillary;blatter;chavez;fidel;merkel;palin;queen;boris;bush;trump".split(";"),Bn={};z.prototype={N:null,x:0,y:0,d:0,b:0},O.prototype={id:0,a:null,name:null,i:null,F:null,x:0,y:0,size:0,l:0,m:0,k:0,w:0,A:0,h:0,R:0,I:0,T:0,u:!1,c:!1,g:!1,J:!0,Q:0,G:null,P:function(){var t;for(t=0;t<Ue.length;t++)if(Ue[t]==this){Ue.splice(t,1);break}delete ve[this.id],t=Se.indexOf(this),-1!=t&&(ze=!0,Se.splice(t,1)),t=me.indexOf(this.id),-1!=t&&me.splice(t,1),this.u=!0,0<this.Q&&ye.push(this)},f:function(){return Math.max(~~(.3*this.size),24)},q:function(t){(this.name=t)&&(null==this.i?this.i=new K(this.f(),"#FFFFFF",!0,"#000000"):this.i.C(this.f()),this.i.r(this.name))},O:function(){for(var t=this.v();this.a.length>t;){var e=~~(Math.random()*this.a.length);this.a.splice(e,1)}for(0==this.a.length&&t>0&&this.a.push(new z(this,this.x,this.y,this.size,Math.random()-.5));this.a.length<t;)e=~~(Math.random()*this.a.length),e=this.a[e],this.a.push(new z(this,e.x,e.y,e.d,e.b))},v:function(){var t=10;20>this.size&&(t=0),this.c&&(t=30);var e=this.size;return this.c||(e*=Be),e*=wn,32&this.R&&(e*=.25),~~Math.max(e,t)},ba:function(){this.O();for(var t=this.a,e=t.length,n=0;e>n;++n){var o=t[(n-1+e)%e].b,a=t[(n+1)%e].b;t[n].b+=(Math.random()-.5)*(this.g?3:1),t[n].b*=.7,10<t[n].b&&(t[n].b=10),-10>t[n].b&&(t[n].b=-10),t[n].b=(o+a+8*t[n].b)/10}for(var i=this,r=this.c?0:(this.id/1e3+Te/1e4)%(2*Math.PI),n=0;e>n;++n){var l=t[n].d,o=t[(n-1+e)%e].d,a=t[(n+1)%e].d;if(15<this.size&&null!=ce&&20<this.size*Be&&0<this.id){var s=!1,h=t[n].x,c=t[n].y;ce.ca(h-5,c-5,10,10,function(t){t.N!=i&&25>(h-t.x)*(h-t.x)+(c-t.y)*(c-t.y)&&(s=!0)}),!s&&(t[n].x<Pe||t[n].y<Fe||t[n].x>Me||t[n].y>Ie)&&(s=!0),s&&(0<t[n].b&&(t[n].b=0),t[n].b-=1)}l+=t[n].b,0>l&&(l=0),l=this.g?(19*l+this.size)/20:(12*l+this.size)/13,t[n].d=(o+a+8*l)/10,o=2*Math.PI/e,a=this.a[n].d,this.c&&0==n%2&&(a+=5),t[n].x=this.x+Math.cos(o*n+r)*a,t[n].y=this.y+Math.sin(o*n+r)*a}},H:function(){if(0>=this.id)return 1;var t;t=(Te-this.I)/120,t=0>t?0:t>1?1:t;var e=0>t?0:t>1?1:t;if(this.f(),this.u&&e>=1){var n=ye.indexOf(this);-1!=n&&ye.splice(n,1)}return this.x=t*(this.w-this.l)+this.l,this.y=t*(this.A-this.m)+this.m,this.size=e*(this.h-this.k)+this.k,e},D:function(){return 0>=this.id?!0:this.x+this.size+40<fe-se/2/Be||this.y+this.size+40<pe-he/2/Be||this.x-this.size-40>fe+se/2/Be||this.y-this.size-40>pe+he/2/Be?!1:!0},p:function(e){if(this.D()){++this.Q;var n=0<this.id&&!this.c&&!this.g&&.4>Be;if(5>this.v()&&0<this.id&&(n=!0),this.J&&!n)for(var o=0;o<this.a.length;o++)this.a[o].d=this.size;if(this.J=n,e.save(),this.T=Te,o=this.H(),this.u&&(e.globalAlpha*=1-o),e.lineWidth=10,e.lineCap="round",e.lineJoin=this.c?"miter":"round",Ge?(e.fillStyle="#FFFFFF",e.strokeStyle="#AAAAAA"):(o=R(this.G)||this.color,Je&&":teams"!=Ve||(o=this.color),e.fillStyle=o,e.strokeStyle=o),n)e.beginPath(),e.arc(this.x,this.y,this.size+5,0,2*Math.PI,!1);else{this.ba(),e.beginPath();var a=this.v();for(e.moveTo(this.a[0].x,this.a[0].y),o=1;a>=o;++o){var i=o%a;e.lineTo(this.a[i].x,this.a[i].y)}}if(e.closePath(),a=this.name.toLowerCase(),!this.g&&Je&&":teams"!=Ve?(o=G(this.G))||(-1!=Mn.indexOf(a)?(Fn.hasOwnProperty(a)||(Fn[a]=new Image,Fn[a].src=t.ASSETS_ROOT+"skins/"+a+".png"),o=0!=Fn[a].width&&Fn[a].complete?Fn[a]:null):o=null):o=null,i=o,n||e.stroke(),e.fill(),null!=i&&(e.save(),e.clip(),o=Math.max(this.size,this.h),e.drawImage(i,this.x-o-5,this.y-o-5,2*o+10,2*o+10),e.restore()),(Ge||15<this.size)&&!n&&(e.strokeStyle="#000000",e.globalAlpha*=.1,e.stroke()),e.globalAlpha=1,o=-1!=Se.indexOf(this),n=~~this.y,0!=this.id&&(Re||o)&&this.name&&this.i&&(null==i||-1==In.indexOf(a))){i=this.i,i.r(this.name),i.C(this.f()),a=0>=this.id?1:Math.ceil(10*Be)/10,i.S(a);var i=i.B(),r=~~(i.width/a),l=~~(i.height/a);e.drawImage(i,~~this.x-~~(r/2),n-~~(l/2),r,l),n+=i.height/2/a+4}0<this.id&&Ke&&(o||0==Se.length&&(!this.c||this.g)&&20<this.size)&&(null==this.F&&(this.F=new K(this.f()/2,"#FFFFFF",!0,"#000000")),o=this.F,o.C(this.f()/2),o.r(~~(this.size*this.size/100)),a=Math.ceil(10*Be)/10,o.S(a),i=o.B(),r=~~(i.width/a),l=~~(i.height/a),e.drawImage(i,~~this.x-~~(r/2),n-~~(l/2),r,l)),e.restore()}}},K.prototype={t:"",K:"#000000",M:!1,o:"#000000",n:16,j:null,L:null,e:!1,s:1,C:function(t){this.n!=t&&(this.n=t,this.e=!0)},S:function(t){this.s!=t&&(this.s=t,this.e=!0)},setStrokeColor:function(t){this.o!=t&&(this.o=t,this.e=!0)},r:function(t){t!=this.t&&(this.t=t,this.e=!0)},B:function(){if(null==this.j&&(this.j=document.createElement("canvas"),this.L=this.j.getContext("2d")),this.e){this.e=!1;var t=this.j,e=this.L,n=this.t,o=this.s,a=this.n,i=a+"px Ubuntu";e.font=i;var r=~~(.2*a);t.width=(e.measureText(n).width+6)*o,t.height=(a+r)*o,e.font=i,e.scale(o,o),e.globalAlpha=1,e.lineWidth=3,e.strokeStyle=this.o,e.fillStyle=this.K,this.M&&e.strokeText(n,3,a-r/2),e.fillText(n,3,a-r/2)}return this.j}},Date.now||(Date.now=function(){return(new Date).getTime()}),function(){for(var e=["ms","moz","webkit","o"],n=0;n<e.length&&!t.requestAnimationFrame;++n)t.requestAnimationFrame=t[e[n]+"RequestAnimationFrame"],t.cancelAnimationFrame=t[e[n]+"CancelAnimationFrame"]||t[e[n]+"CancelRequestAnimationFrame"];t.requestAnimationFrame||(t.requestAnimationFrame=function(t){return setTimeout(t,1e3/60)},t.cancelAnimationFrame=function(t){clearTimeout(t)})}();var Nn={V:function(t){function e(t){return o>t&&(t=o),t>i&&(t=i),~~((t-o)/32)}function n(t){return a>t&&(t=a),t>r&&(t=r),~~((t-a)/32)}var o=t.Z,a=t.$,i=t.X,r=t.Y,l=~~((i-o)/32)+1,s=~~((r-a)/32)+1,h=Array(l*s);return{W:function(t){var o=e(t.x)+n(t.y)*l;null==h[o]?h[o]=t:Array.isArray(h[o])?h[o].push(t):h[o]=[h[o],t]},ca:function(t,o,a,i,r){var s=e(t),c=n(o);for(t=e(t+a),o=n(o+i);o>=c;++c)for(i=s;t>=i;++i)if(a=h[i+c*l],null!=a)if(Array.isArray(a))for(var d=0;d<a.length;d++)r(a[d]);else r(a)}}}},Jn=function(){var t=new O(0,0,0,32,"#ED1C24",""),e=document.createElement("canvas");e.width=32,e.height=32;var n=e.getContext("2d");return function(){0<Se.length&&(t.color=Se[0].color,t.q(Se[0].name)),n.clearRect(0,0,32,32),n.save(),n.translate(16,16),n.scale(.4,.4),t.p(n),n.restore();var o=document.getElementById("favicon"),a=o.cloneNode(!0);a.setAttribute("href",e.toDataURL("image/png")),o.parentNode.replaceChild(a,o)}}();e(function(){Jn()});var Rn="loginCache3";e(function(){if(+t.localStorage.wannaLogin){var n=t.localStorage[Rn];n&&q(n),t.localStorage.fbPictureCache&&e(".agario-profile-picture").attr("src",t.localStorage.fbPictureCache)
+}}),t.facebookLogin=function(){t.localStorage.wannaLogin=1},t.checkLoginStatus=function(){if(console.log("Store loaded!"),+t.localStorage.wannaLogin){var e=t.localStorage.fbTokenCache;e&&(console.log("logging with token "+e),t.MC.doLoginWithFB(e,!0))}},t.fbAsyncInit=function(){function e(){t.localStorage.wannaLogin=1,null==t.FB?alert("You seem to have something blocking Facebook on your browser, please check for any extensions"):t.FB.login(function(t){j(t)},{scope:"public_profile, email"})}t.FB.init({appId:te.fb_app_id,cookie:!0,xfbml:!0,status:!0,version:"v2.2"}),t.FB.Event.subscribe("auth.statusChange",function(n){+t.localStorage.wannaLogin&&("connected"==n.status?j(n):e())}),t.facebookRelogin=e,t.facebookLogin=e},t.logout=function(){rn=null,e("#helloContainer").attr("data-logged-in","0"),e("#helloContainer").attr("data-has-account-data","0"),delete t.localStorage.wannaLogin,delete t.localStorage[Rn],delete t.localStorage.fbPictureCache,delete t.localStorage.fbTokenCache,m(),t.MC.doLogout()};var Gn=function(){function t(t,e,n,o,a){var i=e.getContext("2d"),r=e.width;e=e.height,t.color=a,t.q(n),t.size=o,i.save(),i.translate(r/2,e/2),t.p(i),i.restore()}for(var n=new O(-1,0,0,32,"#5bc0de",""),o=new O(-1,0,0,32,"#5bc0de",""),a="#0791ff #5a07ff #ff07fe #ffa507 #ff0774 #077fff #3aff07 #ff07ed #07a8ff #ff076e #3fff07 #ff0734 #07ff20 #ff07a2 #ff8207 #07ff0e".split(" "),i=[],r=0;r<a.length;++r){var l=r/a.length*12,s=30*Math.sqrt(r/a.length);i.push(new O(-1,Math.cos(l)*s,Math.sin(l)*s,10,a[r],""))}W(i);var h=document.createElement("canvas");return h.getContext("2d"),h.width=h.height=70,t(o,h,"",26,"#ebc0de"),function(){e(".cell-spinner").filter(":visible").each(function(){var o=e(this),a=Date.now(),i=this.width,r=this.height,l=this.getContext("2d");l.clearRect(0,0,i,r),l.save(),l.translate(i/2,r/2);for(var s=0;10>s;++s)l.drawImage(h,(.1*a+80*s)%(i+140)-i/2-70-35,r/2*Math.sin((.001*a+s)%Math.PI*2)-35,70,70);l.restore(),(o=o.attr("data-itr"))&&(o=f(o)),t(n,this,o||"",+e(this).attr("data-size"),"#5bc0de")}),e("#statsPellets").filter(":visible").each(function(){e(this);var n=this.width,o=this.height;for(this.getContext("2d").clearRect(0,0,n,o),n=0;n<i.length;n++)t(i[n],this,"",i[n].size,i[n].color)})}}();t.createParty=function(){c(":party"),En=function(n){_("/#"+t.encodeURIComponent(n)),e(".partyToken").val("agar.io/#"+t.encodeURIComponent(n)),e("#helloContainer").attr("data-party-state","1")},m()},t.joinParty=H,t.cancelParty=function(){_("/"),e("#helloContainer").attr("data-party-state","0"),c(""),m()};var zn=[],On=0,Dn="#000000",Kn=!1,Wn=!1,Yn=0,qn=0,Vn=0,jn=0,Hn=0,_n=!0;setInterval(function(){Wn&&zn.push(N()/100)},1e3/60),setInterval(function(){var t=Q();0!=t&&(++Vn,0==Hn&&(Hn=t),Hn=Math.min(Hn,t))},1e3),t.closeStats=function(){Kn=!1,e("#stats").hide(),g(t.ab),h(0)},t.setSkipStats=function(t){_n=!t},e(function(){e(n)})}}}}(window,window.jQuery);
 </script>
+<script type="text/javascript" src="mc/lib/soundjs.min.js"></script>
+<script type="text/javascript" src="mc/agarioshop.js?v=148"></script>
 <script>
 
 var hasBottomAd = false;
@@ -440,6 +114,18 @@ googletag.cmd.push(function() {
 </script>
 </head>
 <body>
+<nav id="hidden-navigation" class="" role="navigation" style="display:none">
+<ul role="menubar">
+<li class="first" role="menuitem"><a href="/">Free For All</a></li>
+<li role="menuitem"><a href="/team">Team</a></li>
+<li role="menuitem"><a href="/experimental">Experimental</a></li>
+<li class="last" role="menuitem"><a href="/party">Party</a></li>
+</ul>
+</nav>
+<main style="display:none">
+<h1>Agar.io Free For All</h1>
+<p>Eat cells smaller than you and don&#x27;t get eaten by the bigger ones, as an MMO</p>
+</main>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -448,6 +134,9 @@ googletag.cmd.push(function() {
   js.src = "//connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<div id="openfl-overlay"></div>
+<div id="openfl-content"></div>
+<a id="modal-payment-link" class="xsolla_container" href="/pay/"></a>
 <script src="js/a.js?a&amp;ad_box_"></script>
 <div id="overlays" style="display:none; position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 200;">
 <div id="helloContainer" data-logged-in="0" data-has-account-data="0" data-party-state="0" data-results-state="0" data-gamemode="">
@@ -456,7 +145,14 @@ googletag.cmd.push(function() {
 <div class="clearfix" style="margin-bottom: 16px;">
 <img class="agario-profile-picture"/>
 <div class="agario-profile-name-container">
-<span class="agario-profile-name"></span>
+<div class="agario-wallet-container">
+<span class="agario-wallet-label">-</span>
+<img src="mc/img/currency_icon.png" class="agario-wallet-currency"/>
+<div class="agario-wallet-plus">
+<span>+</span>
+</div>
+</div>
+<div class="agario-profile-name"></div>
 </div>
 </div>
 <div style="position: relative; margin-bottom: -15px;" class="clearfix">
@@ -469,6 +165,42 @@ googletag.cmd.push(function() {
 </div>
 </div>
  
+ 
+<div class="agario-loggedout-panel">
+<img src="img/login-perks.png">
+</div>
+ 
+<div class="agario-panel agario-side-panel agario-shop-panel">
+<div class="form-group" id="agario-second-buttons">
+<button id="openShopBtn" onclick="MC.openShop(); return false;" class="btn btn-primary btn-shop" style="line-height: 24px;" data-itr="Shop">
+</button>
+<br clear="both"/>
+</div>
+<div class="shop-left-container">
+<div id="skinButton" style="cursor:pointer">
+<div class="circle big green" style="top:75px;"><span class="outlined-text plus-text" style="cursor:pointer;line-height: 26px;">+</span></div>
+<img class="circle bordered"/>
+<span id="skinLabel" class="outlined-text"></span>
+</div>
+</div>
+<div class="vertical-line" style="min-height:115px;"></div>
+<div class="shop-right-container">
+<div style="position:relative">
+<div id="boostButton" class="shop-power">
+<div class="circle small green"><span class="outlined-text" style="cursor:pointer">+</span></div>
+<img src="mc/img/xpboost_3x_shop.png" style="vertical-align:top; width:60px; display:block;margin:auto;"/>
+<span class="timer"></span>
+</div>
+<div id="massButton" class="shop-power">
+<div class="circle small green"><span class="outlined-text" style="cursor:pointer">+</span></div>
+<img src="mc/img/massboost_3x_shop.png" style="vertical-align:top; width:60px; display:block;margin:auto;"/>
+<span class="timer"></span>
+</div>
+</div>
+</div>
+<span class="text-muted"></span>
+<button id="retryBtn" onclick="MC.retryConnection(); return false;" class="btn btn-primary btn-retry" style="display:none;margin-top:10px;" data-itr="Retry"></button>
+</div>
 </div>
 <div id="mainPanel" class="agario-panel">
 <form role="form">
@@ -487,7 +219,7 @@ googletag.cmd.push(function() {
 <div class="form-group clearfix">
 <input id="nick" class="form-control" placeholder="Nick" maxlength="15" autofocus />
 <select id="gamemode" class="form-control" onchange="setGameMode($(this).val());" required>
-<option selected value="" data-itr="gamemode_ffa"></option>
+<option value="" data-itr="gamemode_ffa"></option>
 <option value=":teams" data-itr="gamemode_teams" disabled></option>
 <option value=":experimental" data-itr="gamemode_experimental"></option>
 <option value=":party" data-itr="party"></option>
@@ -534,6 +266,7 @@ googletag.cmd.push(function() {
 <button onclick="logout(); return false;" class="btn btn-danger btn-logout" data-itr="logout"></button>
 </div>
 <br clear="both"/>
+<span id="version-tag"/>
 </div>
 </form>
 <div id="instructions">
@@ -644,7 +377,7 @@ googletag.cmd.push(function() {
 <button type="button" class="close" onclick="cancelParty();">&times;</button>
 </div>
 </div>
-<div class="agario-promo" style="padding: 0px; width: 293px; height: 366px; position: relative; background-image: url(img/promo.png);">
+<div class="agario-promo" style="padding: 0px; width: 293px; height: 366px; position: relative; background-image: url(/img/promo.png);">
 <div style="text-align: center; position: absolute; bottom: 10px; width: 100%;">
 <a href="https://itunes.apple.com/app/agar.io/id995999703?mt=8&amp;at=1l3vajp" target="_blank" onclick="ga('send', 'event', 'MobilePromo', 'AppStore');"><img src="img/appstore.png" alt="Download on the App Store"/></a>
 <a href="https://play.google.com/store/apps/details?id=com.miniclip.agar.io" target="_blank" onclick="ga('send', 'event', 'MobilePromo', 'PlayStore');"><img src="img/google_play.png" alt="Get it on Google play"/></a>
@@ -660,22 +393,21 @@ googletag.cmd.push(function() {
 	</script>
 <div class="tosBox">
 <center>
-<a href="privacy.txt" class="text-muted" data-itr="privacy_policy"></a>
+<a href="/privacy.txt" class="text-muted" data-itr="privacy_policy"></a>
 |
-<a href="terms.txt" class="text-muted" data-itr="terms_of_service"></a>
+<a href="/terms.txt" class="text-muted" data-itr="terms_of_service"></a>
 |
-<a href="changelog.txt" class="text-muted" data-itr="changelog"></a>
+<a href="/changelog.txt" class="text-muted" data-itr="changelog"></a>
 </center>
 </div>
 </div>
 <div id="connecting" style="display: none; position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 100;">
-<div class="connecting-panel" style="width: 350px; background-color: #FFFFFF; margin: auto; border-radius: 15px; padding: 5px 15px 5px 15px;">
+<div class="connecting-panel" style="width: 350px; background-color: #FFFFFF; margin: auto auto auto -175px; border-radius: 15px; padding: 5px 15px 5px 15px;">
 <h2 data-itr="connecting"></h2>
 <p data-itr="connect_help"></p>
 </div>
 </div>
 <script>
-
 $('.partyToken').on('mouseover click mousemove mousedown mouseup select', function(e){
 	//this.setSelectionRange(0, this.value.length);
 	//e.preventDefault();
@@ -698,12 +430,17 @@ googletag.cmd.push(function() { googletag.display('g300x250'); });
 var hasAdblock = (document.getElementById("tester") == null);
 
 if(hasAdblock){
-	$('#adbg').css('background-image', "url('blocker.png')");
+	$('#adbg').css('background-image', "url('/blocker.png')");
 }
 </script>
 <canvas id="canvas" width="800" height="600"></canvas>
 <div style="font-family:'Ubuntu'">&nbsp;</div>
 <script>
+var MC = new MiniclipAPI("openfl-content","openfl-overlay");
+MC.loadEnvironment(EnvConfig);
+window["MC"]=MC;
+lime.embed ("openfl-content", 880, 1024, "transparent", "mc/");
+MC.hideContainer();
 
 $(function () {
 	$('[data-itr]').each(function(){
@@ -712,12 +449,51 @@ $(function () {
 		$this.html(i18n[itr] || i18n_dict['en'][itr] || itr);
 		//$this.html('');
 	});
-	
+
+	$('#massButton').click(function() {
+		MC.openShop('shopMass');
+	});
+	$('#skinButton').click(function() {
+		MC.openShop('shopSkins');
+	});
+	$('#boostButton').click(function() {
+		MC.openShop('shopBoost');
+	});
+	$('.agario-wallet-container').click(function() {
+		if(MC.isShopAvailable())
+		{
+			MC.openShop('shopCurrency');
+		}
+	});
+
+	/* Disabled on v1.1
+	$('.agario-profile-picture').click(function(){
+        MC.showProfile();
+    })
+	*/
 	$('.btn-login').tooltip({
 		'html': true,
 		'title': i18n['login_tooltip'],
-		'placement': 'bottom'
+		'placement': 'bottom',
+		'trigger': 'manual'
 	});
+
+	var tooltipCounter = 0;
+	$('.btn-login').hover(function(){ tooltipCounter++; checkTooltip(); } , function(){ tooltipCounter--; checkTooltip(); });
+    $('.btn-play-guest').hover(function(){ tooltipCounter++; checkTooltip(); } , function(){ tooltipCounter--; checkTooltip(); });
+    $('.agario-loggedout-panel').hover(function(){ tooltipCounter++; checkTooltip(); } , function(){ tooltipCounter--; checkTooltip(); });
+
+    var checkTimer = 0;
+    function checkTooltip(){
+    	if (tooltipCounter > 0){
+    		clearTimeout(checkTimer);
+			$('.btn-login').tooltip('show');
+    	} else {
+    		checkTimer = setTimeout(function(){
+    			$('.btn-login').tooltip('hide');
+    		}, 200);
+    	}
+    }
 });
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
